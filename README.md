@@ -14,7 +14,7 @@ the internal implementation schema)
 	• The EFSM in the report has to be consistent with the SystemC implementation and the FSMD
 schema!
 
-– Remember: define the EFSM and FSMD before implementing the design!
+		– Remember: define the EFSM and FSMD before implementing the design!
 
 – Organization of the processes
 
