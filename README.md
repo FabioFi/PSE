@@ -8,11 +8,9 @@
 
 – FSMD and EFSM of the device behavior
 
-	• For the FSMD schema, it is enough to show the connections between Controller and Datapath (not
-the internal implementation schema)
+	• For the FSMD schema, it is enough to show the connections between Controller and Datapath (not the internal implementation schema)
 
-	• The EFSM in the report has to be consistent with the SystemC implementation and the FSMD
-schema!
+	• The EFSM in the report has to be consistent with the SystemC implementation and the FSMD schema!
 
 		– Remember: define the EFSM and FSMD before implementing the design!
 
