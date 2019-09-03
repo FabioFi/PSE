@@ -3,32 +3,37 @@
 
 int sc_main(int argc, char * argv[]){
 
-  sc_signal<bool> clock;
+  //sc_signal<bool> clock;
 
   sc_signal<bool> rst;
   sc_signal<sc_uint<1> > input_rdy;
   sc_signal<sc_uint<32> > word1;
   sc_signal<sc_uint<32> > word2;
-  sc_signal<sc_uint<32> > key0;
+  //sc_signal<sc_uint<32> > key0;
   sc_signal<sc_uint<32> > key1;
   sc_signal<sc_uint<32> > key2;
   sc_signal<sc_uint<32> > key3;
+  sc_signal<sc_uint<32> > key4;
   sc_signal<sc_uint<1> > mode;
 
   sc_signal<sc_uint<32> > result0;
   sc_signal<sc_uint<32> > result1;
   sc_signal<sc_uint<1> > output_rdy;
 
-  xtea_RTL_testbench    tb("tb");
-  xtea_RTL              xtea("xtea");
+  sc_signal<bool> reset;
+  sc_signal<sc_dt::sc_logic> clock;
+
+  xtea_RTL_testbench    tb("tb");             // source module
+  xtea_RTL              xtea("xtea");         // root RTL module
 
   xtea.input_rdy(input_rdy);
   xtea.word1(word1);
   xtea.word2(word2);
-  xtea.key0(key0);
+  //xtea.key0(key0);
   xtea.key1(key1);
   xtea.key2(key2);
   xtea.key3(key3);
+  xtea.key4(key4);
   xtea.mode(mode);
   xtea.result0(result0);
   xtea.result1(result1);
