@@ -27,3 +27,6 @@
 	• How do you organize and use the internal signals? What about the latency?
 
 – Justify ALL your choices: if something is not on the specification, then write it on the report!
+
+# Prima difare il make -> export SYSTEMC_HOME=/Users/fabiofiorio/pse_libraries/systemc
+## make clean e poi make

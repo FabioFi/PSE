@@ -9,6 +9,7 @@ xtea_RTL::xtea_RTL(sc_core::sc_module_name module_name) :
     key1("key1"),
     key2("key2"),
     key3("key3"),
+    //key4("key4"),
     mode("mode"),
     result0("result0"),
     result1("result1"),
