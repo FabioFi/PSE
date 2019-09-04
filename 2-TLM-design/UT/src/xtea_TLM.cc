@@ -1,6 +1,60 @@
 #include "xtea_TLM.hh"
 
-xtea_TLM::xtea_TLM(sc_core::sc_module_name module_name) :
+xtea_TLM::xtea_TLM(sc_module_name name_)
+  : sc_module(name_)
+  , target_socket("target_socket")
+  , pending_transaction(NULL)
+  {
+    target_socket(*this);
+  }
+
+void xtea_TLM::b_transport(tlm::tlm_generic_payload& trans, sc_time& t){
+
+  ioDataStruct = *((iostruct*) trans.get_data_ptr());
+
+  if (trans.is_write()) {
+    root_function();
+    trans.set_response_status(tlm::TLM_OK_RESPONSE);
+    ioDataStruct.result = tmp_result;
+    *((iostruct*) trans.get_data_ptr()) = ioDataStruct;
+  } 
+  else if (trans.is_read()){
+    ioDataStruct.result = tmp_result;
+    *((iostruct*) trans.get_data_ptr()) = ioDataStruct;
+  }
+
+}
+
+bool xtea_TLM::get_direct_mem_ptr(tlm::tlm_generic_payload& trans, tlm::tlm_dmi& dmi_data){
+  return false;
+}
+
+tlm::tlm_sync_enum xtea_TLM::nb_transport_fw(tlm::tlm_generic_payload& trans, tlm::tlm_phase& phase, sc_time& t){
+  return tlm::TLM_COMPLETED;
+}
+
+unsigned int xtea_TLM::transport_dbg(tlm::tlm_generic_payload& trans){
+  return 0;
+}
+
+void xtea_TLM:: root_function(){
+  //tmp_result = sqrt((float)ioDataStruct.datain);
+  //mettere tutto il codice
+}
+
+/* Initialization:
+void xtea_TLM:: end_of_elaboration(){
+
+}
+
+void xtea_TLM:: reset(){
+
+}*/
+
+
+//------------------------------------------------------
+
+/*xtea_TLM::xtea_TLM(sc_core::sc_module_name module_name) :
     sc_module(module_name),
     input_rdy("input_rdy"),
     word1("word1"),
@@ -48,13 +102,13 @@ void xtea_TLM::datapath(void){
         result0.write(0);
         result1.write(0);
         output_rdy.write(0);
-    /*    word1.write(0);
-        word2.write(0);
-        key0.write(0);
-        key1.write(0);
-        key2.write(0);
-        key3.write(0);
-        input_rdy.write(0);*/
+        //word1.write(0);
+        //word2.write(0);
+        //key0.write(0);
+        //key1.write(0);
+        //key2.write(0);
+        //key3.write(0);
+        //input_rdy.write(0);
         counter.write(0);
       //  delta.write(0);
         v0.write(0);
@@ -241,4 +295,4 @@ void xtea_TLM::fsm(void){
       NEXT_STATUS = ST_0;
     break;
   }
-}
+}*/
