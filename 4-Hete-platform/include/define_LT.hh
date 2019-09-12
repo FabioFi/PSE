@@ -36,7 +36,7 @@ struct iostruct {
 #define ADDRESS_TYPE int
 #define DATA_TYPE1 iostructV
 #define DATA_TYPE2 iostructT
-#define DATA_TYPE3 iostructR
+//#define DATA_TYPE3 iostructR
 
 #define DATA_TYPE iostruct
 

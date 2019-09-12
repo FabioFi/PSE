@@ -28,7 +28,7 @@ CXX=g++
 CFLAGS= -c
 LD=g++
 
-EXECUTABLE=./bin/waterserbatoio.x
+EXECUTABLE=./bin/xtea.x
 
 all: $(EXECUTABLE)
 

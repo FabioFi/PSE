@@ -1,3 +1,6 @@
+//questo collega il controller TLM a la valvola AMS.
+//invece dovrebbe collegare l'rlt alla valvola AMS.
+
 #include "valvola_tlm.hh"
 
 ValvolaTransactor::ValvolaTransactor( sc_module_name name ) :

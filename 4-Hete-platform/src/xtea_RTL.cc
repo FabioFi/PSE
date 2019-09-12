@@ -1,7 +1,6 @@
 #include "xtea_RTL.hh"
 
 //#define PRINT_OUT
-
 void xtea_RTL :: datapath(void){
   cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH"<<endl;
 

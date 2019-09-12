@@ -16,7 +16,7 @@ void xtea_LT_testbench::run()
 
   sc_time local_time = m_qk.get_local_time();
 
-  iostructR binary_packet;
+  //iostructR binary_packet;
   iostructV valvola_packet;
   iostructT serbatoio_packet;
   // First transaction (initialization)

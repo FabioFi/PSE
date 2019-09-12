@@ -26,8 +26,8 @@ class xtea_RTL_transactor
     virtual tlm::tlm_sync_enum nb_transport_fw(tlm::tlm_generic_payload& trans, tlm::tlm_phase& phase, sc_time& t);
     virtual unsigned int transport_dbg(tlm::tlm_generic_payload& trans);
 
-
-    //Porte
+    //RTL side
+    //Porte RTL
     /*sc_in<bool > p_In_enable;
     sc_out<sc_uint<8> > number_portAI;
     sc_out<sc_uint<8> > number_portAF;
