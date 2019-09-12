@@ -13,7 +13,6 @@ class xtea_RTL_transactor
  public:
 
    //TLM side
-
   tlm::tlm_target_socket<> target_socket;
   iostruct  ioDataStruct;
   tlm::tlm_generic_payload* pending_transaction;
