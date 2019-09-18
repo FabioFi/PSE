@@ -43,14 +43,15 @@ SC_MODULE(main_RTL){
   sc_signal<sc_uint<8> > result_portAI;
   sc_signal<sc_uint<8> > result_portAF;
   sc_signal<sc_uint<8> > result_portBI;
-  sc_signal<sc_uint<8> > result_portBF;
+  sc_signal<sc_uint<8> > result_portBF;*/
 
   sca_tdf::sca_signal< int > m_flag;
   sca_tdf::sca_signal< double > m_threshold;
   sca_tdf::sca_signal< double > m_apertura;
   sc_signal< double > m_livello_acqua;
   sc_signal<int> m_flag_tlm;
-  sc_signal<double> m_threshold_tlm;*/
+  sc_signal<double> m_threshold_tlm;
+
   sc_signal<sc_uint<1> > input_rdy;
   sc_signal<sc_uint<32> > word1;
   sc_signal<sc_uint<32> > word2;
@@ -64,38 +65,41 @@ SC_MODULE(main_RTL){
   sc_signal<sc_uint<1> > output_rdy;
 
   //Definition
-  xtea_LT_testbench		i_src_LT;
+  xtea_LT_testbench		i_src_LT; // source module
   //fixedPoint_RTL_transactor		i_fixedPoint_RTL_transactor;
   //fixedPoint_RTL			i_fixedPoint_RTL;
-  //valvola valv;
-  //serbatoio serb;
+  xtea_LT   LT_xtea;
+  valvola valv;
+  serbatoio serb;
   ValvolaTransactor valvtr;
   SerbatoioTransactor serbtr;
-  //valvola_iface valvi;
-  xtea_LT_testbench		  tb;	       // source module
+  valvola_iface valvi;
+  //xtea_LT_testbench		  tb;	       // source module
   xtea_RTL_transactor		transactor; // xtea transactor
   xtea_RTL			        xtea;    // xtea RTL module
 
   SC_CTOR(main_RTL):
-    //valv("valv"),
-    //serb("serb"),
+    valv("valv"),
+    serb("serb"),
     valvtr("valvtr"),
     serbtr("serbtr"),
-    //valvi("valvi"),
-    //i_src_LT("i_src_LT"),
+    valvi("valvi"),
+    i_src_LT("i_src_LT"),
     //i_fixedPoint_RTL("i_fixedPoint_RTL"),
     //i_fixedPoint_RTL_transactor("i_fixedPoint_RTL_transactor")*/
-    tb("tb")
-    , transactor("transactor")
-    , xtea("xtea")
+    //tb("tb"),
+    xtea("xtea"),
+    transactor("transactor"),
+    LT_xtea("LT_xtea")
   {
 
     SC_THREAD(clk_gen);
 
     i_src_LT.initiator_socket_valvola(valvtr.target_socket);
-    tb.initiator_socket(transactor.target_socket);
+    //tb.initiator_socket(transactor.target_socket);
+    i_src_LT.initiator_socket(LT_xtea.target_socket);
 
-    /*valvtr.flag_valvola(m_flag_tlm);
+    valvtr.flag_valvola(m_flag_tlm);
     valvtr.threshold_valvola(m_threshold_tlm);
 
     valvi.flag_controller(m_flag_tlm);
@@ -110,9 +114,10 @@ SC_MODULE(main_RTL){
     serb.in(m_apertura);
     serb.out(m_livello_acqua);
 
-    serbtr.livello_acqua_in(m_livello_acqua);*/
+    serbtr.livello_acqua_in(m_livello_acqua);
 
     i_src_LT.initiator_socket_serbatoio(serbtr.target_socket);
+    i_src_LT.initiator_socket_rtl(transactor.target_socket);
     //i_src_LT.initiator_socket_rtl(i_fixedPoint_RTL_transactor.target_socket);
 
     xtea.input_rdy(input_rdy);
