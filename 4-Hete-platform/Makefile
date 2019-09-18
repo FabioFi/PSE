@@ -33,7 +33,7 @@ EXECUTABLE=./bin/xtea.x
 all: $(EXECUTABLE)
 
 
-$(EXECUTABLE): obj/main.o obj/valvola.o obj/serbatoio.o obj/controller.o obj/serbatoioTLM.o obj/valvola_i.o obj/valvolaTLM.o obj/xtea_RTL.o obj/xtea_RTL_transactor.o
+$(EXECUTABLE): obj/main.o obj/valvola.o obj/serbatoio.o obj/controller.o obj/controller_xtea.o obj/serbatoioTLM.o obj/valvola_i.o obj/valvolaTLM.o obj/xtea_RTL.o obj/xtea_RTL_transactor.o
 	@ $(LD) -o $@ $(INCDIR) $^ $(LIBS)
 
 obj/serbatoio.o: src/serbatoio.cc
@@ -49,6 +49,10 @@ obj/valvola.o: src/valvola.cc
 	@ $(CXX) $(CFLAGS) -o $@ $(INCDIR) $<
 
 obj/controller.o: src/xtea_LT_testbench.cc
+	@echo Building $@
+	@ $(CXX) $(CFLAGS) -o $@ $(INCDIR) $<
+
+obj/controller_xtea.o: src/xtea_LT.cc
 	@echo Building $@
 	@ $(CXX) $(CFLAGS) -o $@ $(INCDIR) $<
 

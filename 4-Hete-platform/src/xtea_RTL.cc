@@ -1,5 +1,7 @@
 #include "xtea_RTL.hh"
 
+//Mi arriva il valore threshold dal controllore TLM cifrato, lo devo decifrare e devo decidere se aprire, chiudere o lasciare com'è.
+
 //#define PRINT_OUT
 void xtea_RTL :: datapath(void){
   cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH"<<endl;
@@ -8,7 +10,6 @@ void xtea_RTL :: datapath(void){
     STATUS = Reset_ST;
   }
   else if (clk.read() == 1) {
-
 
     STATUS = NEXT_STATUS;
 
@@ -44,12 +45,14 @@ void xtea_RTL :: datapath(void){
         temp0.write(0);
         temp1.write(0);
         delta.write(0x9e3779b9);
+        //mode.write(1); //--------------------decifro e basta------------------
         break;
 
       case ST_1:
         /*NumberA.write((sc_uint<16>(0x0),number_portAI.read(), number_portAF.read()));
         NumberB.write((sc_uint<16>(0x0),number_portBI.read(), number_portBF.read()));*/
         v0.write(word1.read());
+        //v0.write(0);
         v1.write(word2.read());
         break;
 
@@ -138,6 +141,7 @@ void xtea_RTL :: datapath(void){
       case Final_ST:
         result0.write(v0.read());
         result1.write(v1.read());
+        cout << "i risultati sono pronti" << endl;
         output_rdy.write(1);
         break;
     }

@@ -1,5 +1,7 @@
 #include "xtea_RTL_transactor.hh"
 
+//Mi arriva il valore threshold dal controllore TLM cifrato, lo devo passare all'RTL.
+
 // INTERFACE SIDE:
 //****************
 xtea_RTL_transactor::xtea_RTL_transactor(sc_module_name name_)
@@ -52,22 +54,39 @@ void xtea_RTL_transactor::WRITEPROCESS()
 while (true) {
     	wait(begin_write);
   cout<<sc_simulation_time()<<" - "<<name()<<" - notify received"<<endl;
-	/*reset_to_RTL.write(1);
-  AI=ioDataStruct.n1.range(15,8);
-  AF=ioDataStruct.n1.range(7,0);
-  BI=ioDataStruct.n2.range(15,8);
-  BF=ioDataStruct.n2.range(7,0);
-	number_portAI.write(AI);
-  number_portAF.write(AF);
-  number_portBI.write(BI);
-  number_portBF.write(BF);
-  p_Out_enable.write(1);*/
-  //rst.write(1);
-	//din.write(ioDataStruct.datain);
-  result0.write(ioDataStruct.result0);
-  result1.write(ioDataStruct.result1);
-	//din_rdy.write(1);
-  output_rdy.write(1);
+	//reset_to_RTL.write(1);
+  //AI=ioDataStruct.n1.range(15,8);
+  //AF=ioDataStruct.n1.range(7,0);
+  //BI=ioDataStruct.n2.range(15,8);
+  //BF=ioDataStruct.n2.range(7,0);
+	//number_portAI.write(AI);
+  //number_portAF.write(AF);
+  //number_portBI.write(BI);
+  //number_portBF.write(BF);
+  //p_Out_enable.write(1);
+
+  sc_uint<32> w0, w1, k0, k1, k2, k3 = 0;
+  sc_uint<32> r0, r1;
+  w0 = ioDataStruct.result0; //0x12345678; //result0.write(ioDataStruct.result0);
+  w1 = ioDataStruct.result1; //0x9abcdeff; //result1.write(ioDataStruct.result1);
+  k0 = 0x6a1d78c8;
+  k1 = 0x8c86d67f;
+  k2 = 0x2a65bfbe;
+  k3 = 0xb4bd6e46;
+  //result0.write(ioDataStruct.n2); //aprire / chiudere / nulla
+  //result1.write(ioDataStruct.n1); //threshold
+  //word2.write(ioDataStruct.n2); //aprire / chiudere / nulla
+  rst.write(1);
+  word1.write(w0);
+  word2.write(w1);
+  key0.write(k0);
+  key1.write(k1);
+  key2.write(k2);
+  key3.write(k3);
+  mode.write(1); //decryption (con  ho encryption)
+  input_rdy.write(1);
+  //output_rdy.write(1);
+
 	end_write.notify();
 	wait();
   }
@@ -86,8 +105,10 @@ while (true) {
   risultato.range(31,16)=res_uint(31,16);
   risultato.range(15,0)=res_uint(15,0);
 	ioDataStruct.result=risultato;*/
-  ioDataStruct.result0=result0.read();
-  ioDataStruct.result1=result1.read();
+
+  //non dovrei fare nulla perchè non aspetto i dati da qualche altra parte
+  //ioDataStruct.result0=result0.read();
+  //ioDataStruct.result1=result1.read();
 	end_read.notify();
   }
 
@@ -107,10 +128,10 @@ void xtea_RTL_transactor :: reset(){
   cout<<sc_simulation_time()<<" - "<<name()<<" - reset"<<endl;
   //rst.write(0);
   //din_rdy.write(0);
-  output_rdy.write(0);
+  //output_rdy.write(0);
   //din.write(0);
-  result0.write(0);
-  result0.write(0);
+  /*result0.write(0);
+  result1.write(0);*/
 
 }
 

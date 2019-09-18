@@ -7,6 +7,7 @@
 #include "valvola_tlm.hh"
 #include "xtea_RTL.hh"
 #include "xtea_RTL_transactor.hh"
+#include "xtea_LT.hh"
 
 
 #define PERIOD 10
@@ -63,27 +64,27 @@ SC_MODULE(main_RTL){
   sc_signal<sc_uint<1> > output_rdy;
 
   //Definition
-  /*xtea_LT_testbench		i_src_LT;
-  fixedPoint_RTL_transactor		i_fixedPoint_RTL_transactor;
-  fixedPoint_RTL			i_fixedPoint_RTL;
-  valvola valv;
-  serbatoio serb;
+  xtea_LT_testbench		i_src_LT;
+  //fixedPoint_RTL_transactor		i_fixedPoint_RTL_transactor;
+  //fixedPoint_RTL			i_fixedPoint_RTL;
+  //valvola valv;
+  //serbatoio serb;
   ValvolaTransactor valvtr;
   SerbatoioTransactor serbtr;
-  valvola_iface valvi;*/
+  //valvola_iface valvi;
   xtea_LT_testbench		  tb;	       // source module
   xtea_RTL_transactor		transactor; // xtea transactor
   xtea_RTL			        xtea;    // xtea RTL module
 
   SC_CTOR(main_RTL):
-  /*valv("valv"),
-  serb("serb"),
-  valvtr("valvtr"),
-  serbtr("serbtr"),
-  valvi("valvi"),
-  i_src_LT("i_src_LT"),
-  i_fixedPoint_RTL("i_fixedPoint_RTL"),
-  i_fixedPoint_RTL_transactor("i_fixedPoint_RTL_transactor")*/
+    //valv("valv"),
+    //serb("serb"),
+    valvtr("valvtr"),
+    serbtr("serbtr"),
+    //valvi("valvi"),
+    //i_src_LT("i_src_LT"),
+    //i_fixedPoint_RTL("i_fixedPoint_RTL"),
+    //i_fixedPoint_RTL_transactor("i_fixedPoint_RTL_transactor")*/
     tb("tb")
     , transactor("transactor")
     , xtea("xtea")
@@ -91,7 +92,7 @@ SC_MODULE(main_RTL){
 
     SC_THREAD(clk_gen);
 
-    //i_src_LT.initiator_socket_valvola(valvtr.target_socket);
+    i_src_LT.initiator_socket_valvola(valvtr.target_socket);
     tb.initiator_socket(transactor.target_socket);
 
     /*valvtr.flag_valvola(m_flag_tlm);
@@ -109,10 +110,11 @@ SC_MODULE(main_RTL){
     serb.in(m_apertura);
     serb.out(m_livello_acqua);
 
-    serbtr.livello_acqua_in(m_livello_acqua);
+    serbtr.livello_acqua_in(m_livello_acqua);*/
 
     i_src_LT.initiator_socket_serbatoio(serbtr.target_socket);
-    i_src_LT.initiator_socket_rtl(i_fixedPoint_RTL_transactor.target_socket);*/
+    //i_src_LT.initiator_socket_rtl(i_fixedPoint_RTL_transactor.target_socket);
+
     xtea.input_rdy(input_rdy);
     xtea.word1(word1);
     xtea.word2(word2);

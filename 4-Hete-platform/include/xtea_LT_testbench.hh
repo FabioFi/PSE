@@ -1,6 +1,8 @@
 #ifndef _xtea_LT_TESTBENCH_H_
 #define _xtea_LT_TESTBENCH_H_
 
+//Mi arriva il valore threshold dal water tank (ams) -> lo devo cifrare e mandare all'RTL. NO -> devo mandare se aprire o chiudere o nulla
+
 #include <systemc.h>
 #include <tlm.h>
 #include <tlm_utils/tlm_quantumkeeper.h>

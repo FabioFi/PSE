@@ -1,6 +1,8 @@
 #ifndef xtea_RTL_H
 #define xtea_RTL_H
 
+//Mi arriva il valore threshold dal controllore TLM cifrato, lo devo decifrare e devo decidere se aprire, chiudere o lasciare com'è.
+
 #include "systemc.h"
 
 SC_MODULE(xtea_RTL){
@@ -34,6 +36,11 @@ SC_MODULE(xtea_RTL){
   sc_in<bool> rst;
   sc_in<bool> clk;
 
+  //SC_HAS_PROCESS(xtea_RTL);
+
+  /*xtea_RTL(sc_core::sc_module_name module_name );
+  ~xtea_RTL();*/
+
   typedef enum {Reset_ST, ST_0, ST_1, ST_2, ST_3, ST_4, ST_5, ST_6, ST_7, ST_8, ST_9, ST_10, Final_ST} STATES;
 
   /*sc_signal<STATES> STATUS, NEXT_STATUS;
@@ -44,6 +51,7 @@ SC_MODULE(xtea_RTL){
 
   void elaborate_MULTIPLICATION(void);      // xtea_RTL.cc
   void elaborate_MULTIPLICATION_FSM(void);*/  // xtea_RTL.cc
+
   sc_signal<STATES> STATUS, NEXT_STATUS;
   sc_signal<sc_uint<6> > counter;
   sc_signal<sc_uint<32> > delta;
@@ -64,7 +72,7 @@ SC_MODULE(xtea_RTL){
 
     SC_METHOD(fsm);
     //sensitive << STATUS << number_isready << number_portAI << number_portAF << number_portBI << number_portBF << Counter;
-    sensitive << STATUS << input_rdy << word1 << word1 << counter;
+    sensitive << STATUS << input_rdy << word1 << word2 << counter;
   };
 };
 
