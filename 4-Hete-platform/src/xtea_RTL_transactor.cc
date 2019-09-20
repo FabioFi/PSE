@@ -74,7 +74,7 @@ while (true) {
   k1 = 0x8c86d67f;
   k2 = 0x2a65bfbe;
   k3 = 0xb4bd6e46;
-  cout << "------------ w0: " << w0 << " w1: " << w1 << "------------" << endl;
+  cout << "------------ w0: " << std::hex << w0 << " w1: " << std::hex << w1 << "------------" << endl;
   //result0.write(ioDataStruct.n2); //aprire / chiudere / nulla
   //result1.write(ioDataStruct.n1); //threshold
   //word2.write(ioDataStruct.n2); //aprire / chiudere / nulla

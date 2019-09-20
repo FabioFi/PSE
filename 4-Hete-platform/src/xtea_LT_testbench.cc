@@ -67,6 +67,12 @@ void xtea_LT_testbench::run()
   livello_acqua_in=0;
   threshold=0.7;
 
+  /* while(true){
+  *
+  *
+  */
+
+
   //-----------------------CALCOLO THRESHOLD-------------------------------------------
   valvola_packet.flag = flag;
   valvola_packet.threshold = threshold;

@@ -78,7 +78,7 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_3:
-        cout << "inizio a decriptare: " << v0.read() << " e " << v1.read() << endl;
+        cout << "inizio a decriptare" << endl;
         /*result_isready.write(1);
         result_portAF.write((Product.read().range(7,0)));
         result_portAI.write((Product.read().range(15,8)));
@@ -113,6 +113,7 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_7:
+        cout << "v0: " << v0.read() << " v1: " << v1.read() << endl;
         v1.write(v1.read() - (((((v0.read() << 4) ^ (v0.read() >> 5)) + v0.read()) ^ (sum.read() + temp0.read()))));
         sum.write(sum.read() - delta.read());
         break;
@@ -145,7 +146,7 @@ void xtea_RTL :: datapath(void){
       case Final_ST:
         result0.write(v0.read());
         result1.write(v1.read());
-        cout << "i risultati sono pronti: " << result0.read() << " e " << result1.read() << endl;
+        cout << "i risultati sono pronti: " << v0.read() << " e " << v1.read() << endl;
         /*double hexstr2double(const std::string& hexstr){
             union
             {
