@@ -4,12 +4,14 @@
 
 //#define PRINT_OUT
 void xtea_RTL :: datapath(void){
-  cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH"<<endl;
+//  cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH (xtea_RTL)"<<endl;
 
   if (rst.read() == 0){
+  //  cout << "rst == 0" << endl;
     STATUS = Reset_ST;
   }
   else if (clk.read() == 1) {
+    //cout << "rst == 1" << endl;
 
     STATUS = NEXT_STATUS;
 
@@ -62,6 +64,7 @@ void xtea_RTL :: datapath(void){
         }
         NumberA.write(NumberA.read() << 1);
         Counter.write(Counter.read() + 1);*/
+        cout << "inizio a criptare - NO" << endl;
         cout << counter.read() << endl;
         cout << "v0: "<< v0.read() << endl;
         cout << "v1: "<< v1.read() << endl;
@@ -75,6 +78,7 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_3:
+        cout << "inizio a decriptare: " << v0.read() << " e " << v1.read() << endl;
         /*result_isready.write(1);
         result_portAF.write((Product.read().range(7,0)));
         result_portAI.write((Product.read().range(15,8)));
@@ -141,7 +145,18 @@ void xtea_RTL :: datapath(void){
       case Final_ST:
         result0.write(v0.read());
         result1.write(v1.read());
-        cout << "i risultati sono pronti" << endl;
+        cout << "i risultati sono pronti: " << result0.read() << " e " << result1.read() << endl;
+        /*double hexstr2double(const std::string& hexstr){
+            union
+            {
+                long long i;
+                double    d;
+            } value;
+
+            value.i = std::stoll(hexstr, nullptr, 16);
+
+            return value.d;
+        }*/
         output_rdy.write(1);
         break;
     }
@@ -150,7 +165,7 @@ void xtea_RTL :: datapath(void){
 
 
 void xtea_RTL :: fsm(void){
-  cout<<sc_simulation_time()<<" - "<<name()<<" - FSM"<<endl;
+  cout<<sc_simulation_time()<<" - "<<name()<<" - FSM (xtea_RTL)"<<endl;
   NEXT_STATUS = STATUS;
 
   switch(STATUS){

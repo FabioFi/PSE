@@ -1,5 +1,7 @@
 #include "xtea_LT_testbench.hh"
 #include <sstream>
+#include <iostream>
+#include <iomanip>
 
 //Mi arriva il valore threshold dal water tank (ams) -> lo devo cifrare e mandare all'RTL. NO -> devo mandare se aprire o chiudere o nulla
 
@@ -14,6 +16,24 @@ tlm::tlm_sync_enum xtea_LT_testbench::nb_transport_bw(tlm::tlm_generic_payload &
   return tlm::TLM_COMPLETED;
 }
 
+
+//-------------------------------------------convertitore-----------------------
+std::string double2hexstr(double x) {
+    union
+    {
+        uint64_t i;
+        double    d;
+    } value;
+
+   value.d = x;
+
+   std::ostringstream buf;
+   buf << std::hex << std::setfill('0') << std::setw(8) << value.i;
+
+   return buf.str().substr(0, 8);
+}
+//------------------------------------------------------------------------------
+
 void xtea_LT_testbench::run()
 {
 
@@ -25,7 +45,7 @@ void xtea_LT_testbench::run()
   // First transaction (initialization)
   iostruct xtea_packet;
 
-  cout<<sc_simulation_time()<<" - "<<name()<<" - run"<<endl;
+  cout<<sc_simulation_time()<<" - "<<name()<<" - run (xtea_LT_testbench)"<<endl;
 
   tlm::tlm_generic_payload payload_binary;
   tlm::tlm_generic_payload payload_valvola;
@@ -48,7 +68,6 @@ void xtea_LT_testbench::run()
   threshold=0.7;
 
   //-----------------------CALCOLO THRESHOLD-------------------------------------------
-
   valvola_packet.flag = flag;
   valvola_packet.threshold = threshold;
   payload_valvola.set_data_ptr((unsigned char*) &valvola_packet);
@@ -96,7 +115,7 @@ void xtea_LT_testbench::run()
   }
 
   //----------------------------convertire i dati in hex------------------------
-  double b = xtea_packet.n2;
+  /*double b = xtea_packet.n2;
   union {
       double fval ;
       uint64_t ival ;
@@ -104,9 +123,9 @@ void xtea_LT_testbench::run()
   fval = b ;
   std::ostringstream stm ;
   stm << std::hex << std::uppercase << ival ;
-  cout << b << " to hex = 0x" << stm.str() <<" ->this is right!" <<endl;
+  cout << b << " to hex = 0x" << stm.str() <<" ->(open/close/idle) this is right !!!!" <<endl;
 
-  double c = threshold;
+  double c = xtea_packet.n1; // = threshold;
   union {
       double fval1 ;
       uint64_t ival1 ;
@@ -114,15 +133,23 @@ void xtea_LT_testbench::run()
   fval1 = c ;
   std::ostringstream stm1 ;
   stm1 << std::hex << std::uppercase << ival1 ;
-  cout << c << " to hex = 0x" << stm1.str() <<" ->this is right!" <<endl;
+  cout << c << " to hex = 0x" << stm1.str() <<" ->(threshold) this is right !!!!" <<endl;*/
 
-  xtea_packet.datain_word1 = /*stm;*/ xtea_packet.n2; //apertura o chiusura (1.1 0.7 1)
-  xtea_packet.datain_word2 = /*stm1;*/ xtea_packet.n1; //threshold
+
+
+  cout << "0x-" << double2hexstr(xtea_packet.n2) << " - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << endl;
+  cout << "0x-" << double2hexstr(xtea_packet.n1) << " - BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << endl;
+
+  cout << "Open/Close/Idle: " << xtea_packet.n2 << endl;
+  cout << "Threshold: " << xtea_packet.n1 << endl;
+
+  xtea_packet.datain_word1 = /*stm;*/ /*double2hexstr(*/xtea_packet.n2/*)*/; //apertura o chiusura (1.1 0.7 1)
+  xtea_packet.datain_word2 = /*stm1;*/ /*double2hexstr(*/xtea_packet.n1/*)*/; //threshold
 
   //-----------------------ECRYPTION-------------------------------------------
 
   cout << "First invocation: \n";
-  cout << " - the encryption of " << std::hex << xtea_packet.datain_word1 << endl;
+  cout << " - the encryption of " << std::hex << xtea_packet.datain_word1 << " and " << std::hex << xtea_packet.datain_word2 << endl;
   cout << " - with key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
 
   payload.set_data_ptr((unsigned char*) &xtea_packet); // set payload data
@@ -142,7 +169,7 @@ void xtea_LT_testbench::run()
 
   if(payload.get_response_status() == tlm::TLM_OK_RESPONSE){
     cout<<"[TB:] TLM protocol correctly implemented"<<endl;
-    cout<<"[TB:] Result is: " << std::hex << xtea_packet.result0 << ", " << std::hex << xtea_packet.result1 << endl;
+    cout<<"[TB:] Result is: " << std::hex << xtea_packet.result0 << " and " << std::hex << xtea_packet.result1 << endl;
   }
 
   // temporal decoupling> get time and check if we have to synchronize with the target

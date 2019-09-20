@@ -28,7 +28,7 @@ void xtea_RTL_transactor::b_transport(tlm::tlm_generic_payload& trans, sc_time& 
       ioDataStruct=*((iostruct*) trans.get_data_ptr());
       trans.set_response_status(tlm::TLM_OK_RESPONSE);
       begin_write.notify();
-      cout<<"\t write notified"<<endl;
+      cout<<"\t write notified - xtea_RTL_transactor::b_transport"<<endl;
       wait(end_write);
       break;
 
@@ -36,13 +36,13 @@ void xtea_RTL_transactor::b_transport(tlm::tlm_generic_payload& trans, sc_time& 
      ioDataStruct = *((iostruct*) trans.get_data_ptr());
      trans.set_response_status(tlm::TLM_OK_RESPONSE);
      begin_read.notify();
-     cout<<"\t read notified"<<endl;
+     cout<<"\t read notified - xtea_RTL_transactor::b_transport"<<endl;
      wait(end_read);
      *((iostruct*) trans.get_data_ptr()) = ioDataStruct;
      break;
 
-    default:
-     break;
+  //  default:
+    // break;
   }
   cout<<sc_simulation_time()<<" - "<<name()<<" - b_transport ended"<<endl;
 }
@@ -52,8 +52,9 @@ void xtea_RTL_transactor::WRITEPROCESS()
 {
 
 while (true) {
-    	wait(begin_write);
-  cout<<sc_simulation_time()<<" - "<<name()<<" - notify received"<<endl;
+  wait(begin_write);
+  cout<<sc_simulation_time()<<" - "<<name()<<" - notify received !!!"<<endl;
+
 	//reset_to_RTL.write(1);
   //AI=ioDataStruct.n1.range(15,8);
   //AF=ioDataStruct.n1.range(7,0);
@@ -73,6 +74,7 @@ while (true) {
   k1 = 0x8c86d67f;
   k2 = 0x2a65bfbe;
   k3 = 0xb4bd6e46;
+  cout << "------------ w0: " << w0 << " w1: " << w1 << "------------" << endl;
   //result0.write(ioDataStruct.n2); //aprire / chiudere / nulla
   //result1.write(ioDataStruct.n1); //threshold
   //word2.write(ioDataStruct.n2); //aprire / chiudere / nulla
@@ -125,7 +127,7 @@ void xtea_RTL_transactor :: reset(){
   number_portBI.write(0);
   number_portAF.write(0);
   number_portBF.write(0);*/
-  cout<<sc_simulation_time()<<" - "<<name()<<" - reset"<<endl;
+  cout<<sc_simulation_time()<<" - "<<name()<<" - reset (xtea_RTL_transactor)"<<endl;
   //rst.write(0);
   //din_rdy.write(0);
   //output_rdy.write(0);

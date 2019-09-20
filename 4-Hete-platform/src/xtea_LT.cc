@@ -17,7 +17,7 @@ void xtea_LT::b_transport(tlm::tlm_generic_payload& trans, sc_time& t)
 
   if (trans.is_write()) {
     cout<<"\t\t[xtea:] Received invocation of the b_transport primitive - write"<<endl;
-    cout<<"\t\t[xtea:] Invoking the xtea_function to calculate the square xtea"<<endl;
+    cout<<"\t\t[xtea:] Invoking the xtea_function to calculate the xtea"<<endl;
 
     xtea_function();
 
@@ -97,6 +97,8 @@ void xtea_LT:: xtea_function()
         }
 
   }else if(ioDataStruct.mode == 1 ){
+
+    cout << "Inizio la criptazione: " << endl;
 
     sum = delta*32;
 
