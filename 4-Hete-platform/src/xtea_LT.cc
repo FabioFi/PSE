@@ -71,6 +71,9 @@ void xtea_LT:: xtea_function()
   temp = 0;
 
   if ( ioDataStruct.mode == 0 ){
+
+    cout << "Inizio la decriptazione: (NO) " << endl;
+
     delta = 0x9e3779b9;
     for (i=0; i < 32; i++) {
           if((sum & 3) == 0)

@@ -2,7 +2,7 @@
 #define __define_LT_h__
 
 #include <systemc.h>
-#include "sc_fixed.h"
+//#include "sc_fixed.h"
 
 struct iostructV {
   int flag;
@@ -32,10 +32,12 @@ struct iostruct {
 
   sc_logic mode;
 
-  sc_dt::sc_fixed<16,8> n1;
+  /*sc_dt::sc_fixed<16,8> n1;
   sc_dt::sc_fixed<16,8> n2;
-  //sc_uint<32> n2;
-  sc_dt::sc_fixed<32,16> result;
+  sc_dt::sc_fixed<32,16> result;*/
+  double n1;
+  double n2;
+  double result;
 };
 
 #define ADDRESS_TYPE int

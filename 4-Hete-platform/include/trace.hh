@@ -58,14 +58,14 @@ SC_MODULE(main_RTL){
 
   //Definition
   xtea_LT_testbench     i_src_LT; // source module
-  xtea_LT               LT_xtea;
+  //xtea_LT               LT_xtea;
   //fixedPoint_RTL_transactor		i_fixedPoint_RTL_transactor;
   xtea_RTL_transactor   transactor; // xtea transactor
   //fixedPoint_RTL			i_fixedPoint_RTL;
   xtea_RTL              i_xtea_RTL; // xtea RTL module
   valvola               valv;
   serbatoio             serb;
-  ValvolaTransactor     valvtr;
+  //ValvolaTransactor     valvtr;
   SerbatoioTransactor   serbtr;
   valvola_iface         valvi;
   //xtea_LT_testbench		  tb;	       // source module
@@ -73,7 +73,7 @@ SC_MODULE(main_RTL){
   SC_CTOR(main_RTL):
     valv("valv"),
     serb("serb"),
-    valvtr("valvtr"),
+    //valvtr("valvtr"),
     serbtr("serbtr"),
     valvi("valvi"),
     i_src_LT("i_src_LT"),
@@ -81,18 +81,20 @@ SC_MODULE(main_RTL){
     //i_fixedPoint_RTL_transactor("i_fixedPoint_RTL_transactor")*/
     //tb("tb"),
     i_xtea_RTL("i_xtea_RTL"),
-    transactor("transactor"),
-    LT_xtea("LT_xtea")
+    transactor("transactor")
+    //LT_xtea("LT_xtea")
   {
 
     SC_THREAD(clk_gen);
 
-    i_src_LT.initiator_socket_valvola(valvtr.target_socket);
+    //i_src_LT.initiator_socket_valvola(valvtr.target_socket);
     //tb.initiator_socket(transactor.target_socket); */
-    i_src_LT.initiator_socket(LT_xtea.target_socket);
 
-    valvtr.flag_valvola(m_flag_tlm);
-    valvtr.threshold_valvola(m_threshold_tlm);
+    //i_src_LT.initiator_socket(LT_xtea.target_socket); //dal controller al xtea lt
+    i_src_LT.initiator_socket(transactor.target_socket); //dal controller al transactor
+
+    //valvtr.flag_valvola(m_flag_tlm);
+    //valvtr.threshold_valvola(m_threshold_tlm);
 
     valvi.flag_controller(m_flag_tlm);
     valvi.threshold_controller(m_threshold_tlm);
@@ -108,8 +110,7 @@ SC_MODULE(main_RTL){
 
     serbtr.livello_acqua_in(m_livello_acqua);
 
-    i_src_LT.initiator_socket_serbatoio(serbtr.target_socket);
-    i_src_LT.initiator_socket_rtl(transactor.target_socket);
+    i_src_LT.initiator_socket_serbatoio(serbtr.target_socket); //dal controllore al serbatoio transactor per chiedere quanta acqua c'è
     //i_src_LT.initiator_socket_rtl(i_fixedPoint_RTL_transactor.target_socket);
 
     // RTL design <-> Transactor binding (RTL interfaces)

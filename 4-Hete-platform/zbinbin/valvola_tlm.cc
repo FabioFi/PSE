@@ -1,5 +1,10 @@
+
+//DA CANCELLARE
+
+
 //questo collega il controller TLM a la valvola AMS.
-//invece dovrebbe collegare l'rlt alla valvola AMS.
+//invece dovrebbe collegare l'RTL alla valvola AMS.
+
 
 #include "valvola_tlm.hh"
 

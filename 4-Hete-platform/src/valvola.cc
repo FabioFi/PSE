@@ -1,5 +1,7 @@
 #include "valvola.hh"
 
+//prima di fare il calcolo fare /1000 per riportare il valore corretto
+
 valvola::valvola(sc_core::sc_module_name name):
   flag("flag"), max_threshold("max_threshold"), apertura("apertura"){
 }

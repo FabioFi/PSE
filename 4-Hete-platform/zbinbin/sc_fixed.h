@@ -1,3 +1,9 @@
+
+//DA CANCELLARE
+
+
+
+
 /*****************************************************************************
 
   The following code is derived, directly or indirectly, from the SystemC
@@ -17,7 +23,7 @@
 
 /*****************************************************************************
 
-  sc_fixed.h - 
+  sc_fixed.h -
 
   Original Author: Martin Janssen, Synopsys, Inc.
 

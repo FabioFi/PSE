@@ -4,7 +4,7 @@
 
 //#define PRINT_OUT
 void xtea_RTL :: datapath(void){
-//  cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH (xtea_RTL)"<<endl;
+  //cout<<sc_simulation_time()<<" - "<<name()<<" - DATAPATH (xtea_RTL)"<<endl;
 
   if (rst.read() == 0){
   //  cout << "rst == 0" << endl;
@@ -47,7 +47,6 @@ void xtea_RTL :: datapath(void){
         temp0.write(0);
         temp1.write(0);
         delta.write(0x9e3779b9);
-        //mode.write(1); //--------------------decifro e basta------------------
         break;
 
       case ST_1:
@@ -78,7 +77,7 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_3:
-        cout << "inizio a decriptare" << endl;
+        //cout << "inizio a decriptare" << endl;
         /*result_isready.write(1);
         result_portAF.write((Product.read().range(7,0)));
         result_portAI.write((Product.read().range(15,8)));
@@ -113,7 +112,7 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_7:
-        cout << "v0: " << v0.read() << " v1: " << v1.read() << endl;
+        //cout << "v0: " << v0.read() << " v1: " << v1.read() << endl;
         v1.write(v1.read() - (((((v0.read() << 4) ^ (v0.read() >> 5)) + v0.read()) ^ (sum.read() + temp0.read()))));
         sum.write(sum.read() - delta.read());
         break;
@@ -147,17 +146,8 @@ void xtea_RTL :: datapath(void){
         result0.write(v0.read());
         result1.write(v1.read());
         cout << "i risultati sono pronti: " << v0.read() << " e " << v1.read() << endl;
-        /*double hexstr2double(const std::string& hexstr){
-            union
-            {
-                long long i;
-                double    d;
-            } value;
-
-            value.i = std::stoll(hexstr, nullptr, 16);
-
-            return value.d;
-        }*/
+        /* UNIRE I DUE RISULTATI IN UNO UNICO */
+        //devo scriverli in threshold_controller e flag_controller ???????
         output_rdy.write(1);
         break;
     }
@@ -166,33 +156,10 @@ void xtea_RTL :: datapath(void){
 
 
 void xtea_RTL :: fsm(void){
-  cout<<sc_simulation_time()<<" - "<<name()<<" - FSM (xtea_RTL)"<<endl;
+  //cout<<sc_simulation_time()<<" - "<<name()<<" - FSM (xtea_RTL)"<<endl;
   NEXT_STATUS = STATUS;
 
   switch(STATUS){
-    /*case Reset_ST:
-      NEXT_STATUS = ST_0;
-      break;
-    case ST_0:
-      if (number_isready.read() == 1){
-        NEXT_STATUS = ST_1;
-      } else {
-        NEXT_STATUS = ST_0;
-      }
-      break;
-    case ST_1:
-      NEXT_STATUS = ST_2;
-      break;
-    case ST_2:
-      if (Counter.read() <= 30){
-        NEXT_STATUS = ST_2;
-      } else {
-        NEXT_STATUS = ST_3;
-      }
-      break;
-    case ST_3:
-      NEXT_STATUS = ST_0;
-      break;*/
     case Reset_ST:
       NEXT_STATUS = ST_0;
       break;

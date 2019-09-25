@@ -21,6 +21,8 @@ private:
 
   virtual tlm::tlm_sync_enum nb_transport_bw(tlm::tlm_generic_payload &  trans, tlm::tlm_phase &  phase, sc_time &  t);
 
+  void xtea_function();
+
   tlm_utils::tlm_quantumkeeper m_qk;
 
   void run();
@@ -29,8 +31,8 @@ private:
 public:
 
   tlm::tlm_initiator_socket<> initiator_socket_serbatoio;
-  tlm::tlm_initiator_socket<> initiator_socket_valvola;
-  tlm::tlm_initiator_socket<> initiator_socket_rtl;
+//  tlm::tlm_initiator_socket<> initiator_socket_valvola;
+//  tlm::tlm_initiator_socket<> initiator_socket_rtl;
 
   // TLM socket
   tlm::tlm_initiator_socket<> initiator_socket;
@@ -38,6 +40,8 @@ public:
   double livello_acqua_in;
   double threshold;
   sc_core::sc_signal<int> flag;
+  iostruct xtea_packet;
+
 
   // constructor
   xtea_LT_testbench(sc_module_name name);
