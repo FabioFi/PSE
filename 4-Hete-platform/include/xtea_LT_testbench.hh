@@ -21,6 +21,8 @@ private:
 
   virtual tlm::tlm_sync_enum nb_transport_bw(tlm::tlm_generic_payload &  trans, tlm::tlm_phase &  phase, sc_time &  t);
 
+  //virtual void b_transport(tlm::tlm_generic_payload& trans, sc_time& t);
+
   void xtea_function();
 
   tlm_utils::tlm_quantumkeeper m_qk;

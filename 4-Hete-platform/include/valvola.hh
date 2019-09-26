@@ -8,7 +8,7 @@ enum VALVOLA_STATE {VALVOLA_INIT, IDLE, OPEN, CLOSE };
 
 SCA_TDF_MODULE(valvola){
 public:
-  sca_tdf::sca_in< int > flag;
+  sca_tdf::sca_in< double > flag;
   sca_tdf::sca_in< double > max_threshold;
   sca_tdf::sca_out< double > apertura;
 

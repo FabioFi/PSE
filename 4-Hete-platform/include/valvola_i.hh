@@ -2,13 +2,14 @@
 #define VALVOLA_IFACE_HH
 
 #include <systemc-ams>
+#include <systemc.h>
 
 SCA_TDF_MODULE(valvola_iface){
 public:
-  sca_tdf::sca_de::sca_in <int> flag_controller;
-  sca_tdf::sca_de::sca_in <double> threshold_controller;
+  sca_tdf::sca_de::sca_in <sc_uint<32> > flag_controller;
+  sca_tdf::sca_de::sca_in <sc_uint<32> > threshold_controller;
 
-  sca_tdf::sca_out <int> flag_valvola;
+  sca_tdf::sca_out <double> flag_valvola;
   sca_tdf::sca_out <double> threshold_valvola;
 
   valvola_iface(sc_core::sc_module_name name);

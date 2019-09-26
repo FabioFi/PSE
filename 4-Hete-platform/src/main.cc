@@ -7,7 +7,6 @@
 //#include "valvola_tlm.hh"
 #include "xtea_RTL.hh"
 #include "xtea_RTL_transactor.hh"
-#include "xtea_LT.hh"
 #include "trace.hh"
 
 // ---

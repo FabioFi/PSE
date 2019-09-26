@@ -16,6 +16,36 @@ tlm::tlm_sync_enum xtea_LT_testbench::nb_transport_bw(tlm::tlm_generic_payload &
   return tlm::TLM_COMPLETED;
 }
 
+/*void xtea_LT_testbench::b_transport(tlm::tlm_generic_payload& trans, sc_time& t)
+{
+  //timing_annotation = SC_ZERO_TIME;
+  wait(0, SC_NS);
+
+  xtea_packet = *((iostruct*) trans.get_data_ptr());
+
+  if (trans.is_write()) {
+    cout<<"\t\t[xtea:] Received invocation of the b_transport primitive - write"<<endl;
+    //*((iostruct*) trans.get_data_ptr()) = ioDataStruct;
+    xtea_packet=*((iostruct*) trans.get_data_ptr());
+    trans.set_response_status(tlm::TLM_OK_RESPONSE);
+    //begin_write.notify();
+    //wait(end_write);
+  }
+  else if (trans.is_read()){
+    cout<<"\t\t[xtea:] Received invocation of the b_transport primitive - read"<<endl;
+    // and load it on the payload
+    //*((iostruct*) trans.get_data_ptr()) = ioDataStruct;
+    xtea_packet = *((iostruct*) trans.get_data_ptr());
+    trans.set_response_status(tlm::TLM_OK_RESPONSE);
+    //begin_read.notify();
+    //wait(end_read);
+    *((iostruct*) trans.get_data_ptr()) = xtea_packet;
+  }
+
+  //t += timing_annotation;
+
+}*/
+
 void xtea_LT_testbench::run()
 {
 
@@ -100,39 +130,35 @@ void xtea_LT_testbench::run()
       m_qk.sync();
     }
 
-    cout << "AAAAA threshold: " << xtea_packet.datain_word1 << endl;
-    cout << "AAAAA open/close/idle: " << xtea_packet.datain_word2 << endl;
+    cout << "[TB:] threshold: " << xtea_packet.datain_word1 << endl;
+    cout << "[TB:] open/close/idle: " << xtea_packet.datain_word2 << endl;
 
-    xtea_packet.datain_word1 = uint32_t (xtea_packet.n1 * 1000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
-    xtea_packet.datain_word2 = uint32_t (xtea_packet.n2 * 1000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
-
-    //// w0 = (uinti32_t) threshold*10000.0;
-    cout << "BBBBB threshold: " << xtea_packet.datain_word1 << endl;
-    cout << "BBBBB open/close/idle: " << xtea_packet.datain_word2 << endl;
+    xtea_packet.datain_word1 = (uint32_t) (xtea_packet.n1 * 100000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
+    xtea_packet.datain_word2 = (uint32_t) (xtea_packet.n2 * 100000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
 
     //-----------------------ECRYPTION-------------------------------------------
 
-    cout << " - The encryption of " << std::hex << xtea_packet.datain_word1 << " and " << std::hex << xtea_packet.datain_word2 << endl;
-    cout << " - With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
+    cout << "[TB:] The encryption of " /*<< std::hex*/ << xtea_packet.datain_word1 << " and " /*<< std::hex*/ << xtea_packet.datain_word2 << endl;
+    cout << "[TB:] With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
 
-    // payload.set_data_ptr((unsigned char*) &xtea_packet); // set payload data
-    // payload.set_address(0); // set address, 0 here since we have only 1 target and 1 initiator
-    // payload.set_write(); // write transaction
+    payload.set_data_ptr((unsigned char*) &xtea_packet); // set payload data
+    payload.set_address(0); // set address, 0 here since we have only 1 target and 1 initiator
+    payload.set_write(); // write transaction
 
     // update the local time variable to send it to the target
     // local_time = m_qk.get_local_time();
 
+    xtea_function();
+    cout<<"[TB:] Result is: " /*<< std::hex */<< xtea_packet.result0 << " and " /*<< std::hex*/ << xtea_packet.result1 << endl;
+
     // start write transaction
-    // cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
-    // initiator_socket->b_transport(payload, local_time);
+    cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
+    initiator_socket->b_transport(payload, local_time);
 
     // start read transaction
     // payload.set_read();
-    // initiator_socket->b_transport(payload, local_time);
-    xtea_function();
     // if(payload.get_response_status() == tlm::TLM_OK_RESPONSE){
     //   cout<<"[TB:] TLM protocol correctly implemented"<<endl;
-    cout<<"[TB:] Result is: " << std::hex << xtea_packet.result0 << " and " << std::hex << xtea_packet.result1 << endl;
     // }
 
     // // temporal decoupling> get time and check if we have to synchronize with the target
@@ -144,9 +170,6 @@ void xtea_LT_testbench::run()
     //   m_qk.sync();
     //   cout << "#####################" << endl;
     // }
-
-    printf("Done!!\n");
-
   }
   sc_stop();
 
@@ -177,7 +200,7 @@ xtea_LT_testbench::xtea_LT_testbench(sc_module_name name)
 //-----------------------------xtea---------------------------------------------
 
 void xtea_LT_testbench::xtea_function(){
-  cout<<"\t\t[xtea:] Calculating xtea_function ... "<<endl;
+  cout<<"\t\t[xtea:] Calculating xtea_function ... Inizio la criptazione: "<<endl;
   //tmp_result = sqrt((float)ioDataStruct.datain);
   sc_uint<32> tmp_result0 = xtea_packet.datain_word1;
   sc_uint<32> tmp_result1 = xtea_packet.datain_word2;
@@ -185,12 +208,20 @@ void xtea_LT_testbench::xtea_function(){
   sc_uint<32> temp = 0;
   sc_uint<32> delta = 0x9e3779b9;
   sc_uint<32> i;
-
-  cout << "Inizio la criptazione: " << endl;
-
-  sum = delta*32;
+  //sum = delta*32;
 
   for (i=0; i<32; i++) {
+    if((sum & 3) == 0)
+      temp = xtea_packet.datain_key0;
+    else if((sum & 3) == 1)
+      temp = xtea_packet.datain_key1;
+    else if ((sum & 3) == 2)
+      temp = xtea_packet.datain_key2;
+    else temp = xtea_packet.datain_key3;
+
+    tmp_result0 += (((tmp_result1 << 4) ^ (tmp_result1 >> 5)) + tmp_result1) ^ (sum + temp);
+
+    sum += delta;
 
     if(((sum>>11) & 3) == 0)
       temp = xtea_packet.datain_key0;
@@ -200,19 +231,7 @@ void xtea_LT_testbench::xtea_function(){
       temp = xtea_packet.datain_key2;
     else temp = xtea_packet.datain_key3;
 
-    tmp_result1 -= (((tmp_result0 << 4) ^ (tmp_result0 >> 5)) + tmp_result0) ^ (sum + temp);
-
-    sum -= delta;
-
-    if((sum & 3) == 0)
-      temp = xtea_packet.datain_key0;
-    else if((sum & 3) == 1)
-      temp = xtea_packet.datain_key1;
-    else if ((sum & 3) == 2)
-      temp = xtea_packet.datain_key2;
-    else temp = xtea_packet.datain_key3;
-
-    tmp_result0 -= (((tmp_result1 << 4) ^ (tmp_result1 >> 5)) + tmp_result1) ^ (sum + temp);
+    tmp_result1 += (((tmp_result0 << 4) ^ (tmp_result0 >> 5)) + tmp_result0) ^ (sum + temp);
 
   }
   xtea_packet.result0 = tmp_result0;

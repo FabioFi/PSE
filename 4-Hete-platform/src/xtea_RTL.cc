@@ -53,8 +53,8 @@ void xtea_RTL :: datapath(void){
         /*NumberA.write((sc_uint<16>(0x0),number_portAI.read(), number_portAF.read()));
         NumberB.write((sc_uint<16>(0x0),number_portBI.read(), number_portBF.read()));*/
         v0.write(word1.read());
-        //v0.write(0);
         v1.write(word2.read());
+        //cout << "[RTL:] " << word1.read() << " e " << word2.read() << endl;
         break;
 
       case ST_2:
@@ -145,7 +145,7 @@ void xtea_RTL :: datapath(void){
       case Final_ST:
         result0.write(v0.read());
         result1.write(v1.read());
-        cout << "i risultati sono pronti: " << v0.read() << " e " << v1.read() << endl;
+        //cout << "[RTL:] i risultati sono pronti: " << v0.read() << " e " << v1.read() << endl;
         /* UNIRE I DUE RISULTATI IN UNO UNICO */
         //devo scriverli in threshold_controller e flag_controller ???????
         output_rdy.write(1);
