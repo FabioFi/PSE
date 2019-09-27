@@ -97,6 +97,7 @@ void xtea_LT_testbench::run()
     payload_serbatoio.set_read();
     initiator_socket_serbatoio->b_transport(payload_serbatoio, local_time);
     if(payload_serbatoio.get_response_status() == tlm::TLM_OK_RESPONSE){
+      cout << "[TB return:] " << serbatoio_packet.livello_acqua << endl;
       livello_acqua_in=serbatoio_packet.livello_acqua;
     }
 
@@ -130,11 +131,11 @@ void xtea_LT_testbench::run()
       m_qk.sync();
     }
 
-    cout << "[TB:] threshold: " << xtea_packet.datain_word1 << endl;
-    cout << "[TB:] open/close/idle: " << xtea_packet.datain_word2 << endl;
+    //cout << "[TB:] threshold: " << xtea_packet.datain_word1 << endl;
+    //cout << "[TB:] open/close/idle: " << xtea_packet.datain_word2 << endl;
 
-    xtea_packet.datain_word1 = (uint32_t) (xtea_packet.n1 * 100000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
-    xtea_packet.datain_word2 = (uint32_t) (xtea_packet.n2 * 100000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
+    xtea_packet.datain_word1 = (uint32_t) (/*xtea_packet.n1*/threshold * 100000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
+    xtea_packet.datain_word2 = (uint32_t) (/*xtea_packet.n2*/flag * 100000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
 
     //-----------------------ECRYPTION-------------------------------------------
 

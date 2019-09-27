@@ -17,26 +17,12 @@ void xtea_RTL :: datapath(void){
 
     switch(STATUS){
       case Reset_ST:
-        /*result_portAI.write(0);
-        result_portAF.write(0);
-        result_portBI.write(0);
-        result_portBF.write(0);
-        result_isready.write(0);*/
         result0.write(0);
         result1.write(0);
         output_rdy.write(0);
         break;
 
       case ST_0:
-        /*result_portAI.write(0);
-        result_portAF.write(0);
-        result_portBI.write(0);
-        result_portBF.write(0);
-        NumberB.write(0);
-        NumberA.write(0);
-        result_isready.write(0);
-        Product.write(0);
-        Counter.write(0);*/
         result0.write(0);
         result1.write(0);
         output_rdy.write(0);
@@ -50,19 +36,12 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_1:
-        /*NumberA.write((sc_uint<16>(0x0),number_portAI.read(), number_portAF.read()));
-        NumberB.write((sc_uint<16>(0x0),number_portBI.read(), number_portBF.read()));*/
         v0.write(word1.read());
         v1.write(word2.read());
         //cout << "[RTL:] " << word1.read() << " e " << word2.read() << endl;
         break;
 
       case ST_2:
-        /*if (NumberB.read()[Counter.read()] == 1){
-            Product.write(Product.read() + NumberA.read());
-        }
-        NumberA.write(NumberA.read() << 1);
-        Counter.write(Counter.read() + 1);*/
         cout << "inizio a criptare - NO" << endl;
         cout << counter.read() << endl;
         cout << "v0: "<< v0.read() << endl;
@@ -78,11 +57,6 @@ void xtea_RTL :: datapath(void){
 
       case ST_3:
         //cout << "inizio a decriptare" << endl;
-        /*result_isready.write(1);
-        result_portAF.write((Product.read().range(7,0)));
-        result_portAI.write((Product.read().range(15,8)));
-        result_portBI.write((Product.read().range(23,16)));
-        result_portBF.write((Product.read().range(31,24)));*/
         sum.write(delta.read() * 32);
         break;
 
