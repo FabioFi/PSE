@@ -95,11 +95,12 @@ SC_MODULE(main_RTL){
 
     //valvtr.flag_valvola(m_flag_tlm);
     //valvtr.threshold_valvola(m_threshold_tlm);
-    i_xtea_RTL.result0(m_threshold_tlm);
-    i_xtea_RTL.result1(m_flag_tlm);
 
-    valvi.flag_controller(m_flag_tlm);
-    valvi.threshold_controller(m_threshold_tlm);
+    // i_xtea_RTL.result0(m_threshold_tlm);
+    // i_xtea_RTL.result1(m_flag_tlm);
+
+    valvi.flag_controller(result1); //m_flag_tlm
+    valvi.threshold_controller(result0); //m_threshold_tlm
     valvi.flag_valvola(m_flag);
     valvi.threshold_valvola(m_threshold);
 
@@ -124,8 +125,8 @@ SC_MODULE(main_RTL){
     i_xtea_RTL.key2(key2);
     i_xtea_RTL.key3(key3);
     i_xtea_RTL.mode(mode);
-  //  i_xtea_RTL.result0(result0);
-    //i_xtea_RTL.result1(result1);
+    i_xtea_RTL.result0(result0);
+    i_xtea_RTL.result1(result1);
     i_xtea_RTL.output_rdy(output_rdy);
     i_xtea_RTL.clk(clk); //(clock)
     i_xtea_RTL.rst(rst);

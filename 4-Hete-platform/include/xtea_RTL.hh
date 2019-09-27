@@ -41,7 +41,7 @@ SC_MODULE(xtea_RTL){
   /*xtea_RTL(sc_core::sc_module_name module_name );
   ~xtea_RTL();*/
 
-  typedef enum {Reset_ST, ST_0, ST_1, ST_2, ST_3, ST_4, ST_5, ST_6, ST_7, ST_8, ST_9, ST_10, Final_ST} STATES;
+  typedef enum {Reset_ST, ST_0, ST_1, ST_2, ST_3, ST_4, ST_5, ST_6, ST_7, ST_8, ST_9, ST_10, Final_ST, Wait_RESULT} STATES;
 
   /*sc_signal<STATES> STATUS, NEXT_STATUS;
   sc_signal<sc_uint<32> > Product;

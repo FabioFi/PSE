@@ -139,8 +139,8 @@ void xtea_LT_testbench::run()
 
     //-----------------------ECRYPTION-------------------------------------------
 
-    cout << "[TB:] The encryption of " /*<< std::hex*/ << xtea_packet.datain_word1 << " and " /*<< std::hex*/ << xtea_packet.datain_word2 << endl;
-    cout << "[TB:] With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
+    //cout << "[TB:] The encryption of " /*<< std::hex*/ << xtea_packet.datain_word1 << " and " /*<< std::hex*/ << xtea_packet.datain_word2 << endl;
+    //cout << "[TB:] With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
 
     payload.set_data_ptr((unsigned char*) &xtea_packet); // set payload data
     payload.set_address(0); // set address, 0 here since we have only 1 target and 1 initiator
@@ -153,7 +153,7 @@ void xtea_LT_testbench::run()
     cout<<"[TB:] Result is: " /*<< std::hex */<< xtea_packet.result0 << " and " /*<< std::hex*/ << xtea_packet.result1 << endl;
 
     // start write transaction
-    cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
+    //cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
     initiator_socket->b_transport(payload, local_time);
 
     // start read transaction
@@ -201,7 +201,7 @@ xtea_LT_testbench::xtea_LT_testbench(sc_module_name name)
 //-----------------------------xtea---------------------------------------------
 
 void xtea_LT_testbench::xtea_function(){
-  cout<<"\t\t[xtea:] Calculating xtea_function ... Inizio la criptazione: "<<endl;
+  //cout<<"\t\t[xtea:] Calculating xtea_function ... Inizio la criptazione: "<<endl;
   //tmp_result = sqrt((float)ioDataStruct.datain);
   sc_uint<32> tmp_result0 = xtea_packet.datain_word1;
   sc_uint<32> tmp_result1 = xtea_packet.datain_word2;
