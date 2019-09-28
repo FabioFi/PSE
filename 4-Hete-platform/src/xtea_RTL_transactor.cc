@@ -55,9 +55,9 @@ while (true) {
   wait(begin_write);
   //cout<<sc_simulation_time()<<" - "<<name()<<" - notify received !!!"<<endl;
 
-  rst.write(0);
-  wait();
-  rst.write(1);
+  // rst.write(0);
+  // wait();
+  // rst.write(1);
 
   sc_uint<32> w0, w1, k0, k1, k2, k3 = 0;
   sc_uint<32> r0, r1;
@@ -71,7 +71,7 @@ while (true) {
   //result0.write(ioDataStruct.n2); //aprire / chiudere / nulla
   //result1.write(ioDataStruct.n1); //threshold
   //word2.write(ioDataStruct.n2); //aprire / chiudere / nulla
-  // rst.write(1);
+  rst.write(1);
   word1.write(w0);
   word2.write(w1);
   key0.write(k0);

@@ -23,26 +23,15 @@ SC_MODULE(main_RTL){
     }
   }
 
-  //sc_signal < bool >        reset_signal;
   sc_signal < bool >        rst;
-
-  /*sc_signal<bool >  	p_In_enable;
-  sc_signal<sc_uint<8> > n1_int;
-  sc_signal<sc_uint<8> > n2_int;
-  sc_signal<sc_uint<8> > n1_mantix;
-  sc_signal<sc_uint<8> > n2_mantix;
-  sc_signal<bool >  	p_Out_enable;
-  sc_signal<sc_uint<8> > result_portAI;
-  sc_signal<sc_uint<8> > result_portAF;
-  sc_signal<sc_uint<8> > result_portBI;
-  sc_signal<sc_uint<8> > result_portBF;*/
-
   sca_tdf::sca_signal<double> m_flag;
   sca_tdf::sca_signal<double> m_threshold;
   sca_tdf::sca_signal< double > m_apertura;
   sc_signal< double > m_livello_acqua;
-  sc_signal<sc_uint<32> > m_flag_tlm;
-  sc_signal<sc_uint<32> > m_threshold_tlm;
+  // sc_signal<sc_uint<32> > m_flag_tlm;
+  // sc_signal<sc_uint<32> > m_threshold_tlm;
+  sc_core::sc_signal<sc_uint<32> > m_flag_tlm;
+  sc_core::sc_signal<sc_uint<32> > m_threshold_tlm;
 
   sc_signal<sc_uint<1> > input_rdy;
   sc_signal<sc_uint<32> > word1;
@@ -96,11 +85,11 @@ SC_MODULE(main_RTL){
     //valvtr.flag_valvola(m_flag_tlm);
     //valvtr.threshold_valvola(m_threshold_tlm);
 
-    // i_xtea_RTL.result0(m_threshold_tlm);
-    // i_xtea_RTL.result1(m_flag_tlm);
+    i_xtea_RTL.result0(m_threshold_tlm);
+    i_xtea_RTL.result1(m_flag_tlm);
 
-    valvi.flag_controller(result1); //m_flag_tlm
-    valvi.threshold_controller(result0); //m_threshold_tlm
+    valvi.flag_controller(m_flag_tlm); //result1
+    valvi.threshold_controller(m_threshold_tlm); //result0
     valvi.flag_valvola(m_flag);
     valvi.threshold_valvola(m_threshold);
 
@@ -125,8 +114,8 @@ SC_MODULE(main_RTL){
     i_xtea_RTL.key2(key2);
     i_xtea_RTL.key3(key3);
     i_xtea_RTL.mode(mode);
-    i_xtea_RTL.result0(result0);
-    i_xtea_RTL.result1(result1);
+    // i_xtea_RTL.result0(result0); //commentata
+    // i_xtea_RTL.result1(result1); //commentata
     i_xtea_RTL.output_rdy(output_rdy);
     i_xtea_RTL.clk(clk); //(clock)
     i_xtea_RTL.rst(rst);

@@ -4,20 +4,9 @@
 //Mi arriva il valore threshold dal controllore TLM cifrato, lo devo decifrare e devo decidere se aprire, chiudere o lasciare com'è.
 
 #include "systemc.h"
+// #include <systemc-ams> //da togliere
 
 SC_MODULE(xtea_RTL){
-  /*sc_in< bool >     number_isready;
-  sc_in<sc_uint<8> >   number_portAI;
-  sc_in<sc_uint<8> >   number_portAF;
-  sc_in<sc_uint<8> >   number_portBI;
-  sc_in<sc_uint<8> >   number_portBF;
-  sc_out<sc_uint<8> >  result_portAI;
-  sc_out<sc_uint<8> >  result_portAF;
-  sc_out<sc_uint<8> >  result_portBI;
-  sc_out<sc_uint<8> >  result_portBF;
-  sc_out< bool >      result_isready;
-  sc_in<bool>           reset;
-  sc_in< sc_dt::sc_logic > clk;*/
 
   //typedef enum {Reset_ST, ST_0, ST_1, ST_2, ST_3} STATES;
   sc_in<sc_uint<1> > input_rdy;
@@ -31,6 +20,8 @@ SC_MODULE(xtea_RTL){
 
   sc_out<sc_uint<32> > result0;
   sc_out<sc_uint<32> > result1;
+  // sca_tdf::sca_out<sc_uint<32> > result0;
+  // sca_tdf::sca_out<sc_uint<32> > result1;
   sc_out<sc_uint<1> > output_rdy;
 
   sc_in<bool> rst;

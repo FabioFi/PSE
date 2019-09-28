@@ -18,6 +18,8 @@ void valvola::processing(){
 
   double flag_correct = flag / 100000.0;
   double max_threshold_correct = max_threshold / 100000.0;
+  // double flag_correct = (double) flag.read();
+  // double max_threshold_correct = (double) max_threshold.read();
   int flag_round = (int) flag_correct;
 
   std::cout << "[VALVOLA:] " << max_threshold_correct << " - " << flag_correct << " - " /*<< apertura*/ << flag_round  << std::endl;
