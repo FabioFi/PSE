@@ -97,7 +97,7 @@ void xtea_LT_testbench::run()
     payload_serbatoio.set_read();
     initiator_socket_serbatoio->b_transport(payload_serbatoio, local_time);
     if(payload_serbatoio.get_response_status() == tlm::TLM_OK_RESPONSE){
-      cout << "[TB return:] " << serbatoio_packet.livello_acqua << endl;
+      cout << "[TESTBENCH return:] " << serbatoio_packet.livello_acqua << endl;
       livello_acqua_in=serbatoio_packet.livello_acqua;
     }
 

@@ -23,8 +23,8 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_0:
-        result0.write(0);
-        result1.write(0);
+        // result0.write(0);
+        // result1.write(0);
         output_rdy.write(0);
         counter.write(0);
         v0.write(0);
@@ -206,6 +206,10 @@ void xtea_RTL :: fsm(void){
       break;
     case Wait_RESULT:
       NEXT_STATUS = ST_0;
+      // if (rst.read() == 0)
+      //   NEXT_STATUS = Wait_RESULT;
+      // else
+      //   NEXT_STATUS = ST_0;
       break;
   }
 }

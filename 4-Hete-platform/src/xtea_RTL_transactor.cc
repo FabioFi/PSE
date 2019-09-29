@@ -78,7 +78,7 @@ while (true) {
   key1.write(k1);
   key2.write(k2);
   key3.write(k3);
-  mode.write(1); //decryption (con  ho encryption)
+  mode.write(1); //decryption (con 0 ho encryption)
   input_rdy.write(1);
   //output_rdy.write(1);
 
