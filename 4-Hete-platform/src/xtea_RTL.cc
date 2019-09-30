@@ -23,8 +23,8 @@ void xtea_RTL :: datapath(void){
         break;
 
       case ST_0:
-        result0.write(0);
-        result1.write(0);
+        // result0.write(0);
+        // result1.write(0);
         output_rdy.write(0);
         counter.write(0);
         v0.write(0);
@@ -120,8 +120,10 @@ void xtea_RTL :: datapath(void){
         result0.write(v0.read());
         result1.write(v1.read());
         //cout << "[RTL:] i risultati sono pronti: " << v0.read() << " e " << v1.read() << endl;
-        /* UNIRE I DUE RISULTATI IN UNO UNICO */
-        //devo scriverli in threshold_controller e flag_controller ???????
+        //output_rdy.write(1);
+        break;
+      case Wait_RESULT:
+        //cout << "[RTL:] i risultati sono pronti: " << result0.read() << " e " << result1.read() << endl;
         output_rdy.write(1);
         break;
     }
@@ -199,7 +201,15 @@ void xtea_RTL :: fsm(void){
 
     case Final_ST:
       //  cout << "result" <<endl;
+      //NEXT_STATUS = ST_0;
+      NEXT_STATUS = Wait_RESULT;
+      break;
+    case Wait_RESULT:
       NEXT_STATUS = ST_0;
+      // if (rst.read() == 0)
+      //   NEXT_STATUS = Wait_RESULT;
+      // else
+      //   NEXT_STATUS = ST_0;
       break;
   }
 }

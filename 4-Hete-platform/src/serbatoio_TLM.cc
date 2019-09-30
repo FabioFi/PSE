@@ -73,7 +73,7 @@ void SerbatoioTransactor::_trace()
 {
   while(true)
   {
-    wait(20, sc_core::SC_MS);
+    wait(1, sc_core::SC_MS);
     fprintf( log, "%f %f\n", sc_time_stamp().to_seconds(), livello_acqua_in.read() );
   }
 }

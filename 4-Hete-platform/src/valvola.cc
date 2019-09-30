@@ -14,13 +14,13 @@ void valvola::set_attributes(){
 
 void valvola::processing(){
 
-  std::cout << "[VALVOLA:] " << flag << " - " << max_threshold /*<< " - " << apertura*/ << std::endl;
+  // std::cout << "[VALVOLA:] " << flag << " - " << max_threshold /*<< " - " << apertura*/ << std::endl;
 
-  double flag_correct = flag / 100000.0;
-  double max_threshold_correct = max_threshold / 100000.0;
+  double flag_correct = flag / 10000.0;
+  double max_threshold_correct = max_threshold / 10000.0;
   int flag_round = (int) flag_correct;
 
-  std::cout << "[VALVOLA:] " << max_threshold_correct << " - " << flag_correct << " - " /*<< apertura*/ << flag_round  << std::endl;
+  std::cout << "[VALVOLA:] " << max_threshold_correct << " - " << flag_correct << " - " << flag_round  << std::endl;
 
 
   current_state = VALVOLA_INIT;

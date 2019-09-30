@@ -56,7 +56,7 @@ void xtea_LT_testbench::run()
   iostructT serbatoio_packet;
   // First transaction (initialization)
 
-  cout<<sc_simulation_time()<<" - "<<name()<<" - run (xtea_LT_testbench)"<<endl;
+  //cout<<sc_simulation_time()<<" - "<<name()<<" - run (xtea_LT_testbench)"<<endl;
 
   tlm::tlm_generic_payload payload_binary;
   tlm::tlm_generic_payload payload_valvola;
@@ -91,13 +91,13 @@ void xtea_LT_testbench::run()
     if(payload_valvola.get_response_status() == tlm::TLM_OK_RESPONSE){
     }
 
-    wait(5, SC_MS);
+    wait(1, SC_MS);
 
     payload_serbatoio.set_data_ptr((unsigned char*) &serbatoio_packet);
     payload_serbatoio.set_read();
     initiator_socket_serbatoio->b_transport(payload_serbatoio, local_time);
     if(payload_serbatoio.get_response_status() == tlm::TLM_OK_RESPONSE){
-      cout << "[TB return:] " << serbatoio_packet.livello_acqua << endl;
+      cout << "[TESTBENCH return:] " << serbatoio_packet.livello_acqua << endl;
       livello_acqua_in=serbatoio_packet.livello_acqua;
     }
 
@@ -134,13 +134,13 @@ void xtea_LT_testbench::run()
     //cout << "[TB:] threshold: " << xtea_packet.datain_word1 << endl;
     //cout << "[TB:] open/close/idle: " << xtea_packet.datain_word2 << endl;
 
-    xtea_packet.datain_word1 = (uint32_t) (/*xtea_packet.n1*/threshold * 100000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
-    xtea_packet.datain_word2 = (uint32_t) (/*xtea_packet.n2*/flag * 100000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
+    xtea_packet.datain_word1 = (uint32_t) (/*xtea_packet.n1*/threshold * 10000.0); /*signalconv.range(63,32)*/ //prima parte threshold convertita //threshold
+    xtea_packet.datain_word2 = (uint32_t) (/*xtea_packet.n2*/flag * 10000.0); /*signalconv.range(31,0)*/ //seconda parte threshold convertita //open/close/idle
 
     //-----------------------ECRYPTION-------------------------------------------
 
-    cout << "[TB:] The encryption of " /*<< std::hex*/ << xtea_packet.datain_word1 << " and " /*<< std::hex*/ << xtea_packet.datain_word2 << endl;
-    cout << "[TB:] With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
+    //cout << "[TB:] The encryption of " /*<< std::hex*/ << xtea_packet.datain_word1 << " and " /*<< std::hex*/ << xtea_packet.datain_word2 << endl;
+    //cout << "[TB:] With key " << std::hex << xtea_packet.datain_key0 << xtea_packet.datain_key1 << xtea_packet.datain_key2 << xtea_packet.datain_key3 << "\n";
 
     payload.set_data_ptr((unsigned char*) &xtea_packet); // set payload data
     payload.set_address(0); // set address, 0 here since we have only 1 target and 1 initiator
@@ -150,10 +150,10 @@ void xtea_LT_testbench::run()
     // local_time = m_qk.get_local_time();
 
     xtea_function();
-    cout<<"[TB:] Result is: " /*<< std::hex */<< xtea_packet.result0 << " and " /*<< std::hex*/ << xtea_packet.result1 << endl;
+    //cout<<"[TB:] Result is: " /*<< std::hex */<< xtea_packet.result0 << " and " /*<< std::hex*/ << xtea_packet.result1 << endl;
 
     // start write transaction
-    cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
+    //cout<<"[TB:] Invoking the b_transport primitive - write"<<endl;
     initiator_socket->b_transport(payload, local_time);
 
     // start read transaction
@@ -201,7 +201,7 @@ xtea_LT_testbench::xtea_LT_testbench(sc_module_name name)
 //-----------------------------xtea---------------------------------------------
 
 void xtea_LT_testbench::xtea_function(){
-  cout<<"\t\t[xtea:] Calculating xtea_function ... Inizio la criptazione: "<<endl;
+  //cout<<"\t\t[xtea:] Calculating xtea_function ... Inizio la criptazione: "<<endl;
   //tmp_result = sqrt((float)ioDataStruct.datain);
   sc_uint<32> tmp_result0 = xtea_packet.datain_word1;
   sc_uint<32> tmp_result1 = xtea_packet.datain_word2;
