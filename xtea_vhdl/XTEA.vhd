@@ -46,11 +46,12 @@ architecture BEHAVIORAL of XTEA is
 	signal KEY1 		: INTERNAL32_T;
 	signal KEY2 		: INTERNAL32_T;
 	signal KEY3 		: INTERNAL32_T;
-	signal TEXT0 		: INTERNAL32_T;
-	signal TEXT1 		: INTERNAL32_T;
+	signal WORD0 		: INTERNAL32_T;
+	signal WORD1 		: INTERNAL32_T;
 	signal COUNTER 		: UNSIGNED(5 downto 0);
 	signal SUM 			: INTERNAL32_T;
 
+	-- 0x9e3779b9
 	constant DELTA 		: INTERNAL32_T := "10011110001101110111100110111001";
 	constant ZERO 		: INTERNAL32_T := "00000000000000000000000000000000";
 	constant ONE 		: INTERNAL32_T := "00000000000000000000000000000001";
@@ -61,7 +62,7 @@ begin
 	process (STATUS, input_ready)
 	begin
 		case STATUS is
-			when IDLE => 
+			when IDLE =>
 				if input_ready = '1' then
 					NEXT_STATUS <= BUSY_KEY1;
 				else
@@ -73,39 +74,39 @@ begin
 				else
 					NEXT_STATUS <= BUSY_KEY1;
 				end if;
-			when BUSY_KEY2 => 
+			when BUSY_KEY2 =>
 				if mode = '0' then
 					NEXT_STATUS <= BUSY_ENC_INPUT;
 				else
 					NEXT_STATUS <= BUSY_DEC_INPUT;
 				end if;
-			when BUSY_ENC_INPUT => 
+			when BUSY_ENC_INPUT =>
 				if input_ready = '1' then
 					NEXT_STATUS <= BUSY_ENC1;
 				else
 					NEXT_STATUS <= BUSY_ENC_INPUT;
 				end if;
-			when BUSY_ENC1 => 
+			when BUSY_ENC1 =>
 				NEXT_STATUS <= BUSY_ENC2;
-			when BUSY_ENC2 => 
+			when BUSY_ENC2 =>
 				if COUNTER = "100000" then
 					NEXT_STATUS <= BUSY_ENC_OUTPUT1;
 				else
 					NEXT_STATUS <= BUSY_ENC1;
 				end if;
-			when BUSY_ENC_OUTPUT1 => 
+			when BUSY_ENC_OUTPUT1 =>
 				NEXT_STATUS <= BUSY_ENC_OUTPUT2;
-			when BUSY_ENC_OUTPUT2 => 
+			when BUSY_ENC_OUTPUT2 =>
 				NEXT_STATUS <= BUSY_ENC_OUTPUT1;
-			when BUSY_DEC_INPUT => 
+			when BUSY_DEC_INPUT =>
 				if input_ready = '1' then
 					NEXT_STATUS <= BUSY_DEC1;
 				else
 					NEXT_STATUS <= BUSY_DEC_INPUT;
 				end if;
-			when BUSY_DEC1 => 
+			when BUSY_DEC1 =>
 				NEXT_STATUS <= BUSY_DEC2;
-			when BUSY_DEC2 => 
+			when BUSY_DEC2 =>
 				if COUNTER = "100000" then
 					NEXT_STATUS <= BUSY_DEC_OUTPUT1;
 				else
@@ -115,7 +116,7 @@ begin
 				NEXT_STATUS <= BUSY_DEC_OUTPUT2;
 			when BUSY_DEC_OUTPUT2 =>
 				NEXT_STATUS <= BUSY_DEC_OUTPUT1;
-			when others => 
+			when others =>
 				NEXT_STATUS <= STATUS;
 		end case;
 	end process;
@@ -131,88 +132,88 @@ begin
 				KEY1 <= ZERO;
 				KEY2 <= ZERO;
 				KEY3 <= ZERO;
-				TEXT0 <= ZERO;
-				TEXT1 <= ZERO;
+				WORD0 <= ZERO;
+				WORD1 <= ZERO;
 				COUNTER <= "000000";
 				SUM <= ZERO;
 			else
 				STATUS <= NEXT_STATUS;
 				case NEXT_STATUS is
-					when IDLE => 
+					when IDLE =>
 						data_output <= ZERO;
 						output_ready <= '0';
-					when BUSY_KEY1 => 
+					when BUSY_KEY1 =>
 						KEY0 <= data_input(31 downto 0);
 						KEY1 <= data_input(63 downto 32);
-					when BUSY_KEY2 => 
+					when BUSY_KEY2 =>
 						KEY2 <= data_input(31 downto 0);
 						KEY3 <= data_input(63 downto 32);
-					when BUSY_ENC_INPUT => 
-						TEXT0 <= data_input(31 downto 0);
-						TEXT1 <= data_input(63 downto 32);
-					when BUSY_ENC1 => 
+					when BUSY_ENC_INPUT =>
+						WORD0 <= data_input(31 downto 0);
+						WORD1 <= data_input(63 downto 32);
+					when BUSY_ENC1 =>
 						case (SUM and THREE) is
-							when ZERO => 
-							TEXT0 <= TEXT0 + ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY0));
-							when ONE => 
-							TEXT0 <= TEXT0 + ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY1));
-							when TWO => 
-							TEXT0 <= TEXT0 + ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY2));
-							when others => 
-							TEXT0 <= TEXT0 + ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY3));
+							when ZERO =>
+							WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY0));
+							when ONE =>
+							WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY1));
+							when TWO =>
+							WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY2));
+							when others =>
+							WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY3));
 						end case;
-						SUM <= SUM + delta; 
-					when BUSY_ENC2 => 
+						SUM <= SUM + delta;
+					when BUSY_ENC2 =>
 						case ((SUM srl 11) and THREE) is
-							when ZERO => 
-							TEXT1 <= TEXT1 + ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY0));
-							when ONE => 
-							TEXT1 <= TEXT1 + ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY1));
-							when TWO => 
-							TEXT1 <= TEXT1 + ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY2));
-							when others => 
-							TEXT1 <= TEXT1 + ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY3));
+							when ZERO =>
+							WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
+							when ONE =>
+							WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
+							when TWO =>
+							WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
+							when others =>
+							WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
 						end case;
 						COUNTER <= COUNTER + 1;
 					when BUSY_ENC_OUTPUT1 =>
-						data_output <= TEXT0;
+						data_output <= WORD0;
 						output_ready <= '1';
 					when BUSY_ENC_OUTPUT2 =>
-						data_output <= TEXT1;
-					when BUSY_DEC_INPUT => 
-						TEXT0 <= data_input(31 downto 0);
-						TEXT1 <= data_input(63 downto 32);
+						data_output <= WORD1;
+					when BUSY_DEC_INPUT =>
+						WORD0 <= data_input(31 downto 0);
+						WORD1 <= data_input(63 downto 32);
 						SUM <= "11000110111011110011011100100000";
-					when BUSY_DEC1 => 
+					when BUSY_DEC1 =>
 						case ((SUM srl 11) and THREE) is
-							when ZERO => 
-							TEXT1 <= TEXT1 - ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY0));
-							when ONE => 
-							TEXT1 <= TEXT1 - ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY1));
-							when TWO => 
-							TEXT1 <= TEXT1 - ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY2));
-							when others => 
-							TEXT1 <= TEXT1 - ((((TEXT0 sll 4) xor (TEXT0 srl 5)) + TEXT0) xor (SUM + KEY3));
+							when ZERO =>
+							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
+							when ONE =>
+							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
+							when TWO =>
+							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
+							when others =>
+							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
 						end case;
 						SUM <= SUM - delta;
 					when BUSY_DEC2 =>
 						case (SUM and THREE) is
-							when ZERO => 
-							TEXT0 <= TEXT0 - ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY0));
-							when ONE => 
-							TEXT0 <= TEXT0 - ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY1));
-							when TWO => 
-							TEXT0 <= TEXT0 - ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY2));
-							when others => 
-							TEXT0 <= TEXT0 - ((((TEXT1 sll 4) xor (TEXT1 srl 5)) + TEXT1) xor (SUM + KEY3));
+							when ZERO =>
+							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY0));
+							when ONE =>
+							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY1));
+							when TWO =>
+							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY2));
+							when others =>
+							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY3));
 						end case;
 						COUNTER <= COUNTER + 1;
-					when BUSY_DEC_OUTPUT1 => 
-						data_output <= TEXT0;
+					when BUSY_DEC_OUTPUT1 =>
+						data_output <= WORD0;
 						output_ready <= '1';
 					when BUSY_DEC_OUTPUT2=>
-						data_output <= TEXT1;
-					when others => 
+						data_output <= WORD1;
+					when others =>
 						data_output <= ZERO;
 				end case;
 			end if;

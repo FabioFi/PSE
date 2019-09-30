@@ -14,8 +14,8 @@ add wave -radix hexadecimal -color red key0
 add wave -radix hexadecimal -color red key1
 add wave -radix hexadecimal -color red key2
 add wave -radix hexadecimal -color red key3
-add wave -radix hexadecimal -color red text0
-add wave -radix hexadecimal -color red text1
+add wave -radix hexadecimal -color red word0
+add wave -radix hexadecimal -color red word1
 add wave -radix unsigned -color blue status
 
 # Set up 100mhz clock
