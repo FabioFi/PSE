@@ -32,3 +32,16 @@ add dataflow  \
 sim:/xtea/WORD0
 add wave -position insertpoint  \
 sim:/xtea/WORD0
+add wave -position insertpoint  \
+sim:/xtea/WORD0
+do stimuli.do
+# vsim 
+# Start time: 17:25:58 on Sep 30,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_bit(body)
+# Loading work.xtea_pack
+# Loading work.xtea(behavioral)
+# End time: 17:27:34 on Sep 30,2019, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 0
