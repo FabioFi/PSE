@@ -1,0 +1,198 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'systemc/xtea_RTL.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:33:17: error: use of undeclared identifier 'reset'
+            if (reset.read() == 0)
+                ^
+systemc/xtea_RTL.cpp:241:10: error: no matching constructor for initialization of 'sc_signal<STATES>'
+         STATUS(ST_0),
+         ^      ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:242:4: error: no matching constructor for initialization of 'sc_signal<STATES>'
+   NEXT_STATUS(ST_0)
+   ^           ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:244:188: error: expected '(' for function-style cast or type construction
+            { ::sc_core::sc_method_process* xtea_RTL_handle = simcontext()->register_method_process( "xtea_RTL", (void (::sc_core::sc_process_host::*)())(&SC_CURRENT_USER_MODULE::xtea_RTL), this ); sensitive << xtea_RTL_handle; sensitive_pos << xtea_RTL_handle; sensitive_neg << xtea_RTL_handle; };
+                                                                                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+systemc/xtea_RTL.cpp:245:26: error: use of undeclared identifier 'reset'
+            sensitive << reset;
+                         ^
+systemc/xtea_RTL.cpp:248:170: error: no member named 'fsm' in 'xtea_RTL'
+            { ::sc_core::sc_method_process* fsm_handle = simcontext()->register_method_process( "fsm", (void (::sc_core::sc_process_host::*)())(&SC_CURRENT_USER_MODULE::fsm), this ); sensitive << fsm_handle; sensitive_pos << fsm_handle; sensitive_neg << fsm_handle; };
+                                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~^
+In file included from systemc/xtea_RTL.cpp:1:
+In file included from systemc/xtea_RTL.cpp:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc\systemc.h:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_systemc.h:51:
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:193:15: error: no viable conversion from 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>' to 'xtea_RTL::STATES'
+            T v = v2;
+              ^   ~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:187:13: note: in instantiation of function template specialization '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::write<_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES> >' requested here
+            write(v);
+            ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: in instantiation of member function '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::operator=' requested here
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:174:9: note: candidate function not viable: 'this' argument has type 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>', but method is not marked const
+        operator const T () { return this->read(); }
+        ^
+7 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'systemc/xtea_RTL.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:241:10: error: no matching constructor for initialization of 'sc_signal<STATES>'
+         STATUS(ST_0),
+         ^      ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:242:4: error: no matching constructor for initialization of 'sc_signal<STATES>'
+   NEXT_STATUS(ST_0)
+   ^           ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:244:188: error: expected '(' for function-style cast or type construction
+            { ::sc_core::sc_method_process* xtea_RTL_handle = simcontext()->register_method_process( "xtea_RTL", (void (::sc_core::sc_process_host::*)())(&SC_CURRENT_USER_MODULE::xtea_RTL), this ); sensitive << xtea_RTL_handle; sensitive_pos << xtea_RTL_handle; sensitive_neg << xtea_RTL_handle; };
+                                                                                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+systemc/xtea_RTL.cpp:245:26: error: use of undeclared identifier 'reset'
+            sensitive << reset;
+                         ^
+systemc/xtea_RTL.cpp:248:170: error: no member named 'fsm' in 'xtea_RTL'
+            { ::sc_core::sc_method_process* fsm_handle = simcontext()->register_method_process( "fsm", (void (::sc_core::sc_process_host::*)())(&SC_CURRENT_USER_MODULE::fsm), this ); sensitive << fsm_handle; sensitive_pos << fsm_handle; sensitive_neg << fsm_handle; };
+                                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~^
+In file included from systemc/xtea_RTL.cpp:1:
+In file included from systemc/xtea_RTL.cpp:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc\systemc.h:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_systemc.h:51:
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:193:15: error: no viable conversion from 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>' to 'xtea_RTL::STATES'
+            T v = v2;
+              ^   ~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:187:13: note: in instantiation of function template specialization '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::write<_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES> >' requested here
+            write(v);
+            ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: in instantiation of member function '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::operator=' requested here
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:174:9: note: candidate function not viable: 'this' argument has type 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>', but method is not marked const
+        operator const T () { return this->read(); }
+        ^
+6 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'systemc/xtea_RTL.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:241:10: error: no matching constructor for initialization of 'sc_signal<STATES>'
+         STATUS(ST_0),
+         ^      ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+In file included from systemc/xtea_RTL.cpp:1:
+systemc/xtea_RTL.cpp:242:8: error: no matching constructor for initialization of 'sc_signal<STATES>'
+       NEXT_STATUS(ST_0)
+       ^           ~~~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'xtea_RTL::STATES' to 'const _ap_sc_::sc_core::sc_signal<xtea_RTL::STATES>' for 1st argument; 
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:314:56: note: candidate constructor not viable: no known conversion from 'xtea_RTL::STATES' to 'const char *' for 1st argument; 
+        inline __attribute__((always_inline)) explicit sc_signal( const char* name_ ) { }
+                                                       ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:313:47: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+        inline __attribute__((always_inline)) sc_signal() { }
+                                              ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:193:15: error: no viable conversion from 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>' to 'xtea_RTL::STATES'
+            T v = v2;
+              ^   ~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:187:13: note: in instantiation of function template specialization '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::write<_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES> >' requested here
+            write(v);
+            ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: in instantiation of member function '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::operator=' requested here
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:174:9: note: candidate function not viable: 'this' argument has type 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>', but method is not marked const
+        operator const T () { return this->read(); }
+        ^
+3 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'systemc/xtea_RTL.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from systemc/xtea_RTL.cpp:1:
+In file included from systemc/xtea_RTL.cpp:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc\systemc.h:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_systemc.h:51:
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:193:15: error: no viable conversion from 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>' to 'xtea_RTL::STATES'
+            T v = v2;
+              ^   ~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:187:13: note: in instantiation of function template specialization '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::write<_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES> >' requested here
+            write(v);
+            ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: in instantiation of member function '_ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>::operator=' requested here
+    class sc_signal : public sc_signal_inout_if<T> {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:174:9: note: candidate function not viable: 'this' argument has type 'const _ap_sc_::sc_core::sc_signal_inout_if<xtea_RTL::STATES>', but method is not marked const
+        operator const T () { return this->read(); }
+        ^
+1 error generated.
