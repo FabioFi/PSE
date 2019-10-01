@@ -1,7 +1,3 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.NUMERIC_BIT.all;
-
 package XTEA_PACK is
 	-- States definition
 	constant IDLE 				: UNSIGNED(3 downto 0) := "0000";
@@ -18,6 +14,11 @@ package XTEA_PACK is
 	constant BUSY_DEC_OUTPUT1 	: UNSIGNED(3 downto 0) := "1011";
 	constant BUSY_DEC_OUTPUT2 	: UNSIGNED(3 downto 0) := "1100";
 end XTEA_PACK;
+
+library IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE WORK.XTEA_PACK.ALL;
+USE IEEE.NUMERIC_BIT.ALL;
 
 entity XTEA is
 	port (
