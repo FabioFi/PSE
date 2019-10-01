@@ -1,3 +1,7 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.NUMERIC_BIT.all;
+
 package XTEA_PACK is
 	CONSTANT IDLE 				: UNSIGNED(3 downto 0) := "0000";
 	CONSTANT BUSY_KEY1 			: UNSIGNED(3 downto 0) := "0001";
