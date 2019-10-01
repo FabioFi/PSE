@@ -1,0 +1,301 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct  1 17:30:46 2019
+# Process ID: 21948
+# Current directory: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1
+# Command line: vivado.exe -log XTEA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source XTEA.tcl
+# Log file: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1/XTEA.vds
+# Journal file: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source XTEA.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 355.418 ; gain = 60.453
+Command: synth_design -top XTEA -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1964 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 563.605 ; gain = 184.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'XTEA' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:38]
+WARNING: [Synth 8-614] signal 'mode' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:60]
+WARNING: [Synth 8-614] signal 'COUNTER' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:60]
+WARNING: [Synth 8-614] signal 'NEXT_STATUS' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'data_input' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'SUM' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'WORD0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'WORD1' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'KEY0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'KEY1' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'KEY2' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'KEY3' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+WARNING: [Synth 8-614] signal 'COUNTER' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:123]
+INFO: [Synth 8-256] done synthesizing module 'XTEA' (1#1) [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:38]
+WARNING: [Synth 8-3331] design XTEA has unconnected port clk
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 628.391 ; gain = 249.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 628.391 ; gain = 249.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 628.391 ; gain = 249.133
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:139]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:198]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:153]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:139]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:186]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:165]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:139]
+WARNING: [Synth 8-327] inferring latch for variable 'data_output_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:127]
+WARNING: [Synth 8-327] inferring latch for variable 'output_ready_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:128]
+WARNING: [Synth 8-327] inferring latch for variable 'COUNTER_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:135]
+WARNING: [Synth 8-327] inferring latch for variable 'STATUS_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:126]
+WARNING: [Synth 8-327] inferring latch for variable 'WORD1_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:134]
+WARNING: [Synth 8-327] inferring latch for variable 'WORD0_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:133]
+WARNING: [Synth 8-327] inferring latch for variable 'SUM_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:136]
+WARNING: [Synth 8-327] inferring latch for variable 'KEY3_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:132]
+WARNING: [Synth 8-327] inferring latch for variable 'KEY2_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:131]
+WARNING: [Synth 8-327] inferring latch for variable 'KEY1_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:130]
+WARNING: [Synth 8-327] inferring latch for variable 'KEY0_reg' [C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.srcs/sources_1/imports/vhdl/XTEA.vhdl:129]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 628.391 ; gain = 249.133
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 7     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 10    
++---Muxes : 
+	  14 Input     33 Bit        Muxes := 1     
+	  14 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 7     
+	  15 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module XTEA 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 7     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 10    
++---Muxes : 
+	  14 Input     33 Bit        Muxes := 1     
+	  14 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 7     
+	  15 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design XTEA has unconnected port clk
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     6|
+|2     |CARRY4 |    72|
+|3     |LUT1   |     1|
+|4     |LUT2   |   202|
+|5     |LUT3   |   112|
+|6     |LUT4   |   103|
+|7     |LUT5   |    14|
+|8     |LUT6   |   147|
+|9     |LD     |    10|
+|10    |LDC    |   257|
+|11    |IBUF   |    67|
+|12    |OBUF   |    33|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1024|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 858.293 ; gain = 479.035
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 339 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'XTEA' is not ideal for floorplanning, since the cellview 'XTEA' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 919.695 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 267 instances were transformed.
+  LD => LDCE: 10 instances
+  LDC => LDCE: 257 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 919.695 ; gain = 564.277
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 919.695 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1/XTEA.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file XTEA_utilization_synth.rpt -pb XTEA_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  1 17:31:58 2019...

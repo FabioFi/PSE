@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct  1 17:30:46 2019
+# Process ID: 21948
+# Current directory: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1
+# Command line: vivado.exe -log XTEA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source XTEA.tcl
+# Log file: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1/XTEA.vds
+# Journal file: C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/HLS_model/xtea_RTL_logic_synthesis/xtea_RTL_logic_synthesis.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source XTEA.tcl -notrace
