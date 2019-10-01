@@ -30,7 +30,7 @@ SC_MODULE(xtea_RTL)
         sc_signal<sc_uint<32> > temp1;
 
         void datapath(void){
-            if (reset.read() == 0)
+            if (rst.read() == 0)
             {
                 STATUS = Reset_ST;
             }
@@ -63,10 +63,10 @@ SC_MODULE(xtea_RTL)
                     break;
 
                 case ST_2:
-                    cout << "inizio a criptare - NO" << endl;
-                    cout << counter.read() << endl;
-                    cout << "v0: "<< v0.read() << endl;
-                    cout << "v1: "<< v1.read() << endl;
+                    // cout << "inizio a criptare - NO" << endl;
+                    // cout << counter.read() << endl;
+                    // cout << "v0: "<< v0.read() << endl;
+                    // cout << "v1: "<< v1.read() << endl;
                     if((sum.read() & 3) == 0)
                     temp0.write(key0.read());
                     else if((sum.read() & 3) == 1)
@@ -249,5 +249,3 @@ SC_MODULE(xtea_RTL)
             sensitive << STATUS << input_rdy << word1 << word2 << counter;
         }
 };
-
-
