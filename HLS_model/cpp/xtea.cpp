@@ -1,6 +1,6 @@
 #include <cmath>
 
-void root(int a, int &b)
+void xtea(int a, int &b)
 {
         b = sqrt(a);
 }
