@@ -29,10 +29,10 @@ entity XTEA is
 		rst 			: in 	BIT;
 		word0 		: in 	UNSIGNED (31 downto 0);
     word1 		: in 	UNSIGNED (31 downto 0);
-    key0 	    : in 	UNSIGNED (31 downto 0);
-    key1 	    : in 	UNSIGNED (31 downto 0);
-    key2 	    : in 	UNSIGNED (31 downto 0);
-    key3 	    : in 	UNSIGNED (31 downto 0);
+    KEY0 	    : in 	UNSIGNED (31 downto 0);
+    KEY1 	    : in 	UNSIGNED (31 downto 0);
+    KEY2 	    : in 	UNSIGNED (31 downto 0);
+    KEY3 	    : in 	UNSIGNED (31 downto 0);
 		input_ready 	: in 	BIT;
 		mode 			: in 	BIT;
     result0 	: out 	UNSIGNED (31 downto 0);
