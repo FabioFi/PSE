@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1570044224">
+  <File Type="BITSTR-BMM" Name="XTEA_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="XTEA_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="XTEA_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="XTEA_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="XTEA.tcl"/>
+  <File Type="OPT-TIMING" Name="XTEA_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="XTEA_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="XTEA_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="XTEA_reports.tcl"/>
+  <File Type="OPT-DRC" Name="XTEA_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="XTEA.hwdef"/>
+  <File Type="PWROPT-DCP" Name="XTEA_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="XTEA_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="XTEA_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="XTEA_placed.dcp"/>
+  <File Type="PLACE-IO" Name="XTEA_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="XTEA_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="XTEA_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="XTEA_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="XTEA_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="XTEA_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="XTEA_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="XTEA.bgn"/>
+  <File Type="PLACE-TIMING" Name="XTEA_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="XTEA_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="XTEA.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="XTEA_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="XTEA_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="XTEA_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="XTEA.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="XTEA_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="XTEA_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="XTEA_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="XTEA_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="XTEA_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="XTEA_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="XTEA.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="XTEA_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="XTEA.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="XTEA_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="XTEA_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="XTEA.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="XTEA_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="XTEA_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="XTEA_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="XTEA_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="XTEA_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="XTEA_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="XTEA_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="XTEA_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="XTEA_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="XTEA_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="XTEA_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="XTEA_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="XTEA_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="XTEA_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="XTEA_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="XTEA_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="XTEA_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="XTEA_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="XTEA_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="XTEA.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="XTEA_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="XTEA.rbt"/>
+  <File Type="BITSTR-NKY" Name="XTEA.nky"/>
+  <File Type="BG-DRC" Name="XTEA.drc"/>
+  <File Type="RDI-RDI" Name="XTEA.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Test/xtea.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../xtea.vhdl"/>
+        <Attr Name="ImportTime" Val="1570042932"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="XTEA"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
