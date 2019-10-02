@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;xtea_RTL.cpp&apos; ..."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from xtea_RTL.cpp:1:
+In file included from xtea_RTL.cpp:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc\systemc.h:1:
+In file included from C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_systemc.h:51:
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:193:15: error: no viable conversion from &apos;const _ap_sc_::sc_core::sc_signal_inout_if&lt;xtea_RTL::STATES&gt;&apos; to &apos;xtea_RTL::STATES&apos;
+            T v = v2;
+              ^   ~~
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:187:13: note: in instantiation of function template specialization &apos;_ap_sc_::sc_core::sc_signal_inout_if&lt;xtea_RTL::STATES&gt;::write&lt;_ap_sc_::sc_core::sc_signal_inout_if&lt;xtea_RTL::STATES&gt; &gt;&apos; requested here
+            write(v);
+            ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:309:11: note: in instantiation of member function &apos;_ap_sc_::sc_core::sc_signal_inout_if&lt;xtea_RTL::STATES&gt;::operator=&apos; requested here
+    class sc_signal : public sc_signal_inout_if&lt;T&gt; {
+          ^
+C:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc/ap_sc_core.h:174:9: note: candidate function not viable: &apos;this&apos; argument has type &apos;const _ap_sc_::sc_core::sc_signal_inout_if&lt;xtea_RTL::STATES&gt;&apos;, but method is not marked const
+        operator const T () { return this-&gt;read(); }
+        ^
+1 error generated."/>
+</Messages>
