@@ -23,8 +23,10 @@ entity XTEA is
 	port (
 		clk 			: in 	BIT;
 		rst 			: in 	BIT;
-		word 		: in 	UNSIGNED (63 downto 0);
-		result 	: out 	UNSIGNED (31 downto 0);
+		word0 		: in 	UNSIGNED (63 downto 0);
+    word1 		: in 	UNSIGNED (63 downto 0);
+		result0 	: out 	UNSIGNED (31 downto 0);
+    result1 	: out 	UNSIGNED (31 downto 0);
 		input_ready 	: in 	BIT;
 		mode 			: in 	BIT;
 		output_ready 	: out 	BIT;
@@ -138,8 +140,8 @@ begin
             COUNTER <= 0;
 
 					when ST_1 =>
-            WORD0 <= word(31 downto 0);
-            WORD1 <= word(63 downto 32);
+            WORD0 <= word0;
+            WORD1 <= word1;
 
 					when ST_2 =>
             case (SUM and THREE) is
@@ -158,7 +160,8 @@ begin
             SUM <= "11000110111011110011011100100000";
 
 					when ST_4 =>
-						WORD0 <= 
+						WORD0 <= WORD0;
+            SUM <= SUM + DELTA;
 
 					when ST_5 =>
             case ((SUM srl 11) and THREE) is
@@ -171,30 +174,30 @@ begin
               when others =>
               WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
             end case;
-            COUNTER <= COUNTER + 1;
 
-					when BUSY_ENC_OUTPUT2 =>
-						result <= WORD1;
+					when ST_6 =>
+            case ((SUM srl 11) and THREE) is
+              when ZERO =>
+              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
+              when ONE =>
+              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
+              when TWO =>
+              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
+              when others =>
+              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
+            end case;
 
-					when BUSY_DEC_INPUT =>
-						WORD0 <= word(31 downto 0);
-						WORD1 <= word(63 downto 32);
+					when ST_7 =>
+						WORD1 <= WORD1;
 						SUM <= "11000110111011110011011100100000";
 
-					when BUSY_DEC1 =>
-						case ((SUM srl 11) and THREE) is
-							when ZERO =>
-							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
-							when ONE =>
-							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
-							when TWO =>
-							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
-							when others =>
-							WORD1 <= WORD1 - ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
-						end case;
-						SUM <= SUM - delta;
+					when ST_8 =>
+						word1 =  WORD1;
+            if COUNTER < '31' then
+              COUNTER <= COUNTER + 1;
+            end if;
 
-					when BUSY_DEC2 =>
+					when ST_9 =>
 						case (SUM and THREE) is
 							when ZERO =>
 							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY0));
@@ -205,14 +208,17 @@ begin
 							when others =>
 							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY3));
 						end case;
-						COUNTER <= COUNTER + 1;
 
-					when BUSY_DEC_OUTPUT1 =>
-						result <= WORD0;
-						output_ready <= '1';
+					when ST_10 =>
+						word0 <= WORD0;
+            if COUNTER < '31' then
+              COUNTER <= COUNTER + 1;
+            end if;
 
-					when BUSY_DEC_OUTPUT2=>
-						result <= WORD1;
+					when Final_ST =>
+						result0 <= WORD0;
+            result1 <= WORD1;
+            output_ready <= 1;
 
 					when others =>
 						result <= ZERO;
