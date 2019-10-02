@@ -28,8 +28,8 @@ entity XTEA is
 	port (
 		clk 			: in 	BIT;
 		rst 			: in 	BIT;
-		data_input 		: in 	UNSIGNED (63 downto 0);
-		data_output 	: out 	UNSIGNED (31 downto 0);
+		word 		: in 	UNSIGNED (63 downto 0);
+		result 	: out 	UNSIGNED (31 downto 0);
 		input_ready 	: in 	BIT;
 		mode 			: in 	BIT;
 		output_ready 	: out 	BIT
@@ -126,7 +126,7 @@ begin
 		begin
 			if rst = '1' then
 				STATUS <= IDLE;
-				data_output <= ZERO;
+				result <= ZERO;
 				output_ready <= '0';
 				KEY0 <= ZERO;
 				KEY1 <= ZERO;
@@ -140,17 +140,17 @@ begin
 				STATUS <= NEXT_STATUS;
 				case NEXT_STATUS is
 					when IDLE =>
-						data_output <= ZERO;
+						result <= ZERO;
 						output_ready <= '0';
 					when BUSY_KEY1 =>
-						KEY0 <= data_input(31 downto 0);
-						KEY1 <= data_input(63 downto 32);
+						KEY0 <= word(31 downto 0);
+						KEY1 <= word(63 downto 32);
 					when BUSY_KEY2 =>
-						KEY2 <= data_input(31 downto 0);
-						KEY3 <= data_input(63 downto 32);
+						KEY2 <= word(31 downto 0);
+						KEY3 <= word(63 downto 32);
 					when BUSY_ENC_INPUT =>
-						WORD0 <= data_input(31 downto 0);
-						WORD1 <= data_input(63 downto 32);
+						WORD0 <= word(31 downto 0);
+						WORD1 <= word(63 downto 32);
 					when BUSY_ENC1 =>
 						case (SUM and THREE) is
 							when ZERO =>
@@ -176,13 +176,13 @@ begin
 						end case;
 						COUNTER <= COUNTER + 1;
 					when BUSY_ENC_OUTPUT1 =>
-						data_output <= WORD0;
+						result <= WORD0;
 						output_ready <= '1';
 					when BUSY_ENC_OUTPUT2 =>
-						data_output <= WORD1;
+						result <= WORD1;
 					when BUSY_DEC_INPUT =>
-						WORD0 <= data_input(31 downto 0);
-						WORD1 <= data_input(63 downto 32);
+						WORD0 <= word(31 downto 0);
+						WORD1 <= word(63 downto 32);
 						SUM <= "11000110111011110011011100100000";
 					when BUSY_DEC1 =>
 						case ((SUM srl 11) and THREE) is
@@ -209,12 +209,12 @@ begin
 						end case;
 						COUNTER <= COUNTER + 1;
 					when BUSY_DEC_OUTPUT1 =>
-						data_output <= WORD0;
+						result <= WORD0;
 						output_ready <= '1';
 					when BUSY_DEC_OUTPUT2=>
-						data_output <= WORD1;
+						result <= WORD1;
 					when others =>
-						data_output <= ZERO;
+						result <= ZERO;
 				end case;
 			end if;
 		end process;
