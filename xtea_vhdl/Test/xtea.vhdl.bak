@@ -145,7 +145,7 @@ begin
             COUNTER <= "000000";
             V0 <= ZERO;
             V1 <= ZERO;
-            SUM <= "0000000000000000000000000000000000000000000000000000000000000000";
+            SUM <= ZERO;
             TEMP0 <= ZERO;
             TEMP1 <= ZERO;
             DELTA <= "10011110001101110111100110111001";
@@ -155,15 +155,16 @@ begin
             V1 <= word1;
 
 					when ST_2 =>
-            if (SUM(31 downto 0) and THREE) = ZERO then
+            case (SUM and THREE) is
+              when ZERO =>
               TEMP0 <= KEY0;
-            elsif (SUM(31 downto 0) and THREE) = ONE then
+              when ONE =>
               TEMP0 <= KEY1;
-            elsif (SUM(31 downto 0) and THREE) = TWO then
+              when TWO =>
               TEMP0 <= KEY2;
-            else
+              when others =>
               TEMP0 <= KEY3;
-            end if;
+            end case;
 
 					when ST_3 =>
             SUM <= DELTA * 100000;
@@ -173,26 +174,28 @@ begin
             SUM <= SUM + DELTA;
 
 					when ST_5 =>
-            if ((SUM(31 downto 0) srl 11) and THREE) = ZERO then
+            case ((SUM srl 11) and THREE) is
+              when ZERO =>
               TEMP0 <= KEY0;
-            elsif ((SUM(31 downto 0) srl 11) and THREE) = ONE then
+              when ONE =>
               TEMP0 <=  KEY1;
-            elsif ((SUM(31 downto 0) srl 11) and THREE) = TWO then
+              when TWO =>
               TEMP0 <= KEY2;
-            else
+              when others =>
               TEMP0 <= KEY3;
-            end if;
+            end case;
 
 					when ST_6 =>
-            if ((SUM(31 downto 0) srl 11) and THREE) = ZERO then
+            case ((SUM srl 11) and THREE) is
+              when ZERO =>
               TEMP0 <= KEY0;
-            elsif ((SUM(31 downto 0) srl 11) and THREE) =  ONE then
+              when ONE =>
               TEMP0 <= KEY1;
-            elsif ((SUM(31 downto 0) srl 11) and THREE) =  TWO then
+              when TWO =>
               TEMP0 <= KEY2;
-            else
+              when others =>
               TEMP0 <= KEY3;
-            end if;
+            end case;
 
 					when ST_7 =>
 						V1 <= V1 + (V0 sll 4 xor (V0 srl 5) + V0 xor SUM(31 downto 0) + TEMP0);
@@ -205,15 +208,16 @@ begin
             end if;
 
 					when ST_9 =>
-							if (SUM(31 downto 0) and THREE) = ZERO then
-                TEMP0 <= KEY0;
-							elsif (SUM(31 downto 0) and THREE) = ONE then
-                TEMP0 <= KEY1;
-							elsif (SUM(31 downto 0) and THREE) = TWO then
-                TEMP0 <= KEY2;
-							else
-                TEMP0 <= KEY3;
-						end if;
+						case (SUM and THREE) is
+							when ZERO =>
+              TEMP0 <= KEY0;
+							when ONE =>
+              TEMP0 <= KEY1;
+							when TWO =>
+              TEMP0 <= KEY2;
+							when others =>
+              TEMP0 <= KEY3;
+						end case;
 
 					when ST_10 =>
 						V0 <= V0 + (V1 sll 4 xor (V1 srl 5) + V1 xor SUM(31 downto 0) + TEMP0);
