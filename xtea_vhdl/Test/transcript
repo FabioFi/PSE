@@ -17,7 +17,7 @@
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
 # vsim work.xtea 
-# Start time: 18:43:23 on Oct 02,2019
+# Start time: 19:05:35 on Oct 02,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -26,15 +26,12 @@
 # Loading work.xtea(xtea)
 do stimuli.do
 # vsim 
-# Start time: 18:43:41 on Oct 02,2019
+# Start time: 19:05:42 on Oct 02,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_bit(body)
 # Loading work.xtea_pack
 # Loading work.xtea(xtea)
-# ** Error: (vish-4014) No objects found matching 'data_input'.
-# Error in macro ./stimuli.do line 8
-# (vish-4014) No objects found matching 'data_input'.
-#     while executing
-# "add wave -radix hexadecimal -color yellow data_input"
+# End time: 19:05:58 on Oct 02,2019, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
