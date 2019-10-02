@@ -23,12 +23,16 @@ entity XTEA is
 	port (
 		clk 			: in 	BIT;
 		rst 			: in 	BIT;
-		word0 		: in 	UNSIGNED (63 downto 0);
-    word1 		: in 	UNSIGNED (63 downto 0);
-		result0 	: out 	UNSIGNED (31 downto 0);
-    result1 	: out 	UNSIGNED (31 downto 0);
+		word0 		: in 	UNSIGNED (31 downto 0);
+    word1 		: in 	UNSIGNED (31 downto 0);
+    key0 	    : in 	UNSIGNED (31 downto 0);
+    key1 	    : in 	UNSIGNED (31 downto 0);
+    key2 	    : in 	UNSIGNED (31 downto 0);
+    key3 	    : in 	UNSIGNED (31 downto 0);
 		input_ready 	: in 	BIT;
 		mode 			: in 	BIT;
+    result0 	: out 	UNSIGNED (31 downto 0);
+    result1 	: out 	UNSIGNED (31 downto 0);
 		output_ready 	: out 	BIT;
 	);
 end XTEA;
@@ -36,23 +40,22 @@ end XTEA;
 architecture XTEA of XTEA is
 	subtype STATUS_T 		is UNSIGNED (3 downto 0);
 	subtype INTERNAL32_T 	is UNSIGNED (31 downto 0);
+  subtype INTERNAL64_T is UNSIGNED (63 downto 0);
 
 	signal STATUS 		: STATUS_T;
 	signal NEXT_STATUS 	: STATUS_T;
-	signal KEY0 		: INTERNAL32_T;
-	signal KEY1 		: INTERNAL32_T;
-	signal KEY2 		: INTERNAL32_T;
-	signal KEY3 		: INTERNAL32_T;
-	signal WORD0 		: INTERNAL32_T;
-	signal WORD1 		: INTERNAL32_T;
+	signal V0 		: INTERNAL32_T;
+	signal V1 		: INTERNAL32_T;
 	signal COUNTER 		: UNSIGNED(5 downto 0);
 	signal SUM 			: INTERNAL32_T;
-
+  signal TEMP0    : INTERNAL32_T;
+  signal TEMP1    : INTERNAL32_T;
 	constant DELTA 		: INTERNAL32_T := "10011110001101110111100110111001";
 	constant ZERO 		: INTERNAL32_T := "00000000000000000000000000000000";
 	constant ONE 		: INTERNAL32_T := "00000000000000000000000000000001";
 	constant TWO 		: INTERNAL32_T := "00000000000000000000000000000010";
 	constant THREE 		: INTERNAL32_T := "00000000000000000000000000000011";
+
 begin
 	-- FSM
 	process (STATUS, input_ready)
@@ -95,7 +98,7 @@ begin
 				NEXT_STATUS <= ST_9;
 
 			when ST_8 =>
-        if COUNTER = "100000" then
+        if COUNTER < "11111" then
           NEXT_STATUS <= ST_2;
         else
           NEXT_STATUS <= Final_ST;
@@ -105,7 +108,7 @@ begin
 				NEXT_STATUS <= ST_10;
 
 			when ST_10 =>
-      if COUNTER = "100000" then
+      if COUNTER < "11111" then
         NEXT_STATUS <= ST_5;
       else
         NEXT_STATUS <= Final_ST;
@@ -137,91 +140,97 @@ begin
 						output_ready <= '0';
 
 					when ST_0 =>
-            COUNTER <= 0;
+            COUNTER <= '0';
+            V0 <= '0';
+            V1 <= '0';
+            SUM <= '0';
+            TEMP0 <= '0';
+            TEMP1 <= '0';
+            DELTA <= "10011110001101110111100110111001";
 
 					when ST_1 =>
-            WORD0 <= word0;
-            WORD1 <= word1;
+            V0 <= word0;
+            V1 <= word1;
 
 					when ST_2 =>
             case (SUM and THREE) is
               when ZERO =>
-              WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY0));
+              TEMP0 <= KEY0;
               when ONE =>
-              WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY1));
+              TEMP0 <= KEY1;
               when TWO =>
-              WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY2));
+              TEMP0 <= KEY2;
               when others =>
-              WORD0 <= WORD0 + ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY3));
+              TEMP0 <= KEY3;
             end case;
-            SUM <= SUM + delta;
 
 					when ST_3 =>
-            SUM <= "11000110111011110011011100100000";
+            SUM <= DELTA * 100000;
 
 					when ST_4 =>
-						WORD0 <= WORD0;
+						V0 <= V0 + (V1 sll 4 xor (V1 srl 5) + V1 xor SUM + TEMP0);
             SUM <= SUM + DELTA;
 
 					when ST_5 =>
             case ((SUM srl 11) and THREE) is
               when ZERO =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
+              TEMP0 <= KEY0;
               when ONE =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
+              TEMP0 <=  KEY1;
               when TWO =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
+              TEMP0 <= KEY2;
               when others =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
+              TEMP0 <= KEY3;
             end case;
 
 					when ST_6 =>
             case ((SUM srl 11) and THREE) is
               when ZERO =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY0));
+              TEMP0 <= KEY0;
               when ONE =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY1));
+              TEMP0 <= KEY1;
               when TWO =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY2));
+              TEMP0 <= KEY2;
               when others =>
-              WORD1 <= WORD1 + ((((WORD0 sll 4) xor (WORD0 srl 5)) + WORD0) xor (SUM + KEY3));
+              TEMP0 <= KEY3;
             end case;
 
 					when ST_7 =>
-						WORD1 <= WORD1;
-						SUM <= "11000110111011110011011100100000";
+						V1 <= V1 + (V0 sll 4 xor (V0 srl 5) + V0 xor SUM + TEMP0);
+						SUM <= SUM - DELTA;
 
 					when ST_8 =>
-						word1 =  WORD1;
-            if COUNTER < '31' then
+            V1 <= V1 + (V0 sll 4 xor (V0 srl 5) + V0 xor SUM + TEMP0);
+            if COUNTER < "11111" then
               COUNTER <= COUNTER + 1;
             end if;
 
 					when ST_9 =>
 						case (SUM and THREE) is
 							when ZERO =>
-							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY0));
+              TEMP <= KEY0;
 							when ONE =>
-							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY1));
+              TEMP <= KEY1;
 							when TWO =>
-							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY2));
+              TEMP <= KEY2;
 							when others =>
-							WORD0 <= WORD0 - ((((WORD1 sll 4) xor (WORD1 srl 5)) + WORD1) xor (SUM + KEY3));
+              TEMP <= KEY3;
 						end case;
 
 					when ST_10 =>
-						word0 <= WORD0;
-            if COUNTER < '31' then
+						V0 <= V0 + (V1 sll 4 xor (V1 srl 5) + V1 xor SUM + TEMP0);;
+            if COUNTER < "11111" then
               COUNTER <= COUNTER + 1;
             end if;
 
 					when Final_ST =>
-						result0 <= WORD0;
-            result1 <= WORD1;
-            output_ready <= 1;
+						result0 <= V0;
+            result1 <= V1;
+            output_ready <= '1';
 
 					when others =>
-						result <= ZERO;
+						result0 <= ZERO;
+            result0 <= ZERO;
 				end case;
 			end if;
 		end process;
