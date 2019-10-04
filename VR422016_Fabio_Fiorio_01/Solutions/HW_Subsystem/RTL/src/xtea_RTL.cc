@@ -9,7 +9,6 @@ xtea_RTL::xtea_RTL(sc_core::sc_module_name module_name) :
     key1("key1"),
     key2("key2"),
     key3("key3"),
-    //key4("key4"),
     mode("mode"),
     result0("result0"),
     result1("result1"),
@@ -33,7 +32,6 @@ void xtea_RTL::datapath(void){
   if(rst.read() == 0){
     STATUS = Reset_ST;
   } else if(clk.read() == 1){
-    //cout << clk << "a" << endl;
 
     STATUS = NEXT_STATUS;
 
@@ -48,31 +46,17 @@ void xtea_RTL::datapath(void){
         result0.write(0);
         result1.write(0);
         output_rdy.write(0);
-    /*    word1.write(0);
-        word2.write(0);
-        key0.write(0);
-        key1.write(0);
-        key2.write(0);
-        key3.write(0);
-        input_rdy.write(0);*/
         counter.write(0);
-      //  delta.write(0);
         v0.write(0);
         v1.write(0);
         sum.write(0);
         temp0.write(0);
-        temp1.write(0);
         delta.write(0x9e3779b9);
       break;
 
       case ST_1:
         v0.write(word1.read());
         v1.write(word2.read());
-      //  if(mode.read() == 1){
-        //  sum.write(delta.read() * 32);
-        //}
-      //  cout << sum.read() <<endl;
-
       break;
 
       case ST_2:
@@ -129,8 +113,6 @@ void xtea_RTL::datapath(void){
 
       case ST_8:
       v1.write(v1.read() + (((((v0.read() << 4) ^ (v0.read() >> 5)) + v0.read()) ^ (sum.read() + temp0.read()))));
-
-//        v1.write(v1.read() + (((v0.read() << 4) ^ (v0.read() >> 5) + v0.read()) ^ (sum.read() + temp0.read())));
         if(counter.read() < 31){
           counter.write(counter.read() + 1);
         }
