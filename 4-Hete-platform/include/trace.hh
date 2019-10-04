@@ -10,7 +10,7 @@ SC_MODULE(main_RTL){
 
   void clk_gen()
   {
-    while( true )
+    while( true ) // !!!!!!!!!!!! provare a mettere US per diminuire il tempo !!!!!!!!!!!!!!!!
     {
       /*clock.write( sc_dt::SC_LOGIC_1 );
       wait( PERIOD / 2, sc_core::SC_NS );
