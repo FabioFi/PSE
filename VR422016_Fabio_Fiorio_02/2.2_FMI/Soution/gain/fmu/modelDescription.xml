@@ -17,20 +17,17 @@
 	<ModelVariables>
 
 		<ScalarVariable name="data" valueReference="0" description="integer" causality="input"
-		variability="discrete" initial="approx">	
+		variability="discrete" initial="approx">
 		<Integer start="0"/>
 		</ScalarVariable>
-
 		<ScalarVariable name="result" valueReference="1" description="integer" causality="output"
-		variability="discrete" initial="approx">	
+		variability="discrete" initial="approx">
 		<Integer start="0"/>
 		</ScalarVariable>
-
 		<ScalarVariable name="data_ready" valueReference="0" description="bool" causality="input"
 		variability="discrete" initial="approx">
 		<Boolean start="false"/>
 		</ScalarVariable>
-
 		<ScalarVariable name="result_ready" valueReference="1" description="bool" causality="output"
 		variability="discrete" initial="approx">
 		<Boolean start="false"/>

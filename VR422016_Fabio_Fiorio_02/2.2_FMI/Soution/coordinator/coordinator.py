@@ -83,10 +83,6 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 	gain.set_boolean(DATA_READY, memory.get_boolean(MEMORY_DATA_RDY))
 
 
-
-
-
-
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 #- MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN --

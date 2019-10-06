@@ -29,11 +29,11 @@ struct ModelInstance{
 
     // Port declaration goes here 
 
-    // ...
     fmi2Integer data;
-    fmi2Integer result;
     fmi2Boolean data_ready;
+    fmi2Integer result;
     fmi2Boolean result_ready;
+
 
 
     //----------------------------------------------
