@@ -16,8 +16,8 @@
 # // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
-# vsim -wlf waveform.wlf work.xtea 
-# Start time: 21:11:21 on Oct 02,2019
+# vsim work.xtea 
+# Start time: 12:17:45 on Oct 06,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -26,11 +26,12 @@
 # Loading work.xtea(xtea)
 do stimuli.do
 # vsim 
-# Start time: 21:11:42 on Oct 02,2019
+# Start time: 12:18:30 on Oct 06,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_bit(body)
 # Loading work.xtea_pack
 # Loading work.xtea(xtea)
-quit -sim
+# End time: 12:24:11 on Oct 06,2019, Elapsed time: 0:05:41
+# Errors: 0, Warnings: 0

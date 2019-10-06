@@ -226,7 +226,7 @@ begin
 
 					when others =>
 						result0 <= ZERO;
-            result1 <= ZERO;
+            result0 <= ZERO;
 				end case;
 			end if;
 		end process;

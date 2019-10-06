@@ -26,6 +26,24 @@ force clk 0 0, 1 5ns -r 10ns
 force rst 0 0
 force mode 0 0
 
+force word0 16#12345678 0
+force word1 16#9abcdeff 0
+force KEY0 16#6a1d78c8 0
+force KEY1 16#8c86d67f 0
+force KEY2 16#2a65bfbe 0
+force KEY3 16#b4bd6e46 0
+
+force rst 1 0
+force clk 1 0
+force input_ready 1 0
+
+run 1000
+
+## START DECRYPTION
+
+force rst 0 0
+force mode 1 0
+
 force word0 16#8c86d67f 0
 force word1 16#6a1d78c8 0
 force KEY0 16#6a1d78c8 0

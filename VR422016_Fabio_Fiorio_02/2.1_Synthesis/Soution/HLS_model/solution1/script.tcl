@@ -3,13 +3,13 @@
 ## Please DO NOT edit it.
 ## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
 ############################################################
-open_project xtea_cpp_hls
+open_project HLS_model
 set_top xtea
 add_files xtea.cpp
 open_solution "solution1"
-set_part {xc7z020clg400-1} -tool vivado
+set_part {xc7z020-clg400-1} -tool vivado
 create_clock -period 10 -name default
-#source "./xtea_cpp_hls/solution1/directives.tcl"
+#source "./HLS_model/solution1/directives.tcl"
 #csim_design
 csynth_design
 #cosim_design

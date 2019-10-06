@@ -1,0 +1,93 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Oct  6 12:43:55 2019
+# Process ID: 20232
+# Current directory: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17872 C:\Users\fabio.fiorio\Downloads\xtea_rtl_synthesis\xtea_rtl_synthesis.xpr
+# Log file: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/vivado.log
+# Journal file: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/VR422016_Fabio_Fiorio_02/2.1_Synthesis/Soution/xtea_rtl_synthesis' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 777.074 ; gain = 139.785
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg400-1
+Top: XTEA
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1231.520 ; gain = 184.875
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'XTEA' [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:44]
+WARNING: [Synth 8-614] signal 'mode' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:64]
+WARNING: [Synth 8-614] signal 'COUNTER' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:64]
+WARNING: [Synth 8-614] signal 'NEXT_STATUS' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'word0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'word1' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'SUM' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'KEY0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'KEY1' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'KEY2' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'KEY3' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'DELTA' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'V0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'V1' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'TEMP0' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+WARNING: [Synth 8-614] signal 'COUNTER' is read in the process but is not in the sensitivity list [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:130]
+INFO: [Synth 8-256] done synthesizing module 'XTEA' (1#1) [C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.srcs/sources_1/imports/xtea_rtl_synthesis/xtea.vhdl:44]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1271.813 ; gain = 225.168
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1271.813 ; gain = 225.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1271.813 ; gain = 225.168
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1394.668 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 1459.195 ; gain = 412.551
+6 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:19 . Memory (MB): peak = 1459.195 ; gain = 638.051
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+[Sun Oct  6 12:45:14 2019] Launched synth_1...
+Run output will be captured here: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 1460.949 ; gain = 0.000
+launch_runs impl_1 -jobs 6
+[Sun Oct  6 12:45:25 2019] Launched synth_1...
+Run output will be captured here: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.runs/synth_1/runme.log
+[Sun Oct  6 12:45:25 2019] Launched impl_1...
+Run output will be captured here: C:/Users/fabio.fiorio/Downloads/xtea_rtl_synthesis/xtea_rtl_synthesis.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  6 12:47:34 2019...

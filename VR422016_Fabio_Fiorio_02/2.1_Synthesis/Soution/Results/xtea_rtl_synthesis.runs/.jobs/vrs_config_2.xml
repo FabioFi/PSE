@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="C:/Users/fabio.fiorio/OneDrive - EXOR INTERNATIONAL SPA/Documents/PERSONAL/Univr/PSE/Elaborato/PSE/VR422016_Fabio_Fiorio_02/2.1_Synthesis/Soution/xtea_rtl_synthesis/xtea_rtl_synthesis.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
