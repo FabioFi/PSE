@@ -24,9 +24,11 @@ void xtea_RTL_testbench::run(){
 
   sc_uint<32> r0, r1;
 
+for(int y = 0; y < 10000; y++){
+
   w0 = 0x12345678;
   w1 = 0x9abcdeff;
-  
+
   k0 = 0x6a1d78c8;
   k1 = 0x8c86d67f;
   k2 = 0x2a65bfbe;
@@ -87,7 +89,7 @@ void xtea_RTL_testbench::run(){
 
   if((r0 != 0x12345678) || (r1 != 0x9abcdeff))
     printf("Wrong result!");
-
+}
   printf("Done!!\n");
 
   rst.write(0);

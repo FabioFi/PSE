@@ -17,9 +17,9 @@ SC_MODULE(main_RTL){
       clock.write( sc_dt::SC_LOGIC_0 );
       wait( PERIOD / 2, sc_core::SC_NS );*/
       clk.write( true ); //sc_dt::SC_LOGIC_1
-      wait( PERIOD / 2, sc_core::SC_NS );
+      wait( PERIOD / 2, sc_core::SC_US ); //SC_NS
       clk.write( false ); //sc_dt::SC_LOGIC_0
-      wait( PERIOD / 2, sc_core::SC_NS );
+      wait( PERIOD / 2, sc_core::SC_US ); //SC_NS
     }
   }
 

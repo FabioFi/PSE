@@ -18,6 +18,7 @@ void xtea_UT_testbench::run()
   iostruct xtea_packet;
   tlm::tlm_generic_payload payload;
 
+for(int y = 0; y < 10000; y++){
   // send one random number - write invocation
   xtea_packet.datain_word1 = 0x12345678;
   xtea_packet.datain_word2 = 0x9abcdeff;
@@ -79,7 +80,7 @@ void xtea_UT_testbench::run()
     if((xtea_packet.result0 != 0x12345678) || (xtea_packet.result1 != 0x9abcdeff))
       printf("Wrong result!\n");
   }
-
+}
   printf("Done!!\n");
 
   sc_stop();

@@ -27,7 +27,8 @@ int sc_main(int argc, char * argv[]){
     //sca_util::sca_trace(atf, topl->m_apertura, "m_apertura");
     sca_util::sca_trace(atf, topl->m_livello_acqua, "m_livello_acqua");
 
-    sc_core::sc_start(10000, sc_core::SC_MS);
+    sc_core::sc_start(10000, sc_core::SC_MS); //10000
+    //  sc_core::sc_start(1000000, sc_core::SC_MS);
 
     sca_util::sca_close_vcd_trace_file(atf);
 

@@ -7,7 +7,7 @@ void xtea_LT_testbench::run()
 
   iostruct xtea_packet;
   tlm::tlm_generic_payload payload;
-
+for(int y = 0; y < 10000; y++){
   // send one random number - write invocation
   xtea_packet.datain_word1 = 0x12345678;
   xtea_packet.datain_word2 = 0x9abcdeff;
@@ -95,7 +95,7 @@ void xtea_LT_testbench::run()
     m_qk.sync();
     cout << "#####################" << endl;
   }
-
+}
   printf("Done!!\n");
 
   sc_stop();
