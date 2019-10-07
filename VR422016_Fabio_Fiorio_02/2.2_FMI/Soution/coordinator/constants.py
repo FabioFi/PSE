@@ -1,18 +1,6 @@
 # -----------------------------------------------
 # CONSTANTS 
 # -----------------------------------------------
-
-
-# LOG LEVELS
-
-NOTHING = 0
-VERBOSE = 7
-
-
-# VALUE REFERENCES OF MODELS
-
-
-
 # ACCELEROMETER
 
 ACCELEROMETER_CLK	= 0
@@ -63,17 +51,22 @@ M6502_RES_N 	= 4
 M6502_RDY   	= 5
 M6502_SOB_N 	= 3
 
+
+# GAIN
+
+GAIN_RESULT 		= 1
+GAIN_RESULT_RDY 	= 1
+GAIN_DATA			= 0
+GAIN_DATA_RDY		= 0
+
 # SINE
 
 SINE1_Y = 0
 SINE2_Y = 0
 SINE3_Y = 0
 
-# GAIN
 
-DATA = 0
-RESULT = 1
-DATA_READY = 0
-RESULT_READY = 1
+# LOG LEVELS
 
-
+NOTHING = 0
+VERBOSE = 7

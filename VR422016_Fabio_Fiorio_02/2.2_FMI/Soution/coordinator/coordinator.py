@@ -8,6 +8,8 @@ from  constants import *
 import matplotlib.pyplot as plt
 
 
+
+
 #------------------------------------------------------------------------------
 # ACCELEROMETER VALUE NORMALIZER FUNCTION
 #------------------------------------------------------------------------------
@@ -22,11 +24,11 @@ def accelerometer_normalizer(accelerometer):
 
 	return final_cap
 
-#--------------------------------------------------------------------------------
-# DATA EXCHANGE BETWEEN  MODELS
-#--------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+# DATA EXCHANGE BETWEEN THE MODELS
+#------------------------------------------------------------------------------
+def data_exchange(m6502,memory,sine1_y,sine2_y,sine3_y,accelerometer,gain,clk,i):
 
-def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 
 	#----------------------------------------------------------------------------
 	# ACCELEROMETER SETTING
@@ -34,19 +36,18 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 
 	accelerometer.set_boolean(ACCELEROMETER_CLK,	clk )
 
-	#get values from the Sine Waves to the Accelerometer
-	
-	accelerometer.set_real(ACCELEROMETER_AVX,		sine1.get_real( SINE1_Y )	)
-	accelerometer.set_real(ACCELEROMETER_AVY,		sine2.get_real( SINE2_Y )	)
-	accelerometer.set_real(ACCELEROMETER_AVZ,		sine3.get_real( SINE3_Y )	)	
+	# set with the value only new sin values occures
+	if i==1:
+		accelerometer.set_real(ACCELEROMETER_AVX,		sine1_y	)
+		accelerometer.set_real(ACCELEROMETER_AVY,		sine2_y	)
+		accelerometer.set_real(ACCELEROMETER_AVZ,		sine3_y	)	
 
 
 	#----------------------------------------------------------------------------
 	# MEMORY SETTING
 	#----------------------------------------------------------------------------
-
 	memory.set_boolean(MEMORY_CLK,	clk )
-	# From CPU
+	# From Cpu
 	memory.set_integer(MEMORY_ADDR,				m6502.get_integer(M6502_ADDR) 	)	# addr
 	memory.set_integer(MEMORY_DATAO,			m6502.get_integer(M6502_DATAO)	)	# datao
 	memory.set_boolean(MEMORY_OEB,				m6502.get_boolean(M6502_OEB)	)	# oeb
@@ -55,11 +56,9 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 	memory.set_boolean(MEMORY_WE_N,				m6502.get_boolean(M6502_WE_N)	)	# we_n
 	memory.set_integer(MEMORY_ACCELEROMETER,  	accelerometer_normalizer(accelerometer)  ) # value from accelerometer
 	
-	# From Gain
-	
-	memory.set_integer(MEMORY_RESULT, gain.get_integer(RESULT))
-	memory.set_boolean(MEMORY_RESULT_RDY, gain.get_boolean(RESULT_READY))
-
+	# From gain
+	memory.set_integer(MEMORY_RESULT, 		gain.get_integer(GAIN_RESULT) ) # result
+	memory.set_boolean(MEMORY_RESULT_RDY, 	gain.get_boolean(GAIN_RESULT_RDY) ) # result_rdy
 
 	#----------------------------------------------------------------------------
 	# M6502 SETTING
@@ -74,17 +73,20 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 	m6502.set_boolean(M6502_SOB_N,	memory.get_boolean(MEMORY_SOB_N)	)	# sob_n
 	
 
-	#------------------------------------------------------------------------------
-	# GAIN SETTING
-	#------------------------------------------------------------------------------
+	##---------------------------------------
+	## GAIN SETTING
+	##---------------------------------------
 
-	# From Memory
-	gain.set_integer(DATA, memory.get_integer(MEMORY_DATA))
-	gain.set_boolean(DATA_READY, memory.get_boolean(MEMORY_DATA_RDY))
+	gain.set_integer(GAIN_DATA,		memory.get_integer(MEMORY_DATA)		)
+	gain.set_boolean(GAIN_DATA_RDY,	memory.get_boolean(MEMORY_DATA_RDY)	)
+
+
 
 
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
+#- MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN --
+#- MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN --
 #- MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN --
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
@@ -98,19 +100,16 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 # NOTHING: do not use log  
 # VERBOSE: log everything in file. <fmuname>_log.txt
 
+memory 			= load_fmu( './fmus/memory.fmu',			log_level = NOTHING )
+m6502  			= load_fmu( './fmus/m6502.fmu',				log_level = NOTHING )
+accelerometer 	= load_fmu( './fmus/accelerometer.fmu',		log_level = NOTHING )
+gain 			= load_fmu('./fmus/gain.fmu', 				log_level = NOTHING)
 
-# Digital Models
-memory 		= load_fmu( './fmus/memory.fmu',			log_level = NOTHING )
-m6502  		= load_fmu( './fmus/m6502.fmu',				log_level = NOTHING )
-accelerometer 	= load_fmu( './fmus/Accelerometer.fmu',		log_level = NOTHING )
-gain = load_fmu('./fmus/gain.fmu', log_level = NOTHING)
-
-#Continuous Models 
 sine1 			= load_fmu( './fmus/Sine_1.fmu',			log_level = NOTHING )
 sine2 			= load_fmu( './fmus/Sine_2.fmu',			log_level = NOTHING )
 sine3 			= load_fmu( './fmus/Sine_3.fmu',			log_level = NOTHING )
 
-
+# Missing gain FMU....
 
 
 #----------------------------------------------------------------------------------------------------
@@ -121,90 +120,95 @@ sine3 			= load_fmu( './fmus/Sine_3.fmu',			log_level = NOTHING )
 accelerometer.initialize()
 m6502.initialize()
 memory.initialize()
-gain.initialize()
 sine1.initialize()
 sine2.initialize()
 sine3.initialize()
+gain.initialize()
 
+# Missing gain initialization....
 
-# Global time 
-time=0.
+# Global time and  different simulation steps
+time = 0.
 
-#Simulation Step
-step=20e-6
+digital_step = 20e-6
+analog_step  = 40e-6
 
-
-# Initial value of clock for digital models
+# initial value of clock for digital models
 clk=False
 
 
-time_values = []
-accelerometer_values = []
-gain_values = []
+t= []
+y= []
+y2= []
+
+sine1_y = 0.
+sine2_y = 0.
+sine3_y = 0.
 
 
 #----------------------------------------------------------------------------------------------------
 # 3. MAIN ROUTINE
 #----------------------------------------------------------------------------------------------------
 
-while time<1. :	# Simulate 1 second
-
-		#----------------------------------------------------
-		# 3.1 SIMULATION DIGITAL MODELS STEP
-		#----------------------------------------------------
-
-		# do_step method call fmi2DoStep
-
-		memory.do_step(			current_t = time, step_size = step )
-		m6502.do_step(			current_t = time, step_size = step )
-		accelerometer.do_step(	current_t = time, step_size = step )
-		gain.do_step(	current_t = time, step_size = step )
+while time<1. :	
 
 
-		#-------------------------------------------------
-		# 3.2 SIMULATION CONTINUOUS MODELS STEP
-		#-------------------------------------------------
+		#--------------------------------
+		# 3.1 SIMULATION DIGITAL STEP
+		#--------------------------------
 
-		# Sine Waves simulation
+		#this loop simulates the digital part TWICE than the continuous part. 
+		for i in range(1,3):
 
-		sine1.do_step( current_t = time, step_size = step )
-		sine2.do_step( current_t = time, step_size = step )
-		sine3.do_step( current_t = time, step_size = step )
+			#  Digital Simulation Step
+			memory.do_step(			current_t = time, step_size = digital_step )
+			m6502.do_step(			current_t = time, step_size = digital_step )
+			accelerometer.do_step(	current_t = time, step_size = digital_step )
+			gain.do_step(	current_t = time, step_size = digital_step )
 
 
-		# Digital clock update
-		clk = not clk		
+			# Missing gain simulation .....
 
-		# Data Exchange between Digital and Continuous models
-		data_exchange(m6502, memory, sine1, sine2, sine3, accelerometer, gain, clk)
+			# Tracing some values
+			t.append( time )						  # trace Time	
+			y.append( gain.get_integer(GAIN_RESULT) ) # trace values from the Gain
+			y2.append( accelerometer.get("Cap1") )	  # trace one value from the accelerometer	
+
+			# Digital clock update
+			clk = not clk
+
+			# Data Exchange between models  		(GAIN DOES NOT EXIST YET)
+			data_exchange( m6502, memory, sine1_y, sine2_y, sine3_y, accelerometer, gain, clk, i )
+			
+			# Update the global time
+			time = time + digital_step
 		
-		# Update the global time
-		time = time + step
 
-		# Tracing Time, Accelerometer and Gain
-		time_values.append( time )						  			# trace Time	
-		accelerometer_values.append( accelerometer.get("Cap1") )	# trace one value from the Accelerometer
-		gain_values.append( gain.get("result"))
+		#----------------------------------
+		# 3.2 SIMULATION CONTINUOUS STEP
+		#----------------------------------
+
+		# Sine simulation
+		sine1.do_step( current_t = time, step_size = analog_step )
+		sine2.do_step( current_t = time, step_size = analog_step )
+		sine3.do_step( current_t = time, step_size = analog_step )
+
+		# Retrieve the value of the waves
+		sine1_y = sine1.get_real( SINE1_Y )
+		sine2_y = sine2.get_real( SINE2_Y )
+		sine3_y = sine3.get_real( SINE3_Y )
 
 
-#----------------------------------------------------
-# 4. PLOT ACCELEROMETER & GAIN VALUES
-#----------------------------------------------------
 
-#Plot Figure 1 ( Accelerometer )
-plt.figure(1)
-plt.subplot(111)
-plt.title('Accelerometer')
-plt.plot(time_values,accelerometer_values)
+
+f1 = plt.figure()
+f2 = plt.figure()
+
+ax2 = f2.add_subplot(111)
+ax2.plot(t,y2)
+ax1 = f1.add_subplot(111)
+ax1.plot(t,y)
 grid(True)
+show()	
 
 
-#Plot Figure 2 ( Gain )
-plt.figure(2)
-plt.subplot(111)
-plt.title('Gain')
-plt.plot(time_values,gain_values)
-grid(True)
-
-
-plt.show()
