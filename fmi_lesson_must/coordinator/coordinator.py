@@ -106,7 +106,7 @@ def data_exchange(m6502,memory,sine1,sine2,sine3,accelerometer,gain,clk):
 # Digital Models
 memory 		= load_fmu( './fmus/memory.fmu',			log_level = NOTHING )
 m6502  		= load_fmu( './fmus/m6502.fmu',				log_level = NOTHING )
-accelerometer 	= load_fmu( './fmus/Accelerometer.fmu',		log_level = NOTHING )
+accelerometer 	= load_fmu( './fmus/accelerometer.fmu',		log_level = NOTHING )
 gain = load_fmu('./fmus/gain.fmu', log_level = NOTHING)
 
 #Continuous Models 
