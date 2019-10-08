@@ -32,12 +32,7 @@ struct ModelInstance{
     uint8_t result_rdy; //  result is ready flag
     int data;           // from memory
     int result;
-    //float result;
     // Missing result port!
-    //fmi2Integer data;
-    //fmi2Integer result;
-    //fmi2Boolean data_rdy;
-    //fmi2Boolean result_rdy;
 
 
     char * instanceName;

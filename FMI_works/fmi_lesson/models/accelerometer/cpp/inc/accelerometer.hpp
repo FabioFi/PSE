@@ -23,13 +23,13 @@ public:
     double avy_old;
     double avz_old;
     struct accelerometer_iostruct{
-        double accelerometer_V_reduced_0_dot_ddt;
-        double accelerometer_V_avx_ddt;
-        double accelerometer_V_avy_ddt;
         double accelerometer_V_avz_ddt;
         double accelerometer_V_reduced_1_dot_ddt;
         double accelerometer_V_reduced_1_ddt;
         double accelerometer_V_reduced_0_ddt;
+        double accelerometer_V_reduced_0_dot_ddt;
+        double accelerometer_V_avx_ddt;
+        double accelerometer_V_avy_ddt;
         double avz;
         double avy;
         double avx;
@@ -40,13 +40,13 @@ public:
         bool analog_clock;
 
         accelerometer_iostruct():
-            accelerometer_V_reduced_0_dot_ddt(0.0),
-            accelerometer_V_avx_ddt(0.0),
-            accelerometer_V_avy_ddt(0.0),
             accelerometer_V_avz_ddt(0.0),
             accelerometer_V_reduced_1_dot_ddt(0.0),
             accelerometer_V_reduced_1_ddt(0.0),
             accelerometer_V_reduced_0_ddt(0.0),
+            accelerometer_V_reduced_0_dot_ddt(0.0),
+            accelerometer_V_avx_ddt(0.0),
+            accelerometer_V_avy_ddt(0.0),
             avz(0.0),
             avy(0.0),
             avx(0.0),
@@ -57,22 +57,22 @@ public:
             analog_clock(false)
         {}
 
-        accelerometer_iostruct( const double accelerometer_V_reduced_0_dot_ddt_0,
+        accelerometer_iostruct( const double accelerometer_V_avz_ddt_0, const double
+             accelerometer_V_reduced_1_dot_ddt_0, const double accelerometer_V_reduced_1_ddt_0,
+             const double accelerometer_V_reduced_0_ddt_0, const double accelerometer_V_reduced_0_dot_ddt_0,
              const double accelerometer_V_avx_ddt_0, const double accelerometer_V_avy_ddt_0,
-             const double accelerometer_V_avz_ddt_0, const double accelerometer_V_reduced_1_dot_ddt_0,
-             const double accelerometer_V_reduced_1_ddt_0, const double accelerometer_V_reduced_0_ddt_0,
              const double avz_0, const double avy_0, const double avx_0, const double
              Cap7_0, const double Cap5_0, const double Cap2_0, const double Cap1_0,
              const bool analog_clock_0 ):
-            accelerometer_V_reduced_0_dot_ddt(accelerometer_V_reduced_0_dot_ddt_0
-                ),
-            accelerometer_V_avx_ddt(accelerometer_V_avx_ddt_0),
-            accelerometer_V_avy_ddt(accelerometer_V_avy_ddt_0),
             accelerometer_V_avz_ddt(accelerometer_V_avz_ddt_0),
             accelerometer_V_reduced_1_dot_ddt(accelerometer_V_reduced_1_dot_ddt_0
                 ),
             accelerometer_V_reduced_1_ddt(accelerometer_V_reduced_1_ddt_0),
             accelerometer_V_reduced_0_ddt(accelerometer_V_reduced_0_ddt_0),
+            accelerometer_V_reduced_0_dot_ddt(accelerometer_V_reduced_0_dot_ddt_0
+                ),
+            accelerometer_V_avx_ddt(accelerometer_V_avx_ddt_0),
+            accelerometer_V_avy_ddt(accelerometer_V_avy_ddt_0),
             avz(avz_0),
             avy(avy_0),
             avx(avx_0),
@@ -88,12 +88,6 @@ public:
 
         bool operator == (const accelerometer_iostruct & other) const
         {
-            if (accelerometer_V_reduced_0_dot_ddt != other.accelerometer_V_reduced_0_dot_ddt
-                ) return false;
-            if (accelerometer_V_avx_ddt != other.accelerometer_V_avx_ddt) return
-                 false;
-            if (accelerometer_V_avy_ddt != other.accelerometer_V_avy_ddt) return
-                 false;
             if (accelerometer_V_avz_ddt != other.accelerometer_V_avz_ddt) return
                  false;
             if (accelerometer_V_reduced_1_dot_ddt != other.accelerometer_V_reduced_1_dot_ddt
@@ -102,6 +96,12 @@ public:
                 ) return false;
             if (accelerometer_V_reduced_0_ddt != other.accelerometer_V_reduced_0_ddt
                 ) return false;
+            if (accelerometer_V_reduced_0_dot_ddt != other.accelerometer_V_reduced_0_dot_ddt
+                ) return false;
+            if (accelerometer_V_avx_ddt != other.accelerometer_V_avx_ddt) return
+                 false;
+            if (accelerometer_V_avy_ddt != other.accelerometer_V_avy_ddt) return
+                 false;
             if (avz != other.avz) return false;
             if (avy != other.avy) return false;
             if (avx != other.avx) return false;
@@ -124,9 +124,9 @@ public:
     double accelerometer_V_reduced_1_dot;
     double accelerometer_V_reduced_0_dot;
     double accelerometer_V_reduced_1;
-    double accelerometer_V_avz;
     double accelerometer_V_avx;
     double accelerometer_V_avy;
+    double accelerometer_V_avz;
     double accelerometer_V_reduced_0;
     accelerometer();
 

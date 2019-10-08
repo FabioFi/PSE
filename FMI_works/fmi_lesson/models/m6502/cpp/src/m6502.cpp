@@ -65,6 +65,25 @@ void m6502::hif_cone_core_addrh()
         (151U) || core_sm_opcode == uint8_t(167U) || core_sm_opcode == uint8_t(183U
         ) || core_sm_opcode == uint8_t(199U) || core_sm_opcode == uint8_t(215U)
          || core_sm_opcode == uint8_t(231U) || core_sm_opcode == uint8_t(247U);
+    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(5U);
+    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
+         uint8_t(15U);
+    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(21U);
+    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(13U);
+    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(1U);
+    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(18U);
+    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
+        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
+        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
+         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
+    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
+        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
+        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
     core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
         (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
         ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
@@ -83,30 +102,11 @@ void m6502::hif_cone_core_addrh()
          & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
          core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
          == uint8_t(12U);
-    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
-         uint8_t(15U);
-    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(5U);
-    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(21U);
-    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(13U);
-    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(1U);
-    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(18U);
-    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
-        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
-        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
-         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
-    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
-        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
-        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_state();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_state();
     core_sm_adh_alu = (core_sm_abx_1_addr == true || core_sm_aby_1_addr == true
         ) && static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
         (2U) ) & uint8_t(1U) ) == true || static_cast< bool >( static_cast< uint8_t
@@ -185,30 +185,6 @@ void m6502::hif_cone_core_addrh()
          uint8_t >( static_cast< uint8_t >( static_cast< uint8_t >( core_sm_adh_alu
          ) & uint8_t(31U) ) << uint8_t(3U) );
     hif_cone_core_alu_outl();
-    core_adhmx_pre_y_partial7 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
-         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
-         >( core_dregl >> uint8_t(7U) ) & uint8_t(1U) ) || static_cast< bool >(
-         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
-         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(7U
-        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
-        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
-        (1U) ) & uint8_t(1U) ));
-    core_adhmx_pre_y_partial6 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
-         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
-         >( core_dregl >> uint8_t(6U) ) & uint8_t(1U) ) || static_cast< bool >(
-         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
-         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(6U
-        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
-        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
-        (1U) ) & uint8_t(1U) ));
-    core_adhmx_pre_y_partial5 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
-         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
-         >( core_dregl >> uint8_t(5U) ) & uint8_t(1U) ) || static_cast< bool >(
-         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
-         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(5U
-        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
-        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
-        (1U) ) & uint8_t(1U) ));
     core_adhmx_pre_y_partial4 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
          >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
          >( core_dregl >> uint8_t(4U) ) & uint8_t(1U) ) || static_cast< bool >(
@@ -248,14 +224,38 @@ void m6502::hif_cone_core_addrh()
         ) ) || static_cast< bool >( core_adh_sel & uint8_t(1U) )) && !static_cast<
          bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t(1U) ) & uint8_t
         (1U) );
+    core_adhmx_pre_y_partial7 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
+         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
+         >( core_dregl >> uint8_t(7U) ) & uint8_t(1U) ) || static_cast< bool >(
+         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
+         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(7U
+        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
+        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
+        (1U) ) & uint8_t(1U) ));
+    core_adhmx_pre_y_partial6 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
+         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
+         >( core_dregl >> uint8_t(6U) ) & uint8_t(1U) ) || static_cast< bool >(
+         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
+         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(6U
+        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
+        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
+        (1U) ) & uint8_t(1U) ));
+    core_adhmx_pre_y_partial5 = (static_cast< bool >( static_cast< uint8_t >( core_adh_sel
+         >> uint8_t(2U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
+         >( core_dregl >> uint8_t(5U) ) & uint8_t(1U) ) || static_cast< bool >(
+         static_cast< uint8_t >( core_adh_sel >> uint8_t(3U) ) & uint8_t(1U) ) &&
+         static_cast< bool >( static_cast< uint8_t >( core_alu_outl >> uint8_t(5U
+        ) ) & uint8_t(1U) )) && !(static_cast< bool >( core_adh_sel & uint8_t(1U
+        ) ) || static_cast< bool >( static_cast< uint8_t >( core_adh_sel >> uint8_t
+        (1U) ) & uint8_t(1U) ));
     core_adhmx_pre_y_0 = core_adhmx_pre_y_partial0;
-    core_adhmx_pre_y_3 = core_adhmx_pre_y_partial3;
-    core_adhmx_pre_y_2 = core_adhmx_pre_y_partial2;
-    core_adhmx_pre_y_1 = core_adhmx_pre_y_partial1;
-    core_adhmx_pre_y_6 = core_adhmx_pre_y_partial6;
-    core_adhmx_pre_y_5 = core_adhmx_pre_y_partial5;
     core_adhmx_pre_y_4 = core_adhmx_pre_y_partial4;
     core_adhmx_pre_y_7 = core_adhmx_pre_y_partial7;
+    core_adhmx_pre_y_6 = core_adhmx_pre_y_partial6;
+    core_adhmx_pre_y_1 = core_adhmx_pre_y_partial1;
+    core_adhmx_pre_y_3 = core_adhmx_pre_y_partial3;
+    core_adhmx_pre_y_2 = core_adhmx_pre_y_partial2;
+    core_adhmx_pre_y_5 = core_adhmx_pre_y_partial5;
     hif_cone_core_pchl();
     core_addrh = static_cast< uint8_t >( core_adh_sel & uint8_t(15U) ) == uint8_t
         (0U) ? core_pchl : static_cast< uint8_t >( static_cast< uint8_t >( static_cast<
@@ -281,19 +281,10 @@ void m6502::hif_cone_core_addrl()
         (151U) || core_sm_opcode == uint8_t(167U) || core_sm_opcode == uint8_t(183U
         ) || core_sm_opcode == uint8_t(199U) || core_sm_opcode == uint8_t(215U)
          || core_sm_opcode == uint8_t(231U) || core_sm_opcode == uint8_t(247U);
-    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
-        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
-        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
-         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
-    core_sm_zpg_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
-         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
-         & uint8_t(31U) ) == uint8_t(6U) || core_sm_opcode == uint8_t(198U) || core_sm_opcode
-         == uint8_t(230U) || core_sm_rmb_op == true || core_sm_smb_op == true ||
-         core_sm_opcode == uint8_t(20U) || core_sm_opcode == uint8_t(4U);
-    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
-         uint8_t(15U);
     core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
         ) == uint8_t(5U);
+    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
+         uint8_t(15U);
     core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
         ) == uint8_t(21U);
     core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
@@ -309,13 +300,23 @@ void m6502::hif_cone_core_addrl()
     core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
         (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
         ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
+        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
+        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
+         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
+    core_sm_zpg_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
+         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
+         & uint8_t(31U) ) == uint8_t(6U) || core_sm_opcode == uint8_t(198U) || core_sm_opcode
+         == uint8_t(230U) || core_sm_rmb_op == true || core_sm_smb_op == true ||
+         core_sm_opcode == uint8_t(20U) || core_sm_opcode == uint8_t(4U);
     core_dregl = core_drg_ido;
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_type2_read();
-    hif_cone_core_sm_state();
+    core_adlmx_lreg = core_adlmx_lrg_ido;
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_state();
+    hif_cone_core_sm_type2_read();
     core_adl_sel = static_cast< bool >( static_cast< uint8_t >( core_sm_state >>
          uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_bbx_op == true || static_cast<
          bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t
@@ -371,7 +372,6 @@ void m6502::hif_cone_core_addrl()
          >> uint8_t(2U) ) & uint8_t(1U) ) == true || static_cast< bool >( static_cast<
          uint8_t >( core_sm_state >> uint8_t(3U) ) & uint8_t(1U) ) == true) && core_sm_opcode
          == uint8_t(32U) ? uint8_t(2U) : uint8_t(0U)));
-    core_adlmx_lreg = core_adlmx_lrg_ido;
     hif_cone_core_sregl();
     hif_cone_core_pcll();
     core_addrl = static_cast< uint8_t >( core_adl_sel & uint8_t(3U) ) == uint8_t
@@ -404,8 +404,6 @@ void m6502::hif_cone_core_alu2op()
          ) ) << uint8_t(1U) ) | static_cast< uint8_t >( static_cast< bool >( static_cast<
          uint8_t >( core_alu_kreg >> uint8_t(7U) ) & uint8_t(1U) ) ) ) << uint8_t
         (1U) ) | uint8_t(1U);
-    core_alu_add_cin = static_cast< uint16_t >( core_alu_ctl >> uint16_t(4U) ) &
-         uint16_t(1U);
     core_alu_add_b = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(6U) ) & uint16_t(3U) ) == uint8_t(0U) ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t
@@ -425,6 +423,8 @@ void m6502::hif_cone_core_alu2op()
          ) ) << uint8_t(1U) ) | static_cast< uint8_t >( core_alu_add_sub ) ) <<
          uint8_t(1U) ) | static_cast< uint8_t >( core_alu_add_sub ) ) << uint8_t
         (1U) ) | static_cast< uint8_t >( core_alu_add_sub );
+    core_alu_add_cin = static_cast< uint16_t >( core_alu_ctl >> uint16_t(4U) ) &
+         uint16_t(1U);
     core_alu_jreg = core_alu_jrg_ido;
     core_alu_adder_addl_cry_partial0 = core_alu_add_cin;
     core_alu_adder_b_sub = core_alu_add_b ^ core_alu_adder_sub_v;
@@ -515,17 +515,17 @@ void m6502::hif_cone_core_alu2op()
          bool >( static_cast< bool >( static_cast< uint8_t >( core_alu_adder_b_sub
          >> uint8_t(4U) ) & uint8_t(1U) ) ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_jreg >> uint8_t(4U) ) & uint8_t(1U) ) );
+    core_alu_add_out_4 = core_alu_adder_addh_sum_partial0;
+    core_alu_add_out_3 = core_alu_adder_addl_sum_partial3;
+    core_alu_add_out_5 = core_alu_adder_addh_sum_partial1;
+    core_alu_add_out_0 = core_alu_adder_addl_sum_partial0;
+    core_alu_add_out_2 = core_alu_adder_addl_sum_partial2;
+    core_alu_add_out_1 = core_alu_adder_addl_sum_partial1;
+    core_alu_add_out_7 = core_alu_adder_addh_sum_partial3;
+    core_alu_add_out_6 = core_alu_adder_addh_sum_partial2;
     core_alu_add_cout4 = core_alu_adder_cout4l;
     core_alu_bcd_en = static_cast< uint16_t >( core_alu_ctl >> uint16_t(3U) ) &
          uint16_t(1U);
-    core_alu_add_out_1 = core_alu_adder_addl_sum_partial1;
-    core_alu_add_out_4 = core_alu_adder_addh_sum_partial0;
-    core_alu_add_out_7 = core_alu_adder_addh_sum_partial3;
-    core_alu_add_out_3 = core_alu_adder_addl_sum_partial3;
-    core_alu_add_out_2 = core_alu_adder_addl_sum_partial2;
-    core_alu_add_out_5 = core_alu_adder_addh_sum_partial1;
-    core_alu_add_out_6 = core_alu_adder_addh_sum_partial2;
-    core_alu_add_out_0 = core_alu_adder_addl_sum_partial0;
     core_alu_bcd_lo_adj = (!(!core_alu_add_out_1 && !core_alu_add_out_2) && core_alu_add_out_3
          || core_alu_add_cout4) && (!core_alu_add_sub && core_alu_bcd_en);
     core_alu_bcd_lo_adj_sub = core_alu_add_sub && core_alu_bcd_en && !core_alu_add_cout4;
@@ -561,9 +561,17 @@ void m6502::hif_cone_core_alu2op()
          !core_alu_add_out_5) && core_alu_add_out_7 || core_alu_add_cout) && (!core_alu_add_sub
          && core_alu_bcd_en);
     core_alu_bcd_hi_adj_sub = core_alu_add_sub && core_alu_bcd_en && !core_alu_add_cout;
-    core_alu_bcd_addh_cry_partial0_0 = core_alu_bcd_cin4l;
     core_alu_bcd_b_partial0 = core_alu_bcd_hi_adj_sub == true ? uint8_t(10U) : 
         (core_alu_bcd_hi_adj == true ? uint8_t(6U) : uint8_t(0U));
+    core_alu_bcd_addh_cry_partial0_0 = core_alu_bcd_cin4l;
+    core_alu_dcd_partial7 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(7U);
+    core_alu_dcd_partial6 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(6U);
+    core_alu_dcd_partial5 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(5U);
+    core_alu_dcd_partial4 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(4U);
     core_alu_dcd_partial3 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(3U);
     core_alu_dcd_partial2 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
@@ -575,32 +583,19 @@ void m6502::hif_cone_core_alu2op()
     core_alu_bcd_addh_cry_partial1_0 = static_cast< bool >( core_alu_bcd_b_partial0
          & uint8_t(1U) ) && core_alu_add_out_4 || core_alu_add_out_4 && core_alu_bcd_addh_cry_partial0_0
          || static_cast< bool >( core_alu_bcd_b_partial0 & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial0_0;
-    core_alu_dcd_partial7 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(7U);
-    core_alu_dcd_partial6 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(6U);
-    core_alu_dcd_partial5 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(5U);
-    core_alu_dcd_partial4 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(4U);
+    core_alu_dcd_4 = core_alu_dcd_partial4;
+    core_alu_dcd_3 = core_alu_dcd_partial3;
+    core_alu_dcd_2 = core_alu_dcd_partial2;
+    core_alu_dcd_1 = core_alu_dcd_partial1;
+    core_alu_dcd_0 = core_alu_dcd_partial0;
+    core_alu_dcd_5 = core_alu_dcd_partial5;
+    core_alu_dcd_7 = core_alu_dcd_partial7;
+    core_alu_dcd_6 = core_alu_dcd_partial6;
     core_alu_bcd_addh_cry_partial2_0 = static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(1U) ) & uint8_t(1U) ) && core_alu_add_out_5
          || core_alu_add_out_5 && core_alu_bcd_addh_cry_partial1_0 || static_cast<
          bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(1U)
          ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial1_0;
-    core_alu_dcd_6 = core_alu_dcd_partial6;
-    core_alu_dcd_1 = core_alu_dcd_partial1;
-    core_alu_dcd_5 = core_alu_dcd_partial5;
-    core_alu_dcd_4 = core_alu_dcd_partial4;
-    core_alu_dcd_0 = core_alu_dcd_partial0;
-    core_alu_dcd_3 = core_alu_dcd_partial3;
-    core_alu_dcd_2 = core_alu_dcd_partial2;
-    core_alu_dcd_7 = core_alu_dcd_partial7;
-    core_alu_bcd_addh_cry_partial3_0 = static_cast< bool >( static_cast< uint8_t
-         >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) && core_alu_add_out_6
-         || core_alu_add_out_6 && core_alu_bcd_addh_cry_partial2_0 || static_cast<
-         bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(2U)
-         ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial2_0;
     core_alu_log_b_preinv = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(6U) ) & uint16_t(3U) ) == uint8_t(0U) ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t
@@ -617,6 +612,11 @@ void m6502::hif_cone_core_alu2op()
         (6U) ) & uint16_t(3U) ) == uint8_t(2U) ? core_alu_kreg : (static_cast< uint8_t
          >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t(3U
         ) ) == uint8_t(3U) ? core_alu_kreg : uint8_t(0U))));
+    core_alu_bcd_addh_cry_partial3_0 = static_cast< bool >( static_cast< uint8_t
+         >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) && core_alu_add_out_6
+         || core_alu_add_out_6 && core_alu_bcd_addh_cry_partial2_0 || static_cast<
+         bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(2U)
+         ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial2_0;
     core_alu_log_ctl = static_cast< uint8_t >( core_alu_ctl ) & uint8_t(7U);
     core_alu_bcd_addh_sum_partial3_0 = core_alu_bcd_addh_cry_partial3_0 ^ static_cast<
          bool >( core_alu_add_out_7 ^ static_cast< bool >( static_cast< uint8_t
@@ -624,6 +624,16 @@ void m6502::hif_cone_core_alu2op()
     core_alu_bcd_addh_sum_partial2_0 = core_alu_bcd_addh_cry_partial2_0 ^ static_cast<
          bool >( core_alu_add_out_6 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) );
+    core_alu_log_b = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(11U) ) & uint16_t(1U) ) == true ? static_cast< uint8_t >( ~core_alu_log_b_preinv
+         ) : core_alu_log_b_preinv;
+    core_alu_log_cin = core_alu_add_cin;
+    core_alu_bcd_addl_sum_partial1_0 = core_alu_bcd_addl_cry_partial1_0 ^ static_cast<
+         bool >( core_alu_add_out_1 ^ static_cast< bool >( static_cast< uint8_t
+         >( core_alu_bcd_b_partial1 >> uint8_t(1U) ) & uint8_t(1U) ) );
+    core_alu_bcd_addl_sum_partial0_0 = core_alu_bcd_addl_cry_partial0_0 ^ static_cast<
+         bool >( core_alu_add_out_0 ^ static_cast< bool >( core_alu_bcd_b_partial1
+         & uint8_t(1U) ) );
     core_alu_bcd_addh_sum_partial1_0 = core_alu_bcd_addh_cry_partial1_0 ^ static_cast<
          bool >( core_alu_add_out_5 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(1U) ) & uint8_t(1U) ) );
@@ -636,16 +646,6 @@ void m6502::hif_cone_core_alu2op()
     core_alu_bcd_addl_sum_partial2_0 = core_alu_bcd_addl_cry_partial2_0 ^ static_cast<
          bool >( core_alu_add_out_2 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial1 >> uint8_t(2U) ) & uint8_t(1U) ) );
-    core_alu_log_b = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(11U) ) & uint16_t(1U) ) == true ? static_cast< uint8_t >( ~core_alu_log_b_preinv
-         ) : core_alu_log_b_preinv;
-    core_alu_log_cin = core_alu_add_cin;
-    core_alu_bcd_addl_sum_partial1_0 = core_alu_bcd_addl_cry_partial1_0 ^ static_cast<
-         bool >( core_alu_add_out_1 ^ static_cast< bool >( static_cast< uint8_t
-         >( core_alu_bcd_b_partial1 >> uint8_t(1U) ) & uint8_t(1U) ) );
-    core_alu_bcd_addl_sum_partial0_0 = core_alu_bcd_addl_cry_partial0_0 ^ static_cast<
-         bool >( core_alu_add_out_0 ^ static_cast< bool >( core_alu_bcd_b_partial1
-         & uint8_t(1U) ) );
     core_alu_bcd_cout8 = static_cast< bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0
          >> uint8_t(3U) ) & uint8_t(1U) ) && core_alu_add_out_7 || core_alu_add_out_7
          && core_alu_bcd_addh_cry_partial3_0 || static_cast< bool >( static_cast<
@@ -665,14 +665,14 @@ void m6502::hif_cone_core_alu2op()
          & uint8_t(7U) ) == uint8_t(6U) ? static_cast< uint8_t >( core_alu_jreg
          ^ core_alu_log_b ) : static_cast< uint8_t >( core_alu_log_b & static_cast<
          uint8_t >( ~core_alu_jreg ) )))));
-    core_alu_bcd_out_1 = core_alu_bcd_addl_sum_partial1_0;
-    core_alu_bcd_out_0 = core_alu_bcd_addl_sum_partial0_0;
-    core_alu_bcd_out_7 = core_alu_bcd_addh_sum_partial3_0;
-    core_alu_bcd_out_6 = core_alu_bcd_addh_sum_partial2_0;
-    core_alu_bcd_out_4 = core_alu_bcd_addh_sum_partial0_0;
-    core_alu_bcd_out_5 = core_alu_bcd_addh_sum_partial1_0;
     core_alu_bcd_out_3 = core_alu_bcd_addl_sum_partial3_0;
     core_alu_bcd_out_2 = core_alu_bcd_addl_sum_partial2_0;
+    core_alu_bcd_out_4 = core_alu_bcd_addh_sum_partial0_0;
+    core_alu_bcd_out_5 = core_alu_bcd_addh_sum_partial1_0;
+    core_alu_bcd_out_6 = core_alu_bcd_addh_sum_partial2_0;
+    core_alu_bcd_out_7 = core_alu_bcd_addh_sum_partial3_0;
+    core_alu_bcd_out_1 = core_alu_bcd_addl_sum_partial1_0;
+    core_alu_bcd_out_0 = core_alu_bcd_addl_sum_partial0_0;
     core_alu_alu_outl = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(5U) ) & uint16_t(1U) ) == true ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(1U) ) & uint16_t
@@ -691,12 +691,6 @@ void m6502::hif_cone_core_alu2op()
          >> uint8_t(7U) ) & uint8_t(1U) ) : static_cast< bool >( core_alu_jreg &
          uint8_t(1U) );
     core_alu_bcd_cout = !core_alu_bcd_hi_adj_sub && core_alu_bcd_cout8 || core_alu_add_cout;
-    core_alu_alu_cout = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(1U) ) & uint16_t(3U) ) == uint8_t(0U) ? core_alu_bcd_cout :
-         core_alu_log_cout;
-    core_alu_z_flag = core_alu_alu_outl == uint8_t(0U);
-    core_alu_n_flag = static_cast< uint8_t >( core_alu_alu_outl >> uint8_t(7U) 
-        ) & uint8_t(1U);
     core_alu_v_flag = static_cast< bool >( static_cast< bool >( static_cast< uint8_t
          >( core_alu_kreg >> uint8_t(7U) ) & uint8_t(1U) ) ^ static_cast< bool >
         ( !static_cast< bool >( core_alu_ctl & uint16_t(1U) ) ^ static_cast< bool
@@ -716,6 +710,12 @@ void m6502::hif_cone_core_alu2op()
         ) ) && static_cast< bool >( core_alu_jreg & uint8_t(1U) )) ^ static_cast<
          bool >( core_alu_add_cout ^ static_cast< bool >( static_cast< uint8_t >
         ( core_alu_kreg >> uint8_t(7U) ) & uint8_t(1U) ) );
+    core_alu_alu_cout = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(1U) ) & uint16_t(3U) ) == uint8_t(0U) ? core_alu_bcd_cout :
+         core_alu_log_cout;
+    core_alu_z_flag = core_alu_alu_outl == uint8_t(0U);
+    core_alu_n_flag = static_cast< uint8_t >( core_alu_alu_outl >> uint8_t(7U) 
+        ) & uint8_t(1U);
     core_alu2op = static_cast< uint8_t >( static_cast< uint8_t >( static_cast< uint8_t
          >( static_cast< uint8_t >( static_cast< uint8_t >( core_alu_z_flag << uint8_t
         (1U) ) | static_cast< uint8_t >( core_alu_alu_cout ) ) | static_cast< uint8_t
@@ -746,19 +746,6 @@ void m6502::hif_cone_core_alu_jrg_ld()
 void m6502::hif_cone_core_alu_ld()
 {
     hif_cone_core_sm_opcode();
-    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
-        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
-        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
-         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
-    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
-         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
-         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
-         core_sm_opcode == uint8_t(246U);
-    core_sm_abs_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
-         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
-         & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
-         core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
-         == uint8_t(12U);
     core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
          uint8_t(15U);
     core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
@@ -772,22 +759,55 @@ void m6502::hif_cone_core_alu_ld()
     core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
         (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
         ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
+        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
+        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
+         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
+    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
+         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
+         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
+         core_sm_opcode == uint8_t(246U);
+    core_sm_abs_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
+         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
+         & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
+         core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
+         == uint8_t(12U);
     core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
         ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_abx_rmw_addr();
-    hif_cone_core_sm_type1_read();
-    hif_cone_core_sm_type2_read();
-    hif_cone_core_sm_type3_read();
-    hif_cone_core_sm_lda_op();
-    hif_cone_core_sm_state();
-    hif_cone_core_sm_ldx_op();
-    hif_cone_core_sm_ldy_op();
     hif_cone_core_sm_trb_op();
     hif_cone_core_sm_tsb_op();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_state();
+    hif_cone_core_sm_abx_rmw_addr();
+    hif_cone_core_sm_type1_read();
+    hif_cone_core_sm_type2_read();
+    hif_cone_core_sm_type3_read();
+    core_sm_kregi_load = (core_sm_type1_read == true || core_sm_type3_read == true
+         || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_opcode
+         == uint8_t(124U) || static_cast< bool >( core_sm_state & uint8_t(1U) )
+         == true && core_sm_opcode == uint8_t(158U) || static_cast< bool >( static_cast<
+         uint8_t >( core_sm_state >> uint8_t(2U) ) & uint8_t(1U) ) == true && core_sm_bbx_op
+         == true || (core_sm_trb_op == true || core_sm_tsb_op == true) && core_sm_type2_read
+         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
+         core_sm_rel_addr == true || static_cast< bool >( core_sm_state & uint8_t
+        (1U) ) == true && core_sm_zpx_rmw_addr == true || static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true && core_sm_abx_rmw_addr == true || static_cast<
+         bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_1_addr ==
+         true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_3_addr
+         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
+         core_sm_abx_1_addr == true || static_cast< bool >( core_sm_state & uint8_t
+        (1U) ) == true && core_sm_abx_3_addr == true || static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true && core_sm_aby_1_addr == true || static_cast< bool
+         >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t(1U
+        ) ) == true && core_sm_iny_1_addr == true || static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true && core_sm_inx_1_addr == true) && hif_a2t_data.rdy
+         == true || core_sm_resetl == true;
+    hif_cone_core_sm_ldx_op();
+    hif_cone_core_sm_ldy_op();
+    hif_cone_core_sm_lda_op();
     core_sm_jregi_load = (!(core_sm_trb_op == true || core_sm_tsb_op == true) &&
          core_sm_type2_read == true || static_cast< bool >( static_cast< uint8_t
          >( core_sm_state >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode
@@ -845,26 +865,6 @@ void m6502::hif_cone_core_alu_ld()
          & uint8_t(1U) ) == true || static_cast< bool >( static_cast< uint8_t >
         ( core_sm_state >> uint8_t(1U) ) & uint8_t(1U) ) == true) && core_sm_rel_addr
          == true) && hif_a2t_data.rdy == true || core_sm_resetl == true;
-    core_sm_kregi_load = (core_sm_type1_read == true || core_sm_type3_read == true
-         || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_opcode
-         == uint8_t(124U) || static_cast< bool >( core_sm_state & uint8_t(1U) )
-         == true && core_sm_opcode == uint8_t(158U) || static_cast< bool >( static_cast<
-         uint8_t >( core_sm_state >> uint8_t(2U) ) & uint8_t(1U) ) == true && core_sm_bbx_op
-         == true || (core_sm_trb_op == true || core_sm_tsb_op == true) && core_sm_type2_read
-         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
-         core_sm_rel_addr == true || static_cast< bool >( core_sm_state & uint8_t
-        (1U) ) == true && core_sm_zpx_rmw_addr == true || static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true && core_sm_abx_rmw_addr == true || static_cast<
-         bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_1_addr ==
-         true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_3_addr
-         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
-         core_sm_abx_1_addr == true || static_cast< bool >( core_sm_state & uint8_t
-        (1U) ) == true && core_sm_abx_3_addr == true || static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true && core_sm_aby_1_addr == true || static_cast< bool
-         >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t(1U
-        ) ) == true && core_sm_iny_1_addr == true || static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true && core_sm_inx_1_addr == true) && hif_a2t_data.rdy
-         == true || core_sm_resetl == true;
     core_alu_ld = static_cast< uint8_t >( static_cast< uint8_t >( core_sm_jrego_load
          << uint8_t(1U) ) | static_cast< uint8_t >( core_sm_jregi_load ) ) | static_cast<
          uint8_t >( static_cast< uint8_t >( static_cast< uint8_t >( core_sm_kregi_load
@@ -894,8 +894,6 @@ void m6502::hif_cone_core_alu_outl()
          ) ) << uint8_t(1U) ) | static_cast< uint8_t >( static_cast< bool >( static_cast<
          uint8_t >( core_alu_kreg >> uint8_t(7U) ) & uint8_t(1U) ) ) ) << uint8_t
         (1U) ) | uint8_t(1U);
-    core_alu_add_cin = static_cast< uint16_t >( core_alu_ctl >> uint16_t(4U) ) &
-         uint16_t(1U);
     core_alu_add_b = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(6U) ) & uint16_t(3U) ) == uint8_t(0U) ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t
@@ -915,6 +913,8 @@ void m6502::hif_cone_core_alu_outl()
          ) ) << uint8_t(1U) ) | static_cast< uint8_t >( core_alu_add_sub ) ) <<
          uint8_t(1U) ) | static_cast< uint8_t >( core_alu_add_sub ) ) << uint8_t
         (1U) ) | static_cast< uint8_t >( core_alu_add_sub );
+    core_alu_add_cin = static_cast< uint16_t >( core_alu_ctl >> uint16_t(4U) ) &
+         uint16_t(1U);
     core_alu_jreg = core_alu_jrg_ido;
     core_alu_adder_addl_cry_partial0 = core_alu_add_cin;
     core_alu_adder_b_sub = core_alu_add_b ^ core_alu_adder_sub_v;
@@ -1005,17 +1005,17 @@ void m6502::hif_cone_core_alu_outl()
          bool >( static_cast< bool >( static_cast< uint8_t >( core_alu_adder_b_sub
          >> uint8_t(4U) ) & uint8_t(1U) ) ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_jreg >> uint8_t(4U) ) & uint8_t(1U) ) );
+    core_alu_add_out_4 = core_alu_adder_addh_sum_partial0;
+    core_alu_add_out_3 = core_alu_adder_addl_sum_partial3;
+    core_alu_add_out_5 = core_alu_adder_addh_sum_partial1;
+    core_alu_add_out_0 = core_alu_adder_addl_sum_partial0;
+    core_alu_add_out_2 = core_alu_adder_addl_sum_partial2;
+    core_alu_add_out_1 = core_alu_adder_addl_sum_partial1;
+    core_alu_add_out_7 = core_alu_adder_addh_sum_partial3;
+    core_alu_add_out_6 = core_alu_adder_addh_sum_partial2;
     core_alu_add_cout4 = core_alu_adder_cout4l;
     core_alu_bcd_en = static_cast< uint16_t >( core_alu_ctl >> uint16_t(3U) ) &
          uint16_t(1U);
-    core_alu_add_out_1 = core_alu_adder_addl_sum_partial1;
-    core_alu_add_out_4 = core_alu_adder_addh_sum_partial0;
-    core_alu_add_out_7 = core_alu_adder_addh_sum_partial3;
-    core_alu_add_out_3 = core_alu_adder_addl_sum_partial3;
-    core_alu_add_out_2 = core_alu_adder_addl_sum_partial2;
-    core_alu_add_out_5 = core_alu_adder_addh_sum_partial1;
-    core_alu_add_out_6 = core_alu_adder_addh_sum_partial2;
-    core_alu_add_out_0 = core_alu_adder_addl_sum_partial0;
     core_alu_bcd_lo_adj = (!(!core_alu_add_out_1 && !core_alu_add_out_2) && core_alu_add_out_3
          || core_alu_add_cout4) && (!core_alu_add_sub && core_alu_bcd_en);
     core_alu_bcd_lo_adj_sub = core_alu_add_sub && core_alu_bcd_en && !core_alu_add_cout4;
@@ -1051,9 +1051,17 @@ void m6502::hif_cone_core_alu_outl()
          !core_alu_add_out_5) && core_alu_add_out_7 || core_alu_add_cout) && (!core_alu_add_sub
          && core_alu_bcd_en);
     core_alu_bcd_hi_adj_sub = core_alu_add_sub && core_alu_bcd_en && !core_alu_add_cout;
-    core_alu_bcd_addh_cry_partial0_0 = core_alu_bcd_cin4l;
     core_alu_bcd_b_partial0 = core_alu_bcd_hi_adj_sub == true ? uint8_t(10U) : 
         (core_alu_bcd_hi_adj == true ? uint8_t(6U) : uint8_t(0U));
+    core_alu_bcd_addh_cry_partial0_0 = core_alu_bcd_cin4l;
+    core_alu_dcd_partial7 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(7U);
+    core_alu_dcd_partial6 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(6U);
+    core_alu_dcd_partial5 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(5U);
+    core_alu_dcd_partial4 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(4U);
     core_alu_dcd_partial3 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(3U);
     core_alu_dcd_partial2 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
@@ -1065,32 +1073,19 @@ void m6502::hif_cone_core_alu_outl()
     core_alu_bcd_addh_cry_partial1_0 = static_cast< bool >( core_alu_bcd_b_partial0
          & uint8_t(1U) ) && core_alu_add_out_4 || core_alu_add_out_4 && core_alu_bcd_addh_cry_partial0_0
          || static_cast< bool >( core_alu_bcd_b_partial0 & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial0_0;
-    core_alu_dcd_partial7 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(7U);
-    core_alu_dcd_partial6 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(6U);
-    core_alu_dcd_partial5 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(5U);
-    core_alu_dcd_partial4 = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(8U) ) & uint16_t(7U) ) == uint8_t(4U);
+    core_alu_dcd_4 = core_alu_dcd_partial4;
+    core_alu_dcd_3 = core_alu_dcd_partial3;
+    core_alu_dcd_2 = core_alu_dcd_partial2;
+    core_alu_dcd_1 = core_alu_dcd_partial1;
+    core_alu_dcd_0 = core_alu_dcd_partial0;
+    core_alu_dcd_5 = core_alu_dcd_partial5;
+    core_alu_dcd_7 = core_alu_dcd_partial7;
+    core_alu_dcd_6 = core_alu_dcd_partial6;
     core_alu_bcd_addh_cry_partial2_0 = static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(1U) ) & uint8_t(1U) ) && core_alu_add_out_5
          || core_alu_add_out_5 && core_alu_bcd_addh_cry_partial1_0 || static_cast<
          bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(1U)
          ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial1_0;
-    core_alu_dcd_6 = core_alu_dcd_partial6;
-    core_alu_dcd_1 = core_alu_dcd_partial1;
-    core_alu_dcd_5 = core_alu_dcd_partial5;
-    core_alu_dcd_4 = core_alu_dcd_partial4;
-    core_alu_dcd_0 = core_alu_dcd_partial0;
-    core_alu_dcd_3 = core_alu_dcd_partial3;
-    core_alu_dcd_2 = core_alu_dcd_partial2;
-    core_alu_dcd_7 = core_alu_dcd_partial7;
-    core_alu_bcd_addh_cry_partial3_0 = static_cast< bool >( static_cast< uint8_t
-         >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) && core_alu_add_out_6
-         || core_alu_add_out_6 && core_alu_bcd_addh_cry_partial2_0 || static_cast<
-         bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(2U)
-         ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial2_0;
     core_alu_log_b_preinv = static_cast< uint8_t >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(6U) ) & uint16_t(3U) ) == uint8_t(0U) ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t
@@ -1107,6 +1102,11 @@ void m6502::hif_cone_core_alu_outl()
         (6U) ) & uint16_t(3U) ) == uint8_t(2U) ? core_alu_kreg : (static_cast< uint8_t
          >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(6U) ) & uint16_t(3U
         ) ) == uint8_t(3U) ? core_alu_kreg : uint8_t(0U))));
+    core_alu_bcd_addh_cry_partial3_0 = static_cast< bool >( static_cast< uint8_t
+         >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) && core_alu_add_out_6
+         || core_alu_add_out_6 && core_alu_bcd_addh_cry_partial2_0 || static_cast<
+         bool >( static_cast< uint8_t >( core_alu_bcd_b_partial0 >> uint8_t(2U)
+         ) & uint8_t(1U) ) && core_alu_bcd_addh_cry_partial2_0;
     core_alu_log_ctl = static_cast< uint8_t >( core_alu_ctl ) & uint8_t(7U);
     core_alu_bcd_addh_sum_partial3_0 = core_alu_bcd_addh_cry_partial3_0 ^ static_cast<
          bool >( core_alu_add_out_7 ^ static_cast< bool >( static_cast< uint8_t
@@ -1114,6 +1114,16 @@ void m6502::hif_cone_core_alu_outl()
     core_alu_bcd_addh_sum_partial2_0 = core_alu_bcd_addh_cry_partial2_0 ^ static_cast<
          bool >( core_alu_add_out_6 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(2U) ) & uint8_t(1U) ) );
+    core_alu_log_b = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
+         >> uint16_t(11U) ) & uint16_t(1U) ) == true ? static_cast< uint8_t >( ~core_alu_log_b_preinv
+         ) : core_alu_log_b_preinv;
+    core_alu_log_cin = core_alu_add_cin;
+    core_alu_bcd_addl_sum_partial1_0 = core_alu_bcd_addl_cry_partial1_0 ^ static_cast<
+         bool >( core_alu_add_out_1 ^ static_cast< bool >( static_cast< uint8_t
+         >( core_alu_bcd_b_partial1 >> uint8_t(1U) ) & uint8_t(1U) ) );
+    core_alu_bcd_addl_sum_partial0_0 = core_alu_bcd_addl_cry_partial0_0 ^ static_cast<
+         bool >( core_alu_add_out_0 ^ static_cast< bool >( core_alu_bcd_b_partial1
+         & uint8_t(1U) ) );
     core_alu_bcd_addh_sum_partial1_0 = core_alu_bcd_addh_cry_partial1_0 ^ static_cast<
          bool >( core_alu_add_out_5 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial0 >> uint8_t(1U) ) & uint8_t(1U) ) );
@@ -1126,16 +1136,6 @@ void m6502::hif_cone_core_alu_outl()
     core_alu_bcd_addl_sum_partial2_0 = core_alu_bcd_addl_cry_partial2_0 ^ static_cast<
          bool >( core_alu_add_out_2 ^ static_cast< bool >( static_cast< uint8_t
          >( core_alu_bcd_b_partial1 >> uint8_t(2U) ) & uint8_t(1U) ) );
-    core_alu_log_b = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
-         >> uint16_t(11U) ) & uint16_t(1U) ) == true ? static_cast< uint8_t >( ~core_alu_log_b_preinv
-         ) : core_alu_log_b_preinv;
-    core_alu_log_cin = core_alu_add_cin;
-    core_alu_bcd_addl_sum_partial1_0 = core_alu_bcd_addl_cry_partial1_0 ^ static_cast<
-         bool >( core_alu_add_out_1 ^ static_cast< bool >( static_cast< uint8_t
-         >( core_alu_bcd_b_partial1 >> uint8_t(1U) ) & uint8_t(1U) ) );
-    core_alu_bcd_addl_sum_partial0_0 = core_alu_bcd_addl_cry_partial0_0 ^ static_cast<
-         bool >( core_alu_add_out_0 ^ static_cast< bool >( core_alu_bcd_b_partial1
-         & uint8_t(1U) ) );
     core_alu_log_out = static_cast< uint8_t >( core_alu_log_ctl & uint8_t(7U) )
          == uint8_t(2U) ? static_cast< uint8_t >( static_cast< uint8_t >( static_cast<
          uint8_t >( core_alu_jreg & uint8_t(127U) ) << uint8_t(1U) ) | static_cast<
@@ -1150,14 +1150,14 @@ void m6502::hif_cone_core_alu_outl()
          & uint8_t(7U) ) == uint8_t(6U) ? static_cast< uint8_t >( core_alu_jreg
          ^ core_alu_log_b ) : static_cast< uint8_t >( core_alu_log_b & static_cast<
          uint8_t >( ~core_alu_jreg ) )))));
-    core_alu_bcd_out_1 = core_alu_bcd_addl_sum_partial1_0;
-    core_alu_bcd_out_0 = core_alu_bcd_addl_sum_partial0_0;
-    core_alu_bcd_out_7 = core_alu_bcd_addh_sum_partial3_0;
-    core_alu_bcd_out_6 = core_alu_bcd_addh_sum_partial2_0;
-    core_alu_bcd_out_4 = core_alu_bcd_addh_sum_partial0_0;
-    core_alu_bcd_out_5 = core_alu_bcd_addh_sum_partial1_0;
     core_alu_bcd_out_3 = core_alu_bcd_addl_sum_partial3_0;
     core_alu_bcd_out_2 = core_alu_bcd_addl_sum_partial2_0;
+    core_alu_bcd_out_4 = core_alu_bcd_addh_sum_partial0_0;
+    core_alu_bcd_out_5 = core_alu_bcd_addh_sum_partial1_0;
+    core_alu_bcd_out_6 = core_alu_bcd_addh_sum_partial2_0;
+    core_alu_bcd_out_7 = core_alu_bcd_addh_sum_partial3_0;
+    core_alu_bcd_out_1 = core_alu_bcd_addl_sum_partial1_0;
+    core_alu_bcd_out_0 = core_alu_bcd_addl_sum_partial0_0;
     core_alu_alu_outl = static_cast< bool >( static_cast< uint16_t >( core_alu_ctl
          >> uint16_t(5U) ) & uint16_t(1U) ) == true ? uint8_t(0U) : (static_cast<
          uint8_t >( static_cast< uint16_t >( core_alu_ctl >> uint16_t(1U) ) & uint16_t
@@ -1184,10 +1184,6 @@ void m6502::hif_cone_core_aregl()
 void m6502::hif_cone_core_domux_sel()
 {
     hif_cone_core_sm_opcode();
-    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
-         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
-         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
-         core_sm_opcode == uint8_t(246U);
     core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
          uint8_t(15U);
     core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
@@ -1197,63 +1193,24 @@ void m6502::hif_cone_core_domux_sel()
     core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
         (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
         ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
+         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
+         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
+         core_sm_opcode == uint8_t(246U);
+    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
+        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
     core_sm_acc_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
          >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
          & uint8_t(31U) ) == uint8_t(10U);
-    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
-        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
     core_sm_stx_op = core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t
         (150U) || core_sm_opcode == uint8_t(142U);
     core_sm_sty_op = core_sm_opcode == uint8_t(132U) || core_sm_opcode == uint8_t
         (148U) || core_sm_opcode == uint8_t(140U);
-    hif_cone_core_sm_type1_read();
-    hif_cone_core_sm_type2_read();
-    hif_cone_core_sm_type3_read();
-    hif_cone_core_sm_state();
-    hif_cone_core_sm_bit_op();
-    hif_cone_core_sm_trb_op();
-    hif_cone_core_sm_tsb_op();
-    core_sm_domux_001 = core_sm_opcode == uint8_t(168U) || core_sm_opcode == uint8_t
-        (170U) || core_sm_type1_read == true || static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true && core_sm_acc_addr == true || (core_sm_trb_op
-         == true || core_sm_tsb_op == true) && core_sm_type2_read == true || core_sm_bit_op
-         == true && core_sm_type3_read == true || (core_sm_opcode == uint8_t(26U
-        ) || core_sm_opcode == uint8_t(58U)) && static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true || static_cast< bool >( static_cast< uint8_t >
-        ( core_sm_state >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode
-         == uint8_t(72U) ? uint8_t(1U) : uint8_t(0U);
-    core_sm_domux_010 = static_cast< bool >( static_cast< uint8_t >( core_sm_state
-         >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(8U
-        ) || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
-        (3U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(0U) ? uint8_t
-        (2U) : uint8_t(0U);
-    core_sm_domux_011 = core_sm_opcode == uint8_t(186U) ? uint8_t(3U) : uint8_t
-        (0U);
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_abx_rmw_addr();
-    hif_cone_core_sm_cpx_op();
-    hif_cone_core_sm_abx_1_addr();
-    core_sm_domux_100 = static_cast< bool >( static_cast< uint8_t >( core_sm_state
-         >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(218U
-        ) || core_sm_cpx_op == true && core_sm_type3_read == true || core_sm_stx_op
-         == true && core_sm_type3_read == true || core_sm_opcode == uint8_t(138U
-        ) || core_sm_opcode == uint8_t(154U) || (core_sm_opcode == uint8_t(202U
-        ) || core_sm_opcode == uint8_t(232U)) && static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true || static_cast< bool >( core_sm_state & uint8_t
-        (1U) ) == true && core_sm_opcode == uint8_t(124U) || static_cast< bool >
-        ( core_sm_state & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(158U
-        ) || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_rmw_addr
-         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
-         core_sm_abx_rmw_addr == true || static_cast< bool >( core_sm_state & uint8_t
-        (1U) ) == true && core_sm_inx_1_addr == true || static_cast< bool >( core_sm_state
-         & uint8_t(1U) ) == true && core_sm_abx_1_addr == true || static_cast< bool
-         >( core_sm_state & uint8_t(1U) ) == true && core_sm_abx_3_addr == true
-         || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_1_addr
-         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
-         core_sm_zpx_3_addr == true ? uint8_t(4U) : uint8_t(0U);
     hif_cone_core_sm_cpy_op();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_state();
+    hif_cone_core_sm_type3_read();
     core_sm_domux_101 = static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(90U
         ) || core_sm_opcode == uint8_t(152U) || core_sm_cpy_op == true && core_sm_type3_read
@@ -1284,6 +1241,49 @@ void m6502::hif_cone_core_domux_sel()
          bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(3U) ) & uint8_t
         (1U) ) == true && core_sm_opcode == uint8_t(32U) ? uint8_t(7U) : uint8_t
         (0U);
+    hif_cone_core_sm_bit_op();
+    hif_cone_core_sm_trb_op();
+    hif_cone_core_sm_tsb_op();
+    hif_cone_core_sm_type1_read();
+    hif_cone_core_sm_type2_read();
+    core_sm_domux_001 = core_sm_opcode == uint8_t(168U) || core_sm_opcode == uint8_t
+        (170U) || core_sm_type1_read == true || static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true && core_sm_acc_addr == true || (core_sm_trb_op
+         == true || core_sm_tsb_op == true) && core_sm_type2_read == true || core_sm_bit_op
+         == true && core_sm_type3_read == true || (core_sm_opcode == uint8_t(26U
+        ) || core_sm_opcode == uint8_t(58U)) && static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true || static_cast< bool >( static_cast< uint8_t >
+        ( core_sm_state >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode
+         == uint8_t(72U) ? uint8_t(1U) : uint8_t(0U);
+    core_sm_domux_010 = static_cast< bool >( static_cast< uint8_t >( core_sm_state
+         >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(8U
+        ) || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
+        (3U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(0U) ? uint8_t
+        (2U) : uint8_t(0U);
+    core_sm_domux_011 = core_sm_opcode == uint8_t(186U) ? uint8_t(3U) : uint8_t
+        (0U);
+    hif_cone_core_sm_cpx_op();
+    hif_cone_core_sm_abx_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_abx_rmw_addr();
+    core_sm_domux_100 = static_cast< bool >( static_cast< uint8_t >( core_sm_state
+         >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(218U
+        ) || core_sm_cpx_op == true && core_sm_type3_read == true || core_sm_stx_op
+         == true && core_sm_type3_read == true || core_sm_opcode == uint8_t(138U
+        ) || core_sm_opcode == uint8_t(154U) || (core_sm_opcode == uint8_t(202U
+        ) || core_sm_opcode == uint8_t(232U)) && static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true || static_cast< bool >( core_sm_state & uint8_t
+        (1U) ) == true && core_sm_opcode == uint8_t(124U) || static_cast< bool >
+        ( core_sm_state & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(158U
+        ) || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_rmw_addr
+         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
+         core_sm_abx_rmw_addr == true || static_cast< bool >( core_sm_state & uint8_t
+        (1U) ) == true && core_sm_inx_1_addr == true || static_cast< bool >( core_sm_state
+         & uint8_t(1U) ) == true && core_sm_abx_1_addr == true || static_cast< bool
+         >( core_sm_state & uint8_t(1U) ) == true && core_sm_abx_3_addr == true
+         || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true && core_sm_zpx_1_addr
+         == true || static_cast< bool >( core_sm_state & uint8_t(1U) ) == true &&
+         core_sm_zpx_3_addr == true ? uint8_t(4U) : uint8_t(0U);
     core_domux_sel = static_cast< uint8_t >( static_cast< uint8_t >( static_cast<
          uint8_t >( static_cast< uint8_t >( static_cast< uint8_t >( static_cast<
          uint8_t >( core_sm_domux_001 & uint8_t(7U) ) | static_cast< uint8_t >(
@@ -1348,6 +1348,25 @@ void m6502::hif_cone_core_pc_ctl()
         (151U) || core_sm_opcode == uint8_t(167U) || core_sm_opcode == uint8_t(183U
         ) || core_sm_opcode == uint8_t(199U) || core_sm_opcode == uint8_t(215U)
          || core_sm_opcode == uint8_t(231U) || core_sm_opcode == uint8_t(247U);
+    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(5U);
+    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
+         uint8_t(15U);
+    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(21U);
+    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(13U);
+    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(1U);
+    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(18U);
+    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
+        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
+        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
+         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
+    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
+        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
+        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
     core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
         (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
         ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
@@ -1366,25 +1385,13 @@ void m6502::hif_cone_core_pc_ctl()
          & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
          core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
          == uint8_t(12U);
-    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
-         uint8_t(15U);
-    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(5U);
-    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(21U);
-    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(13U);
-    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(1U);
-    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(18U);
-    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
-        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
-        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
-         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
-    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
-        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
-        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_imm_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(9U);
+    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
+        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
+    core_sm_imm_3_addr = core_sm_opcode == uint8_t(160U) || core_sm_opcode == uint8_t
+        (162U) || core_sm_opcode == uint8_t(224U) || core_sm_opcode == uint8_t(192U
+        ) || core_sm_opcode == uint8_t(137U);
     core_sm_branch_take = (core_sm_psrl_7 == false && static_cast< uint8_t >( static_cast<
          uint8_t >( core_sm_opcode >> uint8_t(5U) ) & uint8_t(7U) ) == uint8_t(0U
         ) || core_sm_psrl_7 == true && static_cast< uint8_t >( static_cast< uint8_t
@@ -1406,23 +1413,7 @@ void m6502::hif_cone_core_pc_ctl()
          !core_sm_z_flag_f == static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
          >> uint8_t(7U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
          >( core_sm_opcode >> uint8_t(3U) ) & uint8_t(1U) ) == true;
-    core_sm_imm_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(9U);
-    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
-        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
-    core_sm_imm_3_addr = core_sm_opcode == uint8_t(160U) || core_sm_opcode == uint8_t
-        (162U) || core_sm_opcode == uint8_t(224U) || core_sm_opcode == uint8_t(192U
-        ) || core_sm_opcode == uint8_t(137U);
     hif_cone_core_sm_state();
-    hif_cone_core_alu2op();
-    core_sm_pcl_alu_ld = core_sm_bbx_op == true && core_sm_branch_take == true &&
-         static_cast< bool >( static_cast< uint8_t >( core_alu2op >> uint8_t(2U
-        ) ) & uint8_t(1U) ) == false && static_cast< bool >( static_cast< uint8_t
-         >( core_sm_state >> uint8_t(3U) ) & uint8_t(1U) ) == true || core_sm_branch_take
-         == true && core_sm_rel_addr == true && static_cast< bool >( static_cast<
-         uint8_t >( core_alu2op >> uint8_t(2U) ) & uint8_t(1U) ) == false && static_cast<
-         bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t
-        (1U) ) == true;
     core_sm_pc_load = (static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(3U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(0U
         ) || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
@@ -1466,14 +1457,14 @@ void m6502::hif_cone_core_pc_ctl()
          & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(32U) || static_cast<
          bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(2U) ) & uint8_t
         (1U) ) == true && core_sm_opcode == uint8_t(108U);
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_abx_rmw_addr();
-    hif_cone_core_sm_syncl();
-    hif_cone_core_sm_interrupt();
     hif_cone_core_sm_irq_pend();
+    hif_cone_core_sm_interrupt();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_syncl();
+    hif_cone_core_sm_abx_rmw_addr();
     core_sm_pc_cen = (core_sm_interrupt == false && core_sm_opcode == uint8_t(0U
         ) && static_cast< bool >( core_sm_state & uint8_t(1U) ) == true || core_sm_nmi_pend
          == false && core_sm_syncl == true && core_sm_irq_pend == false || static_cast<
@@ -1532,6 +1523,15 @@ void m6502::hif_cone_core_pc_ctl()
          == true ? uint8_t(1U) : (static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(3U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(0U
         ) ? uint8_t(3U) : uint8_t(0U)));
+    hif_cone_core_alu2op();
+    core_sm_pcl_alu_ld = core_sm_bbx_op == true && core_sm_branch_take == true &&
+         static_cast< bool >( static_cast< uint8_t >( core_alu2op >> uint8_t(2U
+        ) ) & uint8_t(1U) ) == false && static_cast< bool >( static_cast< uint8_t
+         >( core_sm_state >> uint8_t(3U) ) & uint8_t(1U) ) == true || core_sm_branch_take
+         == true && core_sm_rel_addr == true && static_cast< bool >( static_cast<
+         uint8_t >( core_alu2op >> uint8_t(2U) ) & uint8_t(1U) ) == false && static_cast<
+         bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t
+        (1U) ) == true;
     core_pc_ctl = static_cast< uint8_t >( static_cast< uint8_t >( static_cast< uint8_t
          >( static_cast< uint8_t >( static_cast< uint8_t >( core_sm_pc_h_load <<
          uint8_t(1U) ) | static_cast< uint8_t >( core_sm_pc_cen ) ) | static_cast<
@@ -1595,6 +1595,25 @@ void m6502::hif_cone_core_rg_load()
         (151U) || core_sm_opcode == uint8_t(167U) || core_sm_opcode == uint8_t(183U
         ) || core_sm_opcode == uint8_t(199U) || core_sm_opcode == uint8_t(215U)
          || core_sm_opcode == uint8_t(231U) || core_sm_opcode == uint8_t(247U);
+    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(5U);
+    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
+         uint8_t(15U);
+    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(21U);
+    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(13U);
+    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(1U);
+    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(18U);
+    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
+        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
+        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
+         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
+    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
+        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
+        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
     core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
         (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
         ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
@@ -1613,35 +1632,16 @@ void m6502::hif_cone_core_rg_load()
          & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
          core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
          == uint8_t(12U);
-    core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
-         uint8_t(15U);
-    core_sm_zpg_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(5U);
-    core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(21U);
-    core_sm_abs_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(13U);
-    core_sm_inx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(1U);
-    core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(18U);
-    core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
-        (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
-        ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
-         || core_sm_opcode == uint8_t(134U) || core_sm_opcode == uint8_t(100U);
-    core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
-        (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
-        ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
     core_sm_acc_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
          >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
          & uint8_t(31U) ) == uint8_t(10U);
-    hif_cone_core_sm_adc_op();
-    hif_cone_core_sm_lda_op();
     hif_cone_core_sm_ora_op();
     hif_cone_core_sm_and_op();
     hif_cone_core_sm_eor_op();
     hif_cone_core_sm_sbc_op();
     hif_cone_core_sm_state();
+    hif_cone_core_sm_adc_op();
+    hif_cone_core_sm_lda_op();
     core_sm_aregd_load = (core_sm_adc_op == true || core_sm_ora_op == true || core_sm_eor_op
          == true || core_sm_and_op == true || core_sm_sbc_op == true || core_sm_lda_op
          == true || core_sm_acc_addr == true) && core_sm_type1_calc == true || core_sm_resetl
@@ -1695,9 +1695,9 @@ void m6502::hif_cone_core_rg_load()
          uint8_t >( core_sm_state >> uint8_t(2U) ) & uint8_t(1U) ) == true && core_sm_opcode
          == uint8_t(122U) || static_cast< bool >( core_sm_state & uint8_t(1U) )
          == true && core_sm_opcode == uint8_t(168U);
-    hif_cone_core_sm_abx_3_addr();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
+    hif_cone_core_sm_abx_3_addr();
     core_sm_lreg_load = (static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_abs_1_addr == true
          || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
@@ -1794,10 +1794,6 @@ void m6502::hif_cone_core_sm_alu_ctl_d()
         (151U) || core_sm_opcode == uint8_t(167U) || core_sm_opcode == uint8_t(183U
         ) || core_sm_opcode == uint8_t(199U) || core_sm_opcode == uint8_t(215U)
          || core_sm_opcode == uint8_t(231U) || core_sm_opcode == uint8_t(247U);
-    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
-         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
-         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
-         core_sm_opcode == uint8_t(246U);
     core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
          uint8_t(15U);
     core_sm_zpx_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
@@ -1809,22 +1805,26 @@ void m6502::hif_cone_core_sm_alu_ctl_d()
     core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
         (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
         ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_zpx_rmw_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
+         >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
+         & uint8_t(31U) ) == uint8_t(22U) || core_sm_opcode == uint8_t(214U) ||
+         core_sm_opcode == uint8_t(246U);
     core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
         ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_abx_rmw_addr();
-    hif_cone_core_sm_type1_read();
-    hif_cone_core_sm_type3_read();
-    hif_cone_core_sm_lda_op();
     hif_cone_core_sm_cpx_op();
     hif_cone_core_sm_cpy_op();
-    hif_cone_core_sm_state();
     hif_cone_core_sm_bit_op();
     hif_cone_core_sm_trb_op();
     hif_cone_core_sm_tsb_op();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_state();
+    hif_cone_core_sm_abx_rmw_addr();
+    hif_cone_core_sm_type1_read();
+    hif_cone_core_sm_type3_read();
+    hif_cone_core_sm_lda_op();
     core_sm_alu_ctl_bsel = static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_rel_addr == true ||
          static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(3U
@@ -1856,13 +1856,13 @@ void m6502::hif_cone_core_sm_alu_ctl_d()
         (1U) ) == true && core_sm_zpx_3_addr == true || static_cast< bool >( core_sm_state
          & uint8_t(1U) ) == true && core_sm_zpx_1_addr == true ? uint8_t(2U) : uint8_t
         (0U));
-    hif_cone_core_sm_type2_read();
-    hif_cone_core_sm_adc_op();
     hif_cone_core_sm_cmp_op();
     hif_cone_core_sm_sbc_op();
     hif_cone_core_sm_rol_op();
     hif_cone_core_sm_ror_op();
     hif_cone_core_sm_inc_op();
+    hif_cone_core_sm_type2_read();
+    hif_cone_core_sm_adc_op();
     hif_cone_core_alu2op();
     core_sm_alu_ctl_carry = (core_sm_type2_calc == true || core_sm_type2_read ==
          true || core_sm_type1_read == true) && (core_sm_rol_op == true || core_sm_ror_op
@@ -2171,8 +2171,8 @@ void m6502::hif_cone_core_sm_state()
 
 void m6502::hif_cone_core_sm_state_in()
 {
-    hif_cone_core_sm_opcode_ld();
     hif_cone_core_sm_state();
+    hif_cone_core_sm_opcode_ld();
     core_sm_state_in = core_sm_opcode_ld == true ? uint8_t(1U) : static_cast< uint8_t
          >( static_cast< uint8_t >( core_sm_state & uint8_t(127U) ) << uint8_t(1U
         ) );
@@ -2184,6 +2184,12 @@ void m6502::hif_cone_core_sm_syncl()
     hif_cone_core_sm_opcode();
     core_sm_bbx_op = static_cast< uint8_t >( core_sm_opcode & uint8_t(15U) ) ==
          uint8_t(15U);
+    core_sm_imp2psr = core_sm_opcode == uint8_t(24U) || core_sm_opcode == uint8_t
+        (56U) || core_sm_opcode == uint8_t(88U) || core_sm_opcode == uint8_t(120U
+        ) || core_sm_opcode == uint8_t(184U) || core_sm_opcode == uint8_t(216U)
+         || core_sm_opcode == uint8_t(248U);
+    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
+        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
     core_sm_branch_take = (core_sm_psrl_7 == false && static_cast< uint8_t >( static_cast<
          uint8_t >( core_sm_opcode >> uint8_t(5U) ) & uint8_t(7U) ) == uint8_t(0U
         ) || core_sm_psrl_7 == true && static_cast< uint8_t >( static_cast< uint8_t
@@ -2205,15 +2211,9 @@ void m6502::hif_cone_core_sm_syncl()
          !core_sm_z_flag_f == static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
          >> uint8_t(7U) ) & uint8_t(1U) ) && static_cast< bool >( static_cast< uint8_t
          >( core_sm_opcode >> uint8_t(3U) ) & uint8_t(1U) ) == true;
-    core_sm_imp2psr = core_sm_opcode == uint8_t(24U) || core_sm_opcode == uint8_t
-        (56U) || core_sm_opcode == uint8_t(88U) || core_sm_opcode == uint8_t(120U
-        ) || core_sm_opcode == uint8_t(184U) || core_sm_opcode == uint8_t(216U)
-         || core_sm_opcode == uint8_t(248U);
-    core_sm_rel_addr = core_sm_opcode == uint8_t(128U) || static_cast< uint8_t >
-        ( core_sm_opcode & uint8_t(31U) ) == uint8_t(16U);
-    hif_cone_core_sm_state();
     hif_cone_core_sm_imp2tx();
     hif_cone_core_sm_imp2inc();
+    hif_cone_core_sm_state();
     core_sm_syncl = static_cast< bool >( static_cast< uint8_t >( core_sm_state >>
          uint8_t(4U) ) & uint8_t(1U) ) == true && core_sm_opcode == uint8_t(64U
         ) || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
@@ -2282,15 +2282,15 @@ void m6502::hif_cone_core_sm_type1_read()
         ) == uint8_t(1U);
     core_sm_ind_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
         ) == uint8_t(18U);
+    core_sm_imm_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
+        ) == uint8_t(9U);
     core_sm_acc_addr = static_cast< bool >( static_cast< uint8_t >( core_sm_opcode
          >> uint8_t(7U) ) & uint8_t(1U) ) == false && static_cast< uint8_t >( core_sm_opcode
          & uint8_t(31U) ) == uint8_t(10U);
-    core_sm_imm_1_addr = static_cast< uint8_t >( core_sm_opcode & uint8_t(31U) 
-        ) == uint8_t(9U);
-    hif_cone_core_sm_state();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_state();
     core_sm_type1_read = static_cast< bool >( core_sm_state & uint8_t(1U) ) == true
          && core_sm_acc_addr == true || static_cast< bool >( core_sm_state & uint8_t
         (1U) ) == true && core_sm_imm_1_addr == true || static_cast< bool >( static_cast<
@@ -2336,8 +2336,8 @@ void m6502::hif_cone_core_sm_type2_read()
          & uint8_t(31U) ) == uint8_t(14U) || core_sm_opcode == uint8_t(206U) ||
          core_sm_opcode == uint8_t(238U) || core_sm_opcode == uint8_t(28U) || core_sm_opcode
          == uint8_t(12U);
-    hif_cone_core_sm_abx_rmw_addr();
     hif_cone_core_sm_state();
+    hif_cone_core_sm_abx_rmw_addr();
     core_sm_type2_read = static_cast< bool >( static_cast< uint8_t >( core_sm_state
          >> uint8_t(1U) ) & uint8_t(1U) ) == true && core_sm_zpg_rmw_addr == true
          || static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
@@ -2352,10 +2352,6 @@ void m6502::hif_cone_core_sm_type2_read()
 void m6502::hif_cone_core_sm_type3_read()
 {
     hif_cone_core_sm_opcode();
-    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
-        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
-        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
-         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
     core_sm_zpg_3_addr = core_sm_opcode == uint8_t(36U) || core_sm_opcode == uint8_t
         (132U) || core_sm_opcode == uint8_t(164U) || core_sm_opcode == uint8_t(196U
         ) || core_sm_opcode == uint8_t(228U) || core_sm_opcode == uint8_t(166U)
@@ -2363,6 +2359,10 @@ void m6502::hif_cone_core_sm_type3_read()
     core_sm_zpx_3_addr = core_sm_opcode == uint8_t(180U) || core_sm_opcode == uint8_t
         (182U) || core_sm_opcode == uint8_t(150U) || core_sm_opcode == uint8_t(148U
         ) || core_sm_opcode == uint8_t(52U) || core_sm_opcode == uint8_t(116U);
+    core_sm_abs_3_addr = core_sm_opcode == uint8_t(140U) || core_sm_opcode == uint8_t
+        (142U) || core_sm_opcode == uint8_t(236U) || core_sm_opcode == uint8_t(204U
+        ) || core_sm_opcode == uint8_t(44U) || core_sm_opcode == uint8_t(174U) ||
+         core_sm_opcode == uint8_t(172U) || core_sm_opcode == uint8_t(156U);
     core_sm_imm_3_addr = core_sm_opcode == uint8_t(160U) || core_sm_opcode == uint8_t
         (162U) || core_sm_opcode == uint8_t(224U) || core_sm_opcode == uint8_t(192U
         ) || core_sm_opcode == uint8_t(137U);
@@ -2865,8 +2865,8 @@ m6502::m6502() :
     flag_core_alu_jrg_ido(false),
     flag_core_alu_krg_ido(false),
     flag_core_pc_pc(false),
-    flag_core_sm_st_ido(false),
     flag_core_sm_opcd_ido(false),
+    flag_core_sm_st_ido(false),
     flag_core_sm_psrl_0(false),
     flag_core_sm_psrl_1(false),
     flag_core_sm_psrl_2(false),
@@ -2876,17 +2876,17 @@ m6502::m6502() :
     flag_core_sm_psrl_6(false),
     flag_core_sm_psrl_7(false),
     flag_core_drg_ido(false),
+    flag_core_adlmx_lrg_ido(false),
     flag_core_sm_type2_calc(false),
     flag_core_sm_type2_write(false),
-    flag_core_adlmx_lrg_ido(false),
     flag_core_dataol(false),
     flag_clk(false),
     flag_core_sm_wel_n(false),
+    flag_core_sm_z_flag_f(false),
+    flag_core_sm_branch_carry_f(false),
     flag_core_sm_type1_calc(false),
     flag_core_sm_type2_done(false),
     flag_core_sm_type3_calc(false),
-    flag_core_sm_z_flag_f(false),
-    flag_core_sm_branch_carry_f(false),
     flag_globact_process_4_executed(false),
     flag_core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xrg_ff1_core_yrg_ff1_core_adlmx_lrg_ff1_core_alu_jrg_ff1_core_alu_krg_ff1_core_sm_elr_core_sm_misc_core_sm_pipe_core_sm_opcd_ff1_core_sm_st_ff1_executed
         (false),
@@ -3001,10 +3001,10 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
         hif_cone_core_drg_idi();
         core_drg_ido_new = core_drg_idi;
     }
-    hif_cone_core_reset();
     hif_cone_core_rg_load();
     hif_cone_core_sreg_up();
     hif_cone_core_sreg_cen();
+    hif_cone_core_reset();
     if (core_reset == true)
     {
         core_srg_dataol_new = uint8_t(0U);
@@ -3026,8 +3026,8 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     {
         core_srg_dataol_new = core_srg_dataol;
     }
-    hif_cone_core_reset();
     hif_cone_core_pc_ctl();
+    hif_cone_core_reset();
     if (core_reset == true)
     {
         core_pc_pc_new = uint16_t(65532U);
@@ -3049,8 +3049,8 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     {
         core_pc_pc_new = core_pc_pc;
     }
-    hif_cone_core_reset();
     hif_cone_core_pc_ctl();
+    hif_cone_core_reset();
     if (core_reset == true)
     {
         core_pc_hreg_new = uint8_t(252U);
@@ -3107,9 +3107,8 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     else
     {
-        hif_cone_core_sm_type3_read();
-        hif_cone_core_sm_adc_op();
-        hif_cone_core_sm_lda_op();
+        hif_cone_core_sm_imp2tx();
+        hif_cone_core_sm_imp2inc();
         hif_cone_core_sm_cmp_op();
         hif_cone_core_sm_cpx_op();
         hif_cone_core_sm_cpy_op();
@@ -3118,7 +3117,6 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
         hif_cone_core_sm_eor_op();
         hif_cone_core_sm_sbc_op();
         hif_cone_core_sm_asl_op();
-        hif_cone_core_sm_state();
         hif_cone_core_sm_lsr_op();
         hif_cone_core_sm_rol_op();
         hif_cone_core_sm_ror_op();
@@ -3127,9 +3125,11 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
         hif_cone_core_sm_ldx_op();
         hif_cone_core_sm_ldy_op();
         hif_cone_core_sm_bit_op();
+        hif_cone_core_sm_state();
+        hif_cone_core_sm_type3_read();
+        hif_cone_core_sm_adc_op();
+        hif_cone_core_sm_lda_op();
         hif_cone_core_sm_opcode();
-        hif_cone_core_sm_imp2tx();
-        hif_cone_core_sm_imp2inc();
         if (((core_sm_opcode == uint8_t(40U) || core_sm_opcode == uint8_t(64U))
              && static_cast< bool >( static_cast< uint8_t >( core_sm_state >> uint8_t
             (1U) ) & uint8_t(1U) ) == true || core_sm_bit_op == true && core_sm_type3_read
@@ -3169,11 +3169,11 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     else
     {
+        hif_cone_core_sm_sbc_op();
+        hif_cone_core_sm_bit_op();
+        hif_cone_core_sm_state();
         hif_cone_core_sm_type3_read();
         hif_cone_core_sm_adc_op();
-        hif_cone_core_sm_sbc_op();
-        hif_cone_core_sm_state();
-        hif_cone_core_sm_bit_op();
         hif_cone_core_sm_opcode();
         if (core_sm_sob_n_f == true && hif_a2t_data.sob_n == false)
         {
@@ -3231,8 +3231,8 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     else
     {
-        hif_cone_core_sm_state();
         hif_cone_core_sm_interrupt();
+        hif_cone_core_sm_state();
         hif_cone_core_sm_opcode();
         if (core_sm_opcode == uint8_t(64U) && hif_a2t_data.rdy == true && static_cast<
              bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t
@@ -3330,8 +3330,8 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     else
     {
-        hif_cone_core_sm_adc_op();
-        hif_cone_core_sm_lda_op();
+        hif_cone_core_sm_imp2tx();
+        hif_cone_core_sm_imp2inc();
         hif_cone_core_sm_cmp_op();
         hif_cone_core_sm_cpx_op();
         hif_cone_core_sm_cpy_op();
@@ -3340,7 +3340,6 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
         hif_cone_core_sm_eor_op();
         hif_cone_core_sm_sbc_op();
         hif_cone_core_sm_asl_op();
-        hif_cone_core_sm_state();
         hif_cone_core_sm_lsr_op();
         hif_cone_core_sm_rol_op();
         hif_cone_core_sm_ror_op();
@@ -3351,9 +3350,10 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
         hif_cone_core_sm_bit_op();
         hif_cone_core_sm_trb_op();
         hif_cone_core_sm_tsb_op();
+        hif_cone_core_sm_state();
+        hif_cone_core_sm_adc_op();
+        hif_cone_core_sm_lda_op();
         hif_cone_core_sm_opcode();
-        hif_cone_core_sm_imp2tx();
-        hif_cone_core_sm_imp2inc();
         if ((core_sm_opcode == uint8_t(40U) || core_sm_opcode == uint8_t(64U)) &&
              hif_a2t_data.rdy == true && static_cast< bool >( static_cast< uint8_t
              >( core_sm_state >> uint8_t(1U) ) & uint8_t(1U) ) == true)
@@ -3394,16 +3394,16 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     else
     {
-        hif_cone_core_sm_adc_op();
         hif_cone_core_sm_cmp_op();
         hif_cone_core_sm_cpx_op();
         hif_cone_core_sm_cpy_op();
         hif_cone_core_sm_sbc_op();
         hif_cone_core_sm_asl_op();
-        hif_cone_core_sm_state();
         hif_cone_core_sm_lsr_op();
         hif_cone_core_sm_rol_op();
         hif_cone_core_sm_ror_op();
+        hif_cone_core_sm_state();
+        hif_cone_core_sm_adc_op();
         hif_cone_core_sm_opcode();
         if (core_sm_opcode == uint8_t(24U) && hif_a2t_data.rdy == true && static_cast<
              bool >( static_cast< uint8_t >( core_sm_state >> uint8_t(1U) ) & uint8_t
@@ -3449,9 +3449,9 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     {
         core_sm_reset_proc_new = false;
     }
+    hif_cone_core_sm_irq_pend();
     hif_cone_core_sm_state();
     hif_cone_core_sm_syncl();
-    hif_cone_core_sm_irq_pend();
     if (core_sm_irq_pend == true && core_sm_syncl == true && hif_a2t_data.rdy ==
          true)
     {
@@ -3486,13 +3486,13 @@ void m6502::core_drg_ff1_core_srg_process_0_core_pc_counter_core_arg_ff1_core_xr
     }
     core_sm_nmi2_new = core_sm_nmi1;
     core_sm_nmi1_new = !hif_a2t_data.nmi_n;
-    hif_cone_core_sm_abx_3_addr();
-    hif_cone_core_sm_abx_rmw_addr();
-    hif_cone_core_sm_state();
-    hif_cone_core_sm_opcode();
     hif_cone_core_sm_abx_1_addr();
     hif_cone_core_sm_aby_1_addr();
     hif_cone_core_sm_iny_1_addr();
+    hif_cone_core_sm_abx_3_addr();
+    hif_cone_core_sm_state();
+    hif_cone_core_sm_abx_rmw_addr();
+    hif_cone_core_sm_opcode();
     if (core_sm_resetl == true)
     {
         core_sm_addr_carry_new = false;
@@ -3933,8 +3933,8 @@ void m6502::flag_elaboration()
     flag_core_domx_process_executed = false;
     if (flag_core_xrg_ido || (flag_core_yrg_ido || (flag_core_srg_dataol || (flag_core_arg_ido
          || (flag_core_alu_ctl || (flag_core_alu_bcd_addl_cry_partial0_0 || (flag_core_alu_jrg_ido
-         || (flag_core_alu_krg_ido || (flag_core_pc_pc || (flag_core_sm_st_ido ||
-         (flag_core_sm_opcd_ido || (flag_core_sm_psrl_0 || (flag_core_sm_psrl_1
+         || (flag_core_alu_krg_ido || (flag_core_pc_pc || (flag_core_sm_opcd_ido
+         || (flag_core_sm_st_ido || (flag_core_sm_psrl_0 || (flag_core_sm_psrl_1
          || (flag_core_sm_psrl_2 || (flag_core_sm_psrl_3 || (flag_core_sm_psrl_4
          || (flag_core_sm_psrl_5 || (flag_core_sm_psrl_6 || flag_core_sm_psrl_7
         ))))))))))))))))))
@@ -3942,10 +3942,10 @@ void m6502::flag_elaboration()
         core_domx_process();
         flag_core_domx_process_executed = true;
     }
-    if (flag_core_alu_ctl || (flag_core_drg_ido || (flag_core_sm_st_ido || (flag_core_alu_bcd_addl_cry_partial0_0
-         || (flag_core_alu_jrg_ido || (flag_core_pc_pc || (flag_core_sm_opcd_ido
-         || (flag_core_alu_krg_ido || (flag_core_sm_type2_calc || (flag_core_sm_type2_write
-         || (flag_core_adlmx_lrg_ido || flag_core_srg_dataol)))))))))))
+    if (flag_core_alu_ctl || (flag_core_drg_ido || (flag_core_sm_opcd_ido || (flag_core_sm_st_ido
+         || (flag_core_pc_pc || (flag_core_alu_bcd_addl_cry_partial0_0 || (flag_core_alu_jrg_ido
+         || (flag_core_alu_krg_ido || (flag_core_adlmx_lrg_ido || (flag_core_srg_dataol
+         || (flag_core_sm_type2_calc || flag_core_sm_type2_write)))))))))))
     {
         globact_process();
     }
@@ -3957,16 +3957,16 @@ void m6502::flag_elaboration()
     {
         globact_process_1();
     }
-    if (flag_core_sm_type1_calc || (flag_core_sm_type2_done || (flag_core_sm_type3_calc
-         || (flag_core_sm_z_flag_f || (flag_core_sm_branch_carry_f || (flag_core_sm_st_ido
-         || (flag_core_sm_opcd_ido || (flag_core_sm_psrl_0 || (flag_core_sm_psrl_1
+    if (flag_core_sm_z_flag_f || (flag_core_sm_branch_carry_f || (flag_core_sm_opcd_ido
+         || (flag_core_sm_st_ido || (flag_core_sm_type1_calc || (flag_core_sm_type2_done
+         || (flag_core_sm_type3_calc || (flag_core_sm_psrl_0 || (flag_core_sm_psrl_1
          || (flag_core_sm_psrl_2 || (flag_core_sm_psrl_3 || (flag_core_sm_psrl_4
          || (flag_core_sm_psrl_5 || (flag_core_sm_psrl_6 || flag_core_sm_psrl_7
         ))))))))))))))
     {
         globact_process_2();
     }
-    if (flag_core_sm_st_ido || flag_core_sm_opcd_ido)
+    if (flag_core_sm_opcd_ido || flag_core_sm_st_ido)
     {
         globact_process_3();
     }

@@ -365,25 +365,25 @@ fmi2Status fmi2GetReal( fmi2Component c, const fmi2ValueReference * vr, size_t n
         switch (static_cast< int32_t >( vr[i] ))
         {
             case int32_t(0L):
-                value[i] = iostruct->accelerometer_V_reduced_0_dot_ddt;
-                break;
-            case int32_t(1L):
-                value[i] = iostruct->accelerometer_V_avx_ddt;
-                break;
-            case int32_t(2L):
-                value[i] = iostruct->accelerometer_V_avy_ddt;
-                break;
-            case int32_t(3L):
                 value[i] = iostruct->accelerometer_V_avz_ddt;
                 break;
-            case int32_t(4L):
+            case int32_t(1L):
                 value[i] = iostruct->accelerometer_V_reduced_1_dot_ddt;
                 break;
-            case int32_t(5L):
+            case int32_t(2L):
                 value[i] = iostruct->accelerometer_V_reduced_1_ddt;
                 break;
-            case int32_t(6L):
+            case int32_t(3L):
                 value[i] = iostruct->accelerometer_V_reduced_0_ddt;
+                break;
+            case int32_t(4L):
+                value[i] = iostruct->accelerometer_V_reduced_0_dot_ddt;
+                break;
+            case int32_t(5L):
+                value[i] = iostruct->accelerometer_V_avx_ddt;
+                break;
+            case int32_t(6L):
+                value[i] = iostruct->accelerometer_V_avy_ddt;
                 break;
             case int32_t(7L):
                 value[i] = iostruct->avz;
@@ -563,25 +563,25 @@ fmi2Status fmi2SetReal( fmi2Component c, const fmi2ValueReference * vr, size_t n
         switch (static_cast< int32_t >( vr[i] ))
         {
             case int32_t(0L):
-                iostruct->accelerometer_V_reduced_0_dot_ddt = value[i];
-                break;
-            case int32_t(1L):
-                iostruct->accelerometer_V_avx_ddt = value[i];
-                break;
-            case int32_t(2L):
-                iostruct->accelerometer_V_avy_ddt = value[i];
-                break;
-            case int32_t(3L):
                 iostruct->accelerometer_V_avz_ddt = value[i];
                 break;
-            case int32_t(4L):
+            case int32_t(1L):
                 iostruct->accelerometer_V_reduced_1_dot_ddt = value[i];
                 break;
-            case int32_t(5L):
+            case int32_t(2L):
                 iostruct->accelerometer_V_reduced_1_ddt = value[i];
                 break;
-            case int32_t(6L):
+            case int32_t(3L):
                 iostruct->accelerometer_V_reduced_0_ddt = value[i];
+                break;
+            case int32_t(4L):
+                iostruct->accelerometer_V_reduced_0_dot_ddt = value[i];
+                break;
+            case int32_t(5L):
+                iostruct->accelerometer_V_avx_ddt = value[i];
+                break;
+            case int32_t(6L):
+                iostruct->accelerometer_V_avy_ddt = value[i];
                 break;
             case int32_t(7L):
                 iostruct->avz = value[i];

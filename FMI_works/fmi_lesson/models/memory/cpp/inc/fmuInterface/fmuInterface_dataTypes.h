@@ -19,7 +19,7 @@
 #include "../memory.hpp"
 
 
-#define MODEL_GUID "3beea310-cc2d-473e-b817-a1ff21a8910e"
+#define MODEL_GUID "ba328cf2-b8cc-458e-9f7a-9d966b698d3b"
 
 
 #ifdef __cplusplus

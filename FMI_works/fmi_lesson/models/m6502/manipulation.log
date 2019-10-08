@@ -1,4 +1,4 @@
-[VERILOG2HIF] 15:58:52 - INFO: Running command:
+[VERILOG2HIF] 13:13:38 - INFO: Running command:
     verilog2hif verilog/add4rpl.v verilog/addsub8.v verilog/adh_mux.v verilog/adl_mux.v verilog/alu_log.v verilog/bcd_adj.v verilog/m6502.v verilog/m6502_org.v verilog/m6502alu.v verilog/mx81_8.v verilog/op_dcd.v verilog/prog_cnt.v verilog/rg8l.v verilog/rg8l2.v verilog/s_reg.v -o hif/design
 
 -- INFO: Parsing file: verilog/add4rpl.v Line:1
@@ -16,181 +16,181 @@
 -- INFO: Parsing file: verilog/rg8l.v Line:1
 -- INFO: Parsing file: verilog/rg8l2.v Line:1
 -- INFO: Parsing file: verilog/s_reg.v Line:1
-[VERILOG2HIF] 15:58:52 - INFO: Performing post-parsing refinements - step 1
-[VERILOG2HIF] 15:58:53 - INFO: Performing post-parsing refinements - step 2
-[VERILOG2HIF] 15:58:57 - INFO: Renaming conflicting declarations
-[VERILOG2HIF] 15:58:58 - INFO: Binding open ports (if any)
-[VERILOG2HIF] 15:59:00 - INFO: Performing post-parsing refinements - step 3
-[HIF] [flattenDesign] 15:59:01 - INFO: Flattening description
-[HIF] [flattenDesign] 15:59:08 - INFO: Simplifying flattened description
-[HIF] [flattenDesign] 15:59:12 - INFO: Flattening description
-[HIF] [flattenDesign] 15:59:13 - INFO: Simplifying flattened description
-[VERILOG2HIF] 15:59:15 - INFO: Performing standardization
-[VERILOG2HIF] 15:59:15 - INFO:    - STD 01: Simplifying source tree
-[VERILOG2HIF] 15:59:17 - INFO:    - STD 02: Prefixing source tree symbols
-[VERILOG2HIF] 15:59:19 - INFO:    - STD 03: Perform tree standardization
-[VERILOG2HIF] 15:59:37 - INFO:    - STD 04: Mapping destination tree standard symbols
-[VERILOG2HIF] 15:59:37 - INFO:    - STD 05: Simplifying destination tree -- 1
-[VERILOG2HIF] 15:59:41 - INFO:    - STD 06: Managing destination tree casts
-[VERILOG2HIF] 15:59:41 - INFO:    - STD 07: Simplifying destination tree -- 2
-[VERILOG2HIF] 15:59:42 - INFO:    - STD 08: Renaming destination tree forbidden names
-[VERILOG2HIF] 15:59:43 - INFO:    - STD 09: Final cleanup
-[VERILOG2HIF] 15:59:43 - INFO: Refining possible AMS units
-[VERILOG2HIF] 15:59:43 - INFO: Performing HIF description sanity checks
-[VERILOG2HIF] 15:59:43 - INFO: Performing final HIF sanity checks
-[VERILOG2HIF] 15:59:49 - INFO: HIF description written in: hif/design.hif.xml
-[VERILOG2HIF] 15:59:49 - INFO: HIF translation has been completed.
-[DDT] 15:59:49 - INFO: Running command:
+[VERILOG2HIF] 13:13:38 - INFO: Performing post-parsing refinements - step 1
+[VERILOG2HIF] 13:13:39 - INFO: Performing post-parsing refinements - step 2
+[VERILOG2HIF] 13:13:41 - INFO: Renaming conflicting declarations
+[VERILOG2HIF] 13:13:41 - INFO: Binding open ports (if any)
+[VERILOG2HIF] 13:13:43 - INFO: Performing post-parsing refinements - step 3
+[HIF] [flattenDesign] 13:13:44 - INFO: Flattening description
+[HIF] [flattenDesign] 13:13:49 - INFO: Simplifying flattened description
+[HIF] [flattenDesign] 13:13:51 - INFO: Flattening description
+[HIF] [flattenDesign] 13:13:51 - INFO: Simplifying flattened description
+[VERILOG2HIF] 13:13:53 - INFO: Performing standardization
+[VERILOG2HIF] 13:13:53 - INFO:    - STD 01: Simplifying source tree
+[VERILOG2HIF] 13:13:55 - INFO:    - STD 02: Prefixing source tree symbols
+[VERILOG2HIF] 13:13:56 - INFO:    - STD 03: Perform tree standardization
+[VERILOG2HIF] 13:14:05 - INFO:    - STD 04: Mapping destination tree standard symbols
+[VERILOG2HIF] 13:14:05 - INFO:    - STD 05: Simplifying destination tree -- 1
+[VERILOG2HIF] 13:14:07 - INFO:    - STD 06: Managing destination tree casts
+[VERILOG2HIF] 13:14:07 - INFO:    - STD 07: Simplifying destination tree -- 2
+[VERILOG2HIF] 13:14:08 - INFO:    - STD 08: Renaming destination tree forbidden names
+[VERILOG2HIF] 13:14:08 - INFO:    - STD 09: Final cleanup
+[VERILOG2HIF] 13:14:08 - INFO: Refining possible AMS units
+[VERILOG2HIF] 13:14:08 - INFO: Performing HIF description sanity checks
+[VERILOG2HIF] 13:14:08 - INFO: Performing final HIF sanity checks
+[VERILOG2HIF] 13:14:12 - INFO: HIF description written in: hif/design.hif.xml
+[VERILOG2HIF] 13:14:12 - INFO: HIF translation has been completed.
+[DDT] 13:14:12 - INFO: Running command:
     ddt hif/design.hif.xml -o hif/design.ddt.hif.xml
 
-[DDT] 15:59:49 - INFO: Command line parsed.
-[HIF] [XML_PARSER] 15:59:50 - INFO: Parsed input file.
-[DDT] 15:59:50 - INFO: 01 Performing fixes
-[DDT] 15:59:50 - INFO:    01 Fixing nested declarations
-[DDT] 15:59:50 - INFO:    02 Expanding generate constructs
-[DDT] 15:59:50 - INFO:    03 Resolving template arguments
-[DDT] 15:59:59 - INFO:    04 Simplify tree
-[DDT] 15:59:59 - INFO:    05 Removing unused declarations
-[DDT] 16:00:00 - INFO:    06 Rebasing type spans
-[DDT] 16:00:02 - INFO:    07 Fixing ranges direction
-[DDT] 16:00:03 - INFO:    08 Transform global actions
-[DDT] 16:00:03 - INFO:    09 Remove Standard Methods
-[DDT] 16:00:03 - INFO:    10 Splitting partially written signals
-[DDT] 16:00:03 - INFO:    11 Splitting targets representing concats
-[DDT] 16:00:03 - INFO:    12 Fixing instance bindings
-[DDT] 16:00:03 - INFO:    13 Fixing multiple signal/port assignments
-[DDT] 16:00:03 - INFO:    14 Fixing unsupported bits
-[DDT] 16:00:03 - INFO: 02 Padding Bitwidths
-[DDT] 16:00:03 - INFO:    01 Bitwidth Padding
-[DDT] 16:00:03 - INFO:    02 Padding Refinements
-[DDT] 16:00:05 - INFO:    03 Simplify after padding refinements
-[DDT] 16:00:09 - INFO:       - Checking after_bitwidthPadding
-[DDT] 16:00:09 - INFO: 03 Splitting bits
-[DDT] 16:00:09 - INFO:    01 Fix Instance Bindings
-[DDT] 16:00:09 - INFO:    02 Replicate Assign
-[DDT] 16:00:09 - INFO:    03 Splitting Bits
-[DDT] 16:00:11 - INFO:    04 Splitting Refinements
-[DDT] 16:00:16 - INFO:       - Checking after_splitBits
-[DDT] 16:00:16 - INFO: 04 Abstracting data types
-[DDT] 16:00:20 - INFO:       - Checking after_abstractTypes
-[DDT] 16:00:24 - INFO:       - Checking after_abstractTypesSimplify
-[DDT] 16:00:24 - INFO: 05 miscFixes
-[DDT] 16:00:24 - INFO:       - Checking after_miscFixes
-[DDT] 16:00:24 - INFO: 06 Simplifying HIF tree
-[DDT] 16:00:27 - INFO: During translation, one or more warnings have been raised:
+[DDT] 13:14:12 - INFO: Command line parsed.
+[HIF] [XML_PARSER] 13:14:12 - INFO: Parsed input file.
+[DDT] 13:14:12 - INFO: 01 Performing fixes
+[DDT] 13:14:12 - INFO:    01 Fixing nested declarations
+[DDT] 13:14:12 - INFO:    02 Expanding generate constructs
+[DDT] 13:14:12 - INFO:    03 Resolving template arguments
+[DDT] 13:14:19 - INFO:    04 Simplify tree
+[DDT] 13:14:19 - INFO:    05 Removing unused declarations
+[DDT] 13:14:19 - INFO:    06 Rebasing type spans
+[DDT] 13:14:21 - INFO:    07 Fixing ranges direction
+[DDT] 13:14:22 - INFO:    08 Transform global actions
+[DDT] 13:14:22 - INFO:    09 Remove Standard Methods
+[DDT] 13:14:22 - INFO:    10 Splitting partially written signals
+[DDT] 13:14:22 - INFO:    11 Splitting targets representing concats
+[DDT] 13:14:22 - INFO:    12 Fixing instance bindings
+[DDT] 13:14:22 - INFO:    13 Fixing multiple signal/port assignments
+[DDT] 13:14:22 - INFO:    14 Fixing unsupported bits
+[DDT] 13:14:22 - INFO: 02 Padding Bitwidths
+[DDT] 13:14:22 - INFO:    01 Bitwidth Padding
+[DDT] 13:14:22 - INFO:    02 Padding Refinements
+[DDT] 13:14:24 - INFO:    03 Simplify after padding refinements
+[DDT] 13:14:26 - INFO:       - Checking after_bitwidthPadding
+[DDT] 13:14:26 - INFO: 03 Splitting bits
+[DDT] 13:14:26 - INFO:    01 Fix Instance Bindings
+[DDT] 13:14:26 - INFO:    02 Replicate Assign
+[DDT] 13:14:26 - INFO:    03 Splitting Bits
+[DDT] 13:14:28 - INFO:    04 Splitting Refinements
+[DDT] 13:14:32 - INFO:       - Checking after_splitBits
+[DDT] 13:14:32 - INFO: 04 Abstracting data types
+[DDT] 13:14:35 - INFO:       - Checking after_abstractTypes
+[DDT] 13:14:38 - INFO:       - Checking after_abstractTypesSimplify
+[DDT] 13:14:38 - INFO: 05 miscFixes
+[DDT] 13:14:38 - INFO:       - Checking after_miscFixes
+[DDT] 13:14:38 - INFO: 06 Simplifying HIF tree
+[DDT] 13:14:40 - INFO: During translation, one or more warnings have been raised:
 
-[DDT] 16:00:27 - WARNING: Found at least one bit value 'X' in logic or logic vector. They are replaced with 0.
+[DDT] 13:14:40 - WARNING: Found at least one bit value 'X' in logic or logic vector. They are replaced with 0.
 - Raised by /home/portaluri/work/HIF_Suite/core/src/hif/src/manipulation/fixUnsupportedBits.cc:209 [661 times]
 
-[DDT] 16:00:27 - WARNING: Found at least one bit value 'Z' in logic or logic vector. They are replaced with 0.
+[DDT] 13:14:40 - WARNING: Found at least one bit value 'Z' in logic or logic vector. They are replaced with 0.
 - Raised by /home/portaluri/work/HIF_Suite/core/src/hif/src/manipulation/fixUnsupportedBits.cc:218 [84 times]
 
-[DDT] 16:00:27 - INFO: Performing HIF description sanity checks
-[DDT] 16:00:35 - INFO: HIF description written in: /home/fdl/fmi_lesson/models/m6502/hif/design.ddt.hif.xml
-[DDT] 16:00:35 - INFO: Data types abstraction has been completed.
-[A2T] 16:00:35 - INFO: Running command:
+[DDT] 13:14:40 - INFO: Performing HIF description sanity checks
+[DDT] 13:14:45 - INFO: HIF description written in: /home/fdl/fmi_lesson_original/models/m6502/hif/design.ddt.hif.xml
+[DDT] 13:14:45 - INFO: Data types abstraction has been completed.
+[A2T] 13:14:45 - INFO: Running command:
     a2tool hif/design.ddt.hif.xml -o hif/design.ddt.a2t.hif.xml --protocol CPP
 
-[A2T] 16:00:35 - INFO: Reading input HIF file hif/design.ddt.hif.xml...
-[HIF] [XML_PARSER] 16:00:36 - INFO: Parsed input file.
-[A2T] 16:00:38 - INFO: ### Start of analysis phase ###
-[A2T] 16:00:38 - INFO: [Hierarchy] Analysis of design hierarchy tree is completed.
-[A2T] 16:00:38 - INFO: [Clocks] Analysis of module clock signals is completed.
-[A2T] 16:00:38 - INFO: [Interface] Analysis of interfaces is completed.
-[A2T] 16:00:38 - INFO: [Process] Analysis of processes is completed.
-[A2T] 16:00:38 - INFO: [Process] Merge of processes is completed.
-[A2T] 16:00:38 - INFO: ### End of analysis phase ###
-[A2T] 16:00:38 - INFO: ### Start of code generation phase ###
-[A2T] 16:00:38 - INFO: [Backbone] Generation of abstracted system backbone is completed.
-[A2T] 16:00:38 - INFO: [Functionality] Generation of functionality code is completed.
-[A2T] 16:00:38 - INFO: [Optimization] Optimization of functionality code is completed.
-[A2T] 16:00:38 - INFO: [Communication] Generation of C++ communication code is completed.
-[A2T] 16:00:38 - INFO: ### End of code generation phase ###
-[A2T] 16:00:38 - INFO: Performing HIF description sanity checks
-[A2T] 16:00:48 - INFO: HIF description written in: hif/design.ddt.a2t.hif.xml
-[A2T] 16:00:48 - INFO: Abstraction completed.
-[HIF2VP] 16:00:49 - INFO: Running command:
+[A2T] 13:14:45 - INFO: Reading input HIF file hif/design.ddt.hif.xml...
+[HIF] [XML_PARSER] 13:14:46 - INFO: Parsed input file.
+[A2T] 13:14:47 - INFO: ### Start of analysis phase ###
+[A2T] 13:14:47 - INFO: [Hierarchy] Analysis of design hierarchy tree is completed.
+[A2T] 13:14:47 - INFO: [Clocks] Analysis of module clock signals is completed.
+[A2T] 13:14:47 - INFO: [Interface] Analysis of interfaces is completed.
+[A2T] 13:14:47 - INFO: [Process] Analysis of processes is completed.
+[A2T] 13:14:47 - INFO: [Process] Merge of processes is completed.
+[A2T] 13:14:47 - INFO: ### End of analysis phase ###
+[A2T] 13:14:47 - INFO: ### Start of code generation phase ###
+[A2T] 13:14:47 - INFO: [Backbone] Generation of abstracted system backbone is completed.
+[A2T] 13:14:48 - INFO: [Functionality] Generation of functionality code is completed.
+[A2T] 13:14:48 - INFO: [Optimization] Optimization of functionality code is completed.
+[A2T] 13:14:48 - INFO: [Communication] Generation of C++ communication code is completed.
+[A2T] 13:14:48 - INFO: ### End of code generation phase ###
+[A2T] 13:14:48 - INFO: Performing HIF description sanity checks
+[A2T] 13:14:54 - INFO: HIF description written in: hif/design.ddt.a2t.hif.xml
+[A2T] 13:14:54 - INFO: Abstraction completed.
+[HIF2VP] 13:14:54 - INFO: Running command:
     hif2vp hif/design.ddt.a2t.hif.xml -o hif/design.ddt.a2t.fmi.hif.xml -p fmi
 
-[HIF] [XML_PARSER] 16:00:49 - INFO: Parsed input file.
-[HIF2VP] [FMI] 16:00:51 - INFO: Checking model I/O ports and retrieve infos.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Integer port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Integer port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Integer port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [I/O]: Boolean port found.
-[HIF2VP] [FMI] 16:00:51 - INFO: Generate FMU interface
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Add the ModelInstance struct.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2Instantiate function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2SetupExperiment function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2*InitializationMode functions.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2terminate function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2Reset function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2FreeInstance function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2GetVersione and fmi2GetTypesPlatform functions.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2SetDebugLogging function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2Get* functions.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2Set* functions.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2CancelStep function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2DoStep function.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2Get*Status functions.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [FMU]: Generate the fmi2SetRealInputDerivatives and fmi2GetRealOutputDerivatives functions.
-[HIF2VP] [FMI] 16:00:51 - INFO: Generate XML modelDescription.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: FMI model description population.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: Co-Simulation population.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: Log categories population.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: Model variables population.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: Model structure population.
-[HIF2VP] [FMI] 16:00:51 - INFO:    [XML]: Writing XML file.
-[HIF2VP] 16:00:53 - INFO: Performing HIF description sanity checks
-[HIF2VP] 16:01:03 - INFO: HIF description written in: hif/design.ddt.a2t.fmi.hif.xml
-[HIF2VP] 16:01:03 - INFO: Operation completed.
-[HIF2VP] 16:01:03 - INFO:  -- Command "hif2vp -o hif/design.ddt.a2t.fmi.hif.xml -p fmi hif/design.ddt.a2t.hif.xml " Done --
-[HIF2SC] 16:01:03 - INFO: Running command:
+[HIF] [XML_PARSER] 13:14:54 - INFO: Parsed input file.
+[HIF2VP] [FMI] 13:14:56 - INFO: Checking model I/O ports and retrieve infos.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Integer port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Integer port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Integer port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:14:56 - INFO: Generate FMU interface
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Add the ModelInstance struct.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2Instantiate function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2SetupExperiment function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2*InitializationMode functions.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2terminate function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2Reset function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2FreeInstance function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2GetVersione and fmi2GetTypesPlatform functions.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2SetDebugLogging function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2Get* functions.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2Set* functions.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2CancelStep function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2DoStep function.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2Get*Status functions.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [FMU]: Generate the fmi2SetRealInputDerivatives and fmi2GetRealOutputDerivatives functions.
+[HIF2VP] [FMI] 13:14:56 - INFO: Generate XML modelDescription.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: FMI model description population.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: Co-Simulation population.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: Log categories population.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: Model variables population.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: Model structure population.
+[HIF2VP] [FMI] 13:14:56 - INFO:    [XML]: Writing XML file.
+[HIF2VP] 13:14:58 - INFO: Performing HIF description sanity checks
+[HIF2VP] 13:15:07 - INFO: HIF description written in: hif/design.ddt.a2t.fmi.hif.xml
+[HIF2VP] 13:15:07 - INFO: Operation completed.
+[HIF2VP] 13:15:07 - INFO:  -- Command "hif2vp -o hif/design.ddt.a2t.fmi.hif.xml -p fmi hif/design.ddt.a2t.hif.xml " Done --
+[HIF2SC] 13:15:07 - INFO: Running command:
     hif2sc hif/design.ddt.a2t.fmi.hif.xml --directory cpp --extensions cpp_hpp
 
-[HIF] [XML_PARSER] 16:01:03 - INFO: Parsed input file.
-[HIF2SC] 16:01:03 - INFO: Performing refinement steps...
-[HIF2SC] 16:01:03 - INFO: 01 Fixing nested declarations
-[HIF2SC] 16:01:03 - INFO: 02 Fixing generate statements
-[HIF2SC] 16:01:03 - INFO: 03 Fixing troublesome template parameters
-[HIF2SC] 16:01:25 - INFO: 04 Fixing port bindings of component instances
-[HIF2SC] 16:01:25 - INFO: 05 Fixing multiple signal/port assignments
-[HIF2SC] 16:01:25 - INFO: 06 Rebasing type spans
-[HIF2SC] 16:01:28 - INFO: 07 Fixing direction of ranges
-[HIF2SC] 16:01:33 - INFO: 08 Fixing conflicting subprograms
-[HIF2SC] 16:01:33 - INFO: 09 Expanding aliases
-[HIF2SC] 16:01:33 - INFO: 10 Performing miscellaneous fixes
-[HIF2SC] 16:01:37 - INFO: 11 Introducing support utility libraries
-[HIF2SC] 16:01:37 - INFO: 12 Performing standardization
-[HIF2SC] 16:01:37 - INFO:    - STD 01: Simplifying source tree
-[HIF2SC] 16:01:54 - INFO:    - STD 02: Prefixing source tree symbols
-[HIF2SC] 16:02:11 - INFO:    - STD 03: Perform tree standardization
-[HIF2SC] 16:02:33 - INFO:    - STD 04: Mapping destination tree standard symbols
-[HIF2SC] 16:02:33 - INFO:    - STD 05: Simplifying destination tree -- 1
-[HIF2SC] 16:02:45 - INFO:    - STD 06: Managing destination tree casts
-[HIF2SC] 16:02:47 - INFO:    - STD 07: Simplifying destination tree -- 2
-[HIF2SC] 16:02:51 - INFO:    - STD 08: Renaming destination tree forbidden names
-[HIF2SC] 16:02:52 - INFO:    - STD 09: Final cleanup
-[HIF2SC] 16:02:53 - INFO: 13 Refining for C++98 standard compliance
-[HIF2SC] 16:03:02 - INFO: 15 Performing final manipulations
-[HIF2SC] 16:03:03 - INFO: Refinement steps completed.
-[HIF2SC] 16:03:03 - INFO: Generating output directory structure
-[HIF2SC] 16:03:03 - INFO: Generating code...
-[HIF2SC] [PrintHeaderVisitor] 16:03:03 - INFO: Generating C++ code for library fmuInterface.
-[HIF2SC] [PrintHeaderVisitor] 16:03:03 - INFO: Generating C++ code for unit m6502.
-[HIF2SC] 16:03:04 - INFO: Code generation completed.
-[HIF2SC] 16:03:04 - INFO: During translation, one or more warnings have been raised:
+[HIF] [XML_PARSER] 13:15:07 - INFO: Parsed input file.
+[HIF2SC] 13:15:07 - INFO: Performing refinement steps...
+[HIF2SC] 13:15:07 - INFO: 01 Fixing nested declarations
+[HIF2SC] 13:15:07 - INFO: 02 Fixing generate statements
+[HIF2SC] 13:15:07 - INFO: 03 Fixing troublesome template parameters
+[HIF2SC] 13:15:24 - INFO: 04 Fixing port bindings of component instances
+[HIF2SC] 13:15:24 - INFO: 05 Fixing multiple signal/port assignments
+[HIF2SC] 13:15:24 - INFO: 06 Rebasing type spans
+[HIF2SC] 13:15:27 - INFO: 07 Fixing direction of ranges
+[HIF2SC] 13:15:30 - INFO: 08 Fixing conflicting subprograms
+[HIF2SC] 13:15:30 - INFO: 09 Expanding aliases
+[HIF2SC] 13:15:30 - INFO: 10 Performing miscellaneous fixes
+[HIF2SC] 13:15:32 - INFO: 11 Introducing support utility libraries
+[HIF2SC] 13:15:32 - INFO: 12 Performing standardization
+[HIF2SC] 13:15:32 - INFO:    - STD 01: Simplifying source tree
+[HIF2SC] 13:15:38 - INFO:    - STD 02: Prefixing source tree symbols
+[HIF2SC] 13:15:44 - INFO:    - STD 03: Perform tree standardization
+[HIF2SC] 13:15:57 - INFO:    - STD 04: Mapping destination tree standard symbols
+[HIF2SC] 13:15:57 - INFO:    - STD 05: Simplifying destination tree -- 1
+[HIF2SC] 13:16:08 - INFO:    - STD 06: Managing destination tree casts
+[HIF2SC] 13:16:10 - INFO:    - STD 07: Simplifying destination tree -- 2
+[HIF2SC] 13:16:13 - INFO:    - STD 08: Renaming destination tree forbidden names
+[HIF2SC] 13:16:14 - INFO:    - STD 09: Final cleanup
+[HIF2SC] 13:16:14 - INFO: 13 Refining for C++98 standard compliance
+[HIF2SC] 13:16:19 - INFO: 15 Performing final manipulations
+[HIF2SC] 13:16:20 - INFO: Refinement steps completed.
+[HIF2SC] 13:16:20 - INFO: Generating output directory structure
+[HIF2SC] 13:16:20 - INFO: Generating code...
+[HIF2SC] [PrintHeaderVisitor] 13:16:20 - INFO: Generating C++ code for library fmuInterface.
+[HIF2SC] [PrintHeaderVisitor] 13:16:20 - INFO: Generating C++ code for unit m6502.
+[HIF2SC] 13:16:21 - INFO: Code generation completed.
+[HIF2SC] 13:16:21 - INFO: During translation, one or more warnings have been raised:
 
-[HIF2SC] 16:03:04 - WARNING: Found at least one logic XOR operation. They have been translated as bitwise XOR operations.
+[HIF2SC] 13:16:21 - WARNING: Found at least one logic XOR operation. They have been translated as bitwise XOR operations.
 - Raised by /home/portaluri/work/HIF_Suite/core/src/hif2sc/src/PreRefine_misc.cc:569 [69 times]
 
-[HIF2SC] 16:03:04 - INFO:  -- Command "hif2sc --directory cpp --extensions cpp_hpp hif/design.ddt.a2t.fmi.hif.xml " Done --
+[HIF2SC] 13:16:21 - INFO:  -- Command "hif2sc --directory cpp --extensions cpp_hpp hif/design.ddt.a2t.fmi.hif.xml " Done --

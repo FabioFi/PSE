@@ -1,4 +1,4 @@
-<SYSTEM formatVersion="4.0" generationDate="16:1:39:670915" languageId="CPP" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="HIF2VP">
+<SYSTEM formatVersion="4.0" generationDate="13:16:33:209431" languageId="CPP" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="HIF2VP">
 	<LIBRARYDEFS>
 		<LIBRARYDEF clinkage="false" languageId="CPP" name="hif_systemc_new" standard="true"/>
 		<LIBRARYDEF clinkage="false" languageId="C" name="hif_systemc_cstring" standard="true"/>
@@ -562,7 +562,7 @@
 					</POINTER>
 				</TYPE>
 				<VALUE>
-					<STRINGVAL value="3beea310-cc2d-473e-b817-a1ff21a8910e">
+					<STRINGVAL value="ba328cf2-b8cc-458e-9f7a-9d966b698d3b">
 						<TYPE>
 							<POINTER typeVariant="NATIVE_TYPE">
 								<CHAR constexpr="true" typeVariant="NATIVE_TYPE"/>
