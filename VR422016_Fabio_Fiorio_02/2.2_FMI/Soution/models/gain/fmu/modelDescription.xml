@@ -18,17 +18,23 @@
 	
 
 		<ScalarVariable causality="input" description="data flag" name="data_rdy" valueReference="0" variability="discrete">
+
 			<Boolean start="false"/>
+
 		</ScalarVariable>
 	
 
 		<ScalarVariable causality="output" description="result flag" name="result_rdy" valueReference="1" variability="discrete">
-			<Boolean start="false" />
+
+			<Boolean />
+
 		</ScalarVariable>
 
 
 		<ScalarVariable causality="input" description="data from the memory" name="data" valueReference="0" variability="discrete">
+
 			<Integer start="0"/>
+
 		</ScalarVariable>
 
 		<ScalarVariable name="result" valueReference="1" description="integer" causality="output" variability="discrete" initial="approx">

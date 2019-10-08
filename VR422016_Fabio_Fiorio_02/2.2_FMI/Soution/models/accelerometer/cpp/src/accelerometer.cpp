@@ -43,9 +43,9 @@ accelerometer::accelerometer() :
     accelerometer_V_reduced_1_dot(0.0),
     accelerometer_V_reduced_0_dot(0.0),
     accelerometer_V_reduced_1(0.0),
-    accelerometer_V_avz(0.0),
     accelerometer_V_avx(0.0),
     accelerometer_V_avy(0.0),
+    accelerometer_V_avz(0.0),
     accelerometer_V_reduced_0(0.0),
     process_in_queue(false),
     flag_analog_clock(false)
@@ -211,13 +211,13 @@ void accelerometer::simulate( accelerometer_iostruct * io_exchange, int32_t & cy
         flag_elaboration();
         update_event_queue();
     }
-    io_exchange->accelerometer_V_reduced_0_dot_ddt = hif_a2t_data.accelerometer_V_reduced_0_dot_ddt;
-    io_exchange->accelerometer_V_avx_ddt = hif_a2t_data.accelerometer_V_avx_ddt;
-    io_exchange->accelerometer_V_avy_ddt = hif_a2t_data.accelerometer_V_avy_ddt;
     io_exchange->accelerometer_V_avz_ddt = hif_a2t_data.accelerometer_V_avz_ddt;
     io_exchange->accelerometer_V_reduced_1_dot_ddt = hif_a2t_data.accelerometer_V_reduced_1_dot_ddt;
     io_exchange->accelerometer_V_reduced_1_ddt = hif_a2t_data.accelerometer_V_reduced_1_ddt;
     io_exchange->accelerometer_V_reduced_0_ddt = hif_a2t_data.accelerometer_V_reduced_0_ddt;
+    io_exchange->accelerometer_V_reduced_0_dot_ddt = hif_a2t_data.accelerometer_V_reduced_0_dot_ddt;
+    io_exchange->accelerometer_V_avx_ddt = hif_a2t_data.accelerometer_V_avx_ddt;
+    io_exchange->accelerometer_V_avy_ddt = hif_a2t_data.accelerometer_V_avy_ddt;
     io_exchange->Cap7 = hif_a2t_data.Cap7;
     io_exchange->Cap5 = hif_a2t_data.Cap5;
     io_exchange->Cap2 = hif_a2t_data.Cap2;

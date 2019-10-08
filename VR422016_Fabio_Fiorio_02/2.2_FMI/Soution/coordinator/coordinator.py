@@ -103,11 +103,10 @@ def data_exchange(m6502,memory,sine1_y,sine2_y,sine3_y,accelerometer,gain,clk,i)
 memory 			= load_fmu( './fmus/memory.fmu',			log_level = NOTHING )
 m6502  			= load_fmu( './fmus/m6502.fmu',				log_level = NOTHING )
 accelerometer 	= load_fmu( './fmus/accelerometer.fmu',		log_level = NOTHING )
-gain 			= load_fmu('./fmus/gain.fmu', 				log_level = NOTHING)
-
 sine1 			= load_fmu( './fmus/Sine_1.fmu',			log_level = NOTHING )
 sine2 			= load_fmu( './fmus/Sine_2.fmu',			log_level = NOTHING )
 sine3 			= load_fmu( './fmus/Sine_3.fmu',			log_level = NOTHING )
+gain 			= load_fmu('./fmus/gain.fmu', 				log_level = NOTHING)
 
 # Missing gain FMU....
 
@@ -164,9 +163,9 @@ while time<1. :
 			memory.do_step(			current_t = time, step_size = digital_step )
 			m6502.do_step(			current_t = time, step_size = digital_step )
 			accelerometer.do_step(	current_t = time, step_size = digital_step )
+
 			gain.do_step(	current_t = time, step_size = digital_step )
-
-
+			
 			# Missing gain simulation .....
 
 			# Tracing some values

@@ -19,7 +19,7 @@
 #include "../accelerometer.hpp"
 
 
-#define MODEL_GUID "cb7f2aaf-5ace-4dda-bb94-64f4423ed092"
+#define MODEL_GUID "f7a1eec2-8f2e-43c7-9e81-cc425c7efc48"
 
 
 #ifdef __cplusplus

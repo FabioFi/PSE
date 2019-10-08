@@ -19,7 +19,7 @@
 #include "../m6502.hpp"
 
 
-#define MODEL_GUID "2a0582fb-db1d-4b9c-b2d7-de24ebfa732d"
+#define MODEL_GUID "323754ff-45fa-4484-8f95-11bb6f7901e7"
 
 
 #ifdef __cplusplus

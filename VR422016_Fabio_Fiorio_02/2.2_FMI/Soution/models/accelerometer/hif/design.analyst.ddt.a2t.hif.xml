@@ -1,4 +1,4 @@
-<SYSTEM formatVersion="4.0" generationDate="15:57:38:660602" languageId="CPP" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="A2T">
+<SYSTEM formatVersion="4.0" generationDate="13:12:56:146408" languageId="CPP" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="A2T">
 	<LIBRARYDEFS>
 		<LIBRARYDEF clinkage="false" languageId="CPP" name="hif_verilog_vams_driver_access" standard="true"/>
 		<LIBRARYDEF clinkage="false" languageId="CPP" name="hif_verilog_vams_disciplines" standard="true"/>
@@ -121,96 +121,6 @@
 						<TYPEDEF external="false" name="accelerometer_iostruct" opaque="true" standard="false">
 							<TYPE>
 								<RECORD constexpr="false" packed="false" typeVariant="NATIVE_TYPE" union="false">
-									<FIELD direction="OUT" name="accelerometer_V_reduced_0_dot_ddt">
-										<TYPE>
-											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-												<SPAN direction="DOWNTO">
-													<LEFTBOUND>
-														<INTVAL value="63"/>
-													</LEFTBOUND>
-													<RIGHTBOUND>
-														<INTVAL value="0"/>
-													</RIGHTBOUND>
-												</SPAN>
-											</REAL>
-										</TYPE>
-										<VALUE>
-											<REALVAL value="0">
-												<TYPE>
-													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-														<SPAN direction="DOWNTO">
-															<LEFTBOUND>
-																<INTVAL value="63"/>
-															</LEFTBOUND>
-															<RIGHTBOUND>
-																<INTVAL value="0"/>
-															</RIGHTBOUND>
-														</SPAN>
-													</REAL>
-												</TYPE>
-											</REALVAL>
-										</VALUE>
-									</FIELD>
-									<FIELD direction="OUT" name="accelerometer_V_avx_ddt">
-										<TYPE>
-											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-												<SPAN direction="DOWNTO">
-													<LEFTBOUND>
-														<INTVAL value="63"/>
-													</LEFTBOUND>
-													<RIGHTBOUND>
-														<INTVAL value="0"/>
-													</RIGHTBOUND>
-												</SPAN>
-											</REAL>
-										</TYPE>
-										<VALUE>
-											<REALVAL value="0">
-												<TYPE>
-													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-														<SPAN direction="DOWNTO">
-															<LEFTBOUND>
-																<INTVAL value="63"/>
-															</LEFTBOUND>
-															<RIGHTBOUND>
-																<INTVAL value="0"/>
-															</RIGHTBOUND>
-														</SPAN>
-													</REAL>
-												</TYPE>
-											</REALVAL>
-										</VALUE>
-									</FIELD>
-									<FIELD direction="OUT" name="accelerometer_V_avy_ddt">
-										<TYPE>
-											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-												<SPAN direction="DOWNTO">
-													<LEFTBOUND>
-														<INTVAL value="63"/>
-													</LEFTBOUND>
-													<RIGHTBOUND>
-														<INTVAL value="0"/>
-													</RIGHTBOUND>
-												</SPAN>
-											</REAL>
-										</TYPE>
-										<VALUE>
-											<REALVAL value="0">
-												<TYPE>
-													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-														<SPAN direction="DOWNTO">
-															<LEFTBOUND>
-																<INTVAL value="63"/>
-															</LEFTBOUND>
-															<RIGHTBOUND>
-																<INTVAL value="0"/>
-															</RIGHTBOUND>
-														</SPAN>
-													</REAL>
-												</TYPE>
-											</REALVAL>
-										</VALUE>
-									</FIELD>
 									<FIELD direction="OUT" name="accelerometer_V_avz_ddt">
 										<TYPE>
 											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
@@ -302,6 +212,96 @@
 										</VALUE>
 									</FIELD>
 									<FIELD direction="OUT" name="accelerometer_V_reduced_0_ddt">
+										<TYPE>
+											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+												<SPAN direction="DOWNTO">
+													<LEFTBOUND>
+														<INTVAL value="63"/>
+													</LEFTBOUND>
+													<RIGHTBOUND>
+														<INTVAL value="0"/>
+													</RIGHTBOUND>
+												</SPAN>
+											</REAL>
+										</TYPE>
+										<VALUE>
+											<REALVAL value="0">
+												<TYPE>
+													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+														<SPAN direction="DOWNTO">
+															<LEFTBOUND>
+																<INTVAL value="63"/>
+															</LEFTBOUND>
+															<RIGHTBOUND>
+																<INTVAL value="0"/>
+															</RIGHTBOUND>
+														</SPAN>
+													</REAL>
+												</TYPE>
+											</REALVAL>
+										</VALUE>
+									</FIELD>
+									<FIELD direction="OUT" name="accelerometer_V_reduced_0_dot_ddt">
+										<TYPE>
+											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+												<SPAN direction="DOWNTO">
+													<LEFTBOUND>
+														<INTVAL value="63"/>
+													</LEFTBOUND>
+													<RIGHTBOUND>
+														<INTVAL value="0"/>
+													</RIGHTBOUND>
+												</SPAN>
+											</REAL>
+										</TYPE>
+										<VALUE>
+											<REALVAL value="0">
+												<TYPE>
+													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+														<SPAN direction="DOWNTO">
+															<LEFTBOUND>
+																<INTVAL value="63"/>
+															</LEFTBOUND>
+															<RIGHTBOUND>
+																<INTVAL value="0"/>
+															</RIGHTBOUND>
+														</SPAN>
+													</REAL>
+												</TYPE>
+											</REALVAL>
+										</VALUE>
+									</FIELD>
+									<FIELD direction="OUT" name="accelerometer_V_avx_ddt">
+										<TYPE>
+											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+												<SPAN direction="DOWNTO">
+													<LEFTBOUND>
+														<INTVAL value="63"/>
+													</LEFTBOUND>
+													<RIGHTBOUND>
+														<INTVAL value="0"/>
+													</RIGHTBOUND>
+												</SPAN>
+											</REAL>
+										</TYPE>
+										<VALUE>
+											<REALVAL value="0">
+												<TYPE>
+													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+														<SPAN direction="DOWNTO">
+															<LEFTBOUND>
+																<INTVAL value="63"/>
+															</LEFTBOUND>
+															<RIGHTBOUND>
+																<INTVAL value="0"/>
+															</RIGHTBOUND>
+														</SPAN>
+													</REAL>
+												</TYPE>
+											</REALVAL>
+										</VALUE>
+									</FIELD>
+									<FIELD direction="OUT" name="accelerometer_V_avy_ddt">
 										<TYPE>
 											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
 												<SPAN direction="DOWNTO">
@@ -563,60 +563,6 @@
 							<VALUE>
 								<RECORDVALUE>
 									<ALTS>
-										<RECORDVALUEALT name="accelerometer_V_reduced_0_dot_ddt">
-											<VALUE>
-												<REALVAL value="0">
-													<TYPE>
-														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-															<SPAN direction="DOWNTO">
-																<LEFTBOUND>
-																	<INTVAL value="63"/>
-																</LEFTBOUND>
-																<RIGHTBOUND>
-																	<INTVAL value="0"/>
-																</RIGHTBOUND>
-															</SPAN>
-														</REAL>
-													</TYPE>
-												</REALVAL>
-											</VALUE>
-										</RECORDVALUEALT>
-										<RECORDVALUEALT name="accelerometer_V_avx_ddt">
-											<VALUE>
-												<REALVAL value="0">
-													<TYPE>
-														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-															<SPAN direction="DOWNTO">
-																<LEFTBOUND>
-																	<INTVAL value="63"/>
-																</LEFTBOUND>
-																<RIGHTBOUND>
-																	<INTVAL value="0"/>
-																</RIGHTBOUND>
-															</SPAN>
-														</REAL>
-													</TYPE>
-												</REALVAL>
-											</VALUE>
-										</RECORDVALUEALT>
-										<RECORDVALUEALT name="accelerometer_V_avy_ddt">
-											<VALUE>
-												<REALVAL value="0">
-													<TYPE>
-														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-															<SPAN direction="DOWNTO">
-																<LEFTBOUND>
-																	<INTVAL value="63"/>
-																</LEFTBOUND>
-																<RIGHTBOUND>
-																	<INTVAL value="0"/>
-																</RIGHTBOUND>
-															</SPAN>
-														</REAL>
-													</TYPE>
-												</REALVAL>
-											</VALUE>
-										</RECORDVALUEALT>
 										<RECORDVALUEALT name="accelerometer_V_avz_ddt">
 											<VALUE>
 												<REALVAL value="0">
@@ -672,6 +618,60 @@
 											</VALUE>
 										</RECORDVALUEALT>
 										<RECORDVALUEALT name="accelerometer_V_reduced_0_ddt">
+											<VALUE>
+												<REALVAL value="0">
+													<TYPE>
+														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="63"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</REAL>
+													</TYPE>
+												</REALVAL>
+											</VALUE>
+										</RECORDVALUEALT>
+										<RECORDVALUEALT name="accelerometer_V_reduced_0_dot_ddt">
+											<VALUE>
+												<REALVAL value="0">
+													<TYPE>
+														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="63"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</REAL>
+													</TYPE>
+												</REALVAL>
+											</VALUE>
+										</RECORDVALUEALT>
+										<RECORDVALUEALT name="accelerometer_V_avx_ddt">
+											<VALUE>
+												<REALVAL value="0">
+													<TYPE>
+														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="63"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</REAL>
+													</TYPE>
+												</REALVAL>
+											</VALUE>
+										</RECORDVALUEALT>
+										<RECORDVALUEALT name="accelerometer_V_avy_ddt">
 											<VALUE>
 												<REALVAL value="0">
 													<TYPE>
@@ -1128,36 +1128,6 @@
 								</REALVAL>
 							</VALUE>
 						</VARIABLE>
-						<VARIABLE instance="true" name="accelerometer_V_avz" standard="false">
-							<TYPE>
-								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-									<SPAN direction="DOWNTO">
-										<LEFTBOUND>
-											<INTVAL value="63"/>
-										</LEFTBOUND>
-										<RIGHTBOUND>
-											<INTVAL value="0"/>
-										</RIGHTBOUND>
-									</SPAN>
-								</REAL>
-							</TYPE>
-							<VALUE>
-								<REALVAL value="0">
-									<TYPE>
-										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
-											<SPAN direction="DOWNTO">
-												<LEFTBOUND>
-													<INTVAL value="63"/>
-												</LEFTBOUND>
-												<RIGHTBOUND>
-													<INTVAL value="0"/>
-												</RIGHTBOUND>
-											</SPAN>
-										</REAL>
-									</TYPE>
-								</REALVAL>
-							</VALUE>
-						</VARIABLE>
 						<VARIABLE instance="true" name="accelerometer_V_avx" standard="false">
 							<TYPE>
 								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
@@ -1189,6 +1159,36 @@
 							</VALUE>
 						</VARIABLE>
 						<VARIABLE instance="true" name="accelerometer_V_avy" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avz" standard="false">
 							<TYPE>
 								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
 									<SPAN direction="DOWNTO">
@@ -4478,54 +4478,6 @@
 											</WHILE>
 											<ASSIGN>
 												<LEFTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_reduced_0_dot_ddt">
-														<PREFIX>
-															<IDENTIFIER name="io_exchange"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</LEFTHANDSIDE>
-												<RIGHTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_reduced_0_dot_ddt">
-														<PREFIX>
-															<IDENTIFIER name="hif_a2t_data"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</RIGHTHANDSIDE>
-											</ASSIGN>
-											<ASSIGN>
-												<LEFTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_avx_ddt">
-														<PREFIX>
-															<IDENTIFIER name="io_exchange"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</LEFTHANDSIDE>
-												<RIGHTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_avx_ddt">
-														<PREFIX>
-															<IDENTIFIER name="hif_a2t_data"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</RIGHTHANDSIDE>
-											</ASSIGN>
-											<ASSIGN>
-												<LEFTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_avy_ddt">
-														<PREFIX>
-															<IDENTIFIER name="io_exchange"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</LEFTHANDSIDE>
-												<RIGHTHANDSIDE>
-													<FIELDREFERENCE fieldName="accelerometer_V_avy_ddt">
-														<PREFIX>
-															<IDENTIFIER name="hif_a2t_data"/>
-														</PREFIX>
-													</FIELDREFERENCE>
-												</RIGHTHANDSIDE>
-											</ASSIGN>
-											<ASSIGN>
-												<LEFTHANDSIDE>
 													<FIELDREFERENCE fieldName="accelerometer_V_avz_ddt">
 														<PREFIX>
 															<IDENTIFIER name="io_exchange"/>
@@ -4582,6 +4534,54 @@
 												</LEFTHANDSIDE>
 												<RIGHTHANDSIDE>
 													<FIELDREFERENCE fieldName="accelerometer_V_reduced_0_ddt">
+														<PREFIX>
+															<IDENTIFIER name="hif_a2t_data"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</RIGHTHANDSIDE>
+											</ASSIGN>
+											<ASSIGN>
+												<LEFTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_reduced_0_dot_ddt">
+														<PREFIX>
+															<IDENTIFIER name="io_exchange"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</LEFTHANDSIDE>
+												<RIGHTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_reduced_0_dot_ddt">
+														<PREFIX>
+															<IDENTIFIER name="hif_a2t_data"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</RIGHTHANDSIDE>
+											</ASSIGN>
+											<ASSIGN>
+												<LEFTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_avx_ddt">
+														<PREFIX>
+															<IDENTIFIER name="io_exchange"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</LEFTHANDSIDE>
+												<RIGHTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_avx_ddt">
+														<PREFIX>
+															<IDENTIFIER name="hif_a2t_data"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</RIGHTHANDSIDE>
+											</ASSIGN>
+											<ASSIGN>
+												<LEFTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_avy_ddt">
+														<PREFIX>
+															<IDENTIFIER name="io_exchange"/>
+														</PREFIX>
+													</FIELDREFERENCE>
+												</LEFTHANDSIDE>
+												<RIGHTHANDSIDE>
+													<FIELDREFERENCE fieldName="accelerometer_V_avy_ddt">
 														<PREFIX>
 															<IDENTIFIER name="hif_a2t_data"/>
 														</PREFIX>

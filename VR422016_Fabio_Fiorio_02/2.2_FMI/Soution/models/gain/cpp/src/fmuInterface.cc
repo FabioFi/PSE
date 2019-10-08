@@ -4,7 +4,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 #define GAIN_VALUE 10
 
 //-----------------------------------------------------------------------------------------
@@ -22,21 +21,22 @@ fmi2Status fmi2GetInteger( fmi2Component c, const fmi2ValueReference * vr, size_
     {
         switch ( vr[i] )
         {
-            case 0L:
-
-                value[i] = comp -> data;
-
+            case 0:
+            
+                value[i] = comp->data;
+            
             break;
 
-            
-            case 1L:
+            case 1:
 
                 value[i] = comp -> result;
 
             break;
             
+            // Missing get result port here...
+
             default:
-                
+
                 return fmi2Error;
 
             break;
@@ -70,23 +70,18 @@ fmi2Status fmi2GetBoolean( fmi2Component c, const fmi2ValueReference * vr, size_
         switch (vr[i])
         {
             
-            case 0L:
+            case 0:
 
                 value[i] = comp->data_rdy ;
 
             break;
 
-            case 1L:
+            case 1:
 
                 value[i] = comp->result_rdy;
 
             break;
-
             default:
-
-                return fmi2Error;
-
-
                 break;
         };
         if (comp->logAll == fmi2True)
@@ -117,22 +112,12 @@ fmi2Status fmi2SetInteger( fmi2Component c, const fmi2ValueReference * vr, size_
     {
         switch (vr[i])
         {
-            case 0L:
+            case 0:
 
                 comp->data = value[i];
                 
             break;
-
-	    case 1L:
-
-                comp -> result = value[i];
-
-            break;
-
             default:
-
-                return fmi2Error;
-
             break;
         };
         if (comp->logAll == fmi2True)
@@ -163,22 +148,19 @@ fmi2Status fmi2SetBoolean( fmi2Component c, const fmi2ValueReference * vr, size_
     {
         switch ( vr[i] )
         {
-            case 0L:
+            case 0:
                 
                 comp->data_rdy = value[i];
             
             break;
 
-            case 1L:
+            case 1:
 
                 comp->result_rdy = value[i];
 
             break;
 
             default:
-
-                return fmi2Error;
-                
             break;
         };
         if (comp->logAll == fmi2True)
@@ -222,8 +204,16 @@ fmi2Status fmi2DoStep( fmi2Component c, fmi2Real currentCommunicationPoint, fmi2
     if(comp -> data_rdy == fmi2True){
 
         comp -> result = comp -> data * GAIN_VALUE;
-        comp -> result_rdy = fmi2True;
+        //comp -> result_rdy = fmi2True;
+
+    }else{
+
+       	comp -> result = 0;
+
     }
+
+    comp -> result_rdy = fmi2True;
+
 
     // LOGGING
 
