@@ -1,0 +1,2 @@
+- aggiungere nella seconda relazione le altre 2 cartelle spiegate (HLS e results)
+- controllare le modifiche fatte al 3 elaborato ed aggiungere/togliere quelle non fatte nella relazione
