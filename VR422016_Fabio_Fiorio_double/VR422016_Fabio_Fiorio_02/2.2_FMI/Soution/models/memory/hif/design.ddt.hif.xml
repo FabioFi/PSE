@@ -1,0 +1,4937 @@
+<SYSTEM formatVersion="4.0" generationDate="13:16:30:429018" languageId="RTL" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="DDT">
+	<LIBRARYDEFS>
+		<LIBRARYDEF clinkage="false" languageId="RTL" name="hif_verilog_standard" standard="true"/>
+	</LIBRARYDEFS>
+	<DESIGNUNITS>
+		<DESIGNUNIT name="memory">
+			<VIEW filename="" languageId="RTL" name="behav" standard="false">
+				<LIBRARIES>
+					<LIBRARY filename="" name="hif_verilog_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+				</LIBRARIES>
+				<ENTITY name="Entity">
+					<PORT direction="IN" name="clk" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+					</PORT>
+					<PORT direction="IN" name="rst" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+					</PORT>
+					<PORT direction="IN" name="addr" wrapper="false">
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="15"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+					</PORT>
+					<PORT direction="OUT" name="datai" wrapper="false">
+						<VALUE>
+							<INTVAL value="0">
+								<TYPE>
+									<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="7"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</INTEGER>
+								</TYPE>
+							</INTVAL>
+						</VALUE>
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="7"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="18"/>
+					</PORT>
+					<PORT direction="IN" name="datao" wrapper="false">
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="7"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+					</PORT>
+					<PORT direction="OUT" name="irq_n" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+					</PORT>
+					<PORT direction="OUT" name="nmi_n" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+					</PORT>
+					<PORT direction="OUT" name="sob_n" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+					</PORT>
+					<PORT direction="OUT" name="res_n" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+					</PORT>
+					<PORT direction="OUT" name="rdy" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="14"/>
+					</PORT>
+					<PORT direction="IN" name="vpab" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+					</PORT>
+					<PORT direction="IN" name="sync" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+					</PORT>
+					<PORT direction="IN" name="we_n" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+					</PORT>
+					<PORT direction="IN" name="oeb" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+					</PORT>
+					<PORT direction="IN" name="accelerometer" wrapper="false">
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="15"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="26"/>
+					</PORT>
+					<PORT direction="OUT" name="data" wrapper="false">
+						<VALUE>
+							<INTVAL value="0">
+								<TYPE>
+									<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="15"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</INTEGER>
+								</TYPE>
+							</INTVAL>
+						</VALUE>
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="15"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+					</PORT>
+					<PORT direction="OUT" name="data_rdy" wrapper="false">
+						<VALUE>
+							<BOOLVAL value="false">
+								<TYPE>
+									<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+								</TYPE>
+							</BOOLVAL>
+						</VALUE>
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="19"/>
+					</PORT>
+					<PORT direction="IN" name="result" wrapper="false">
+						<TYPE>
+							<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="15"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</INTEGER>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="19"/>
+					</PORT>
+					<PORT direction="IN" name="result_rdy" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+					</PORT>
+					<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+				</ENTITY>
+				<CONTENTS name="Architecture">
+					<DECLARATIONS>
+						<SIGNAL name="data_mspw" standard="false" wrapper="false">
+							<TYPE>
+								<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+									<RANGE direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="15"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</RANGE>
+									<TYPE>
+										<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+									</TYPE>
+								</ARRAY>
+							</TYPE>
+							<VALUE>
+								<AGGREGATE>
+									<ALTS>
+										<ALT>
+											<INDICES>
+												<INTVAL value="0"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="1"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="2"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="3"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="4"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="5"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="6"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="7"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="8"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="9"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="10"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="11"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="12"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="13"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="14"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="15"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+									</ALTS>
+								</AGGREGATE>
+							</VALUE>
+						</SIGNAL>
+						<SIGNAL name="datai_mspw" standard="false" wrapper="false">
+							<TYPE>
+								<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+									<RANGE direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</RANGE>
+									<TYPE>
+										<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+									</TYPE>
+								</ARRAY>
+							</TYPE>
+							<VALUE>
+								<AGGREGATE>
+									<ALTS>
+										<ALT>
+											<INDICES>
+												<INTVAL value="0"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="1"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="2"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="3"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="4"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="5"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="6"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+										<ALT>
+											<INDICES>
+												<INTVAL value="7"/>
+											</INDICES>
+											<VALUE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</VALUE>
+										</ALT>
+									</ALTS>
+								</AGGREGATE>
+							</VALUE>
+						</SIGNAL>
+						<CONSTANT define="false" instance="true" name="ACCELEROMETER_HIGH_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8187">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="51"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ACCELEROMETER_LOW_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8186">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="50"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="DATA_HIGH_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8185">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="42"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="DATA_LOW_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8184">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="41"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="RESULT_HIGH_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8183">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="44"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="RESULT_LOW_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8182">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="43"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="DATA_RDY_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8181">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="41"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="RESULT_RDY_ADDRESS" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="31"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8180">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="31"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="43"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_START" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="0">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_1" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="1">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_2" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="2">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_3" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="3">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_4" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="4">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_5" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="5">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_6" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="6">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_7" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="7">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_8" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="8">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_9" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="9">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="21"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_10" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="10">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_11" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="11">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_12" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="12">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_13" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="13">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_14" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="14">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<CONSTANT define="false" instance="true" name="ST_15" standard="false">
+							<TYPE>
+								<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="15">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="23"/>
+						</CONSTANT>
+						<SIGNAL name="state" standard="false" wrapper="false">
+							<TYPE>
+								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="0">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="15"/>
+						</SIGNAL>
+						<VARIABLE instance="true" name="state_sig_var" standard="false">
+							<TYPE>
+								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="7"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="0">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="ram" standard="false">
+							<TYPE>
+								<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+									<RANGE direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="32767"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</RANGE>
+									<TYPE>
+										<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</ARRAY>
+							</TYPE>
+							<VALUE>
+								<AGGREGATE>
+									<OTHERS>
+										<INTVAL value="0">
+											<TYPE>
+												<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+													<SPAN direction="DOWNTO">
+														<LEFTBOUND>
+															<INTVAL value="7"/>
+														</LEFTBOUND>
+														<RIGHTBOUND>
+															<INTVAL value="0"/>
+														</RIGHTBOUND>
+													</SPAN>
+												</INTEGER>
+											</TYPE>
+										</INTVAL>
+									</OTHERS>
+								</AGGREGATE>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="rom" standard="false">
+							<TYPE>
+								<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+									<RANGE direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="8191"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</RANGE>
+									<TYPE>
+										<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="7"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</ARRAY>
+							</TYPE>
+							<VALUE>
+								<AGGREGATE>
+									<OTHERS>
+										<INTVAL value="0">
+											<TYPE>
+												<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+													<SPAN direction="DOWNTO">
+														<LEFTBOUND>
+															<INTVAL value="7"/>
+														</LEFTBOUND>
+														<RIGHTBOUND>
+															<INTVAL value="0"/>
+														</RIGHTBOUND>
+													</SPAN>
+												</INTEGER>
+											</TYPE>
+										</INTVAL>
+									</OTHERS>
+								</AGGREGATE>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="memory_addr_switch" standard="false">
+							<TYPE>
+								<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+							</TYPE>
+							<VALUE>
+								<BOOLVAL value="false">
+									<TYPE>
+										<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+									</TYPE>
+								</BOOLVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="memory_addr" standard="false">
+							<TYPE>
+								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="15"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</INTEGER>
+							</TYPE>
+							<VALUE>
+								<INTVAL value="0">
+									<TYPE>
+										<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="15"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</INTEGER>
+									</TYPE>
+								</INTVAL>
+							</VALUE>
+						</VARIABLE>
+					</DECLARATIONS>
+					<STATETABLES>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="INITIAL" name="initial_process" standard="false">
+							<STATES>
+								<STATE atomic="false" name="initial_process" priority="0">
+									<ACTIONS>
+										<PCALL name="hif_verilog__system_readmemh">
+											<INSTANCE>
+												<INSTANCE name="standard">
+													<LIBRARY filename="" name="hif_verilog_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<STRINGVAL value="./roms/rom.mem">
+														<TYPE>
+															<STRING constexpr="true" typeVariant="NATIVE_TYPE"/>
+														</TYPE>
+													</STRINGVAL>
+												</VALUE>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<IDENTIFIER name="rom">
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+													</IDENTIFIER>
+												</VALUE>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param3">
+												<VALUE>
+													<INTVAL value="0">
+														<TYPE>
+															<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																<SPAN direction="DOWNTO">
+																	<LEFTBOUND>
+																		<INTVAL value="31"/>
+																	</LEFTBOUND>
+																	<RIGHTBOUND>
+																		<INTVAL value="0"/>
+																	</RIGHTBOUND>
+																</SPAN>
+															</INTEGER>
+														</TYPE>
+													</INTVAL>
+												</VALUE>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param4">
+												<VALUE>
+													<INTVAL value="8191">
+														<TYPE>
+															<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																<SPAN direction="DOWNTO">
+																	<LEFTBOUND>
+																		<INTVAL value="31"/>
+																	</LEFTBOUND>
+																	<RIGHTBOUND>
+																		<INTVAL value="0"/>
+																	</RIGHTBOUND>
+																</SPAN>
+															</INTEGER>
+														</TYPE>
+													</INTVAL>
+												</VALUE>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param5">
+												<VALUE>
+													<INTVAL value="0">
+														<TYPE>
+															<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																<SPAN direction="DOWNTO">
+																	<LEFTBOUND>
+																		<INTVAL value="31"/>
+																	</LEFTBOUND>
+																	<RIGHTBOUND>
+																		<INTVAL value="0"/>
+																	</RIGHTBOUND>
+																</SPAN>
+															</INTEGER>
+														</TYPE>
+													</INTVAL>
+												</VALUE>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param6">
+												<VALUE>
+													<INTVAL value="8191">
+														<TYPE>
+															<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																<SPAN direction="DOWNTO">
+																	<LEFTBOUND>
+																		<INTVAL value="31"/>
+																	</LEFTBOUND>
+																	<RIGHTBOUND>
+																		<INTVAL value="0"/>
+																	</RIGHTBOUND>
+																</SPAN>
+															</INTEGER>
+														</TYPE>
+													</INTVAL>
+												</VALUE>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+										</PCALL>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="state_sig_var">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="ST_START">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+												</IDENTIFIER>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="state">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="state_sig_var">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="datai">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<INTVAL value="0">
+													<TYPE>
+														<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</INTVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="14"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="irq_n">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="nmi_n">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="res_n">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="rdy">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="sob_n">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="data_rdy">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<BOOLVAL value="false">
+													<TYPE>
+														<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</BOOLVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="data">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<INTVAL value="0">
+													<TYPE>
+														<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="15"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</INTVAL>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+										</ASSIGN>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="process" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="state">
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="15"/>
+								</IDENTIFIER>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="process" priority="0">
+									<ACTIONS>
+										<SWITCH caseSemantics="CASE_LITERAL">
+											<CONDITION>
+												<IDENTIFIER name="state_sig_var">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+												</IDENTIFIER>
+											</CONDITION>
+											<ALT>
+												<IDENTIFIER name="ST_START">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="datai_mspw">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<AGGREGATE>
+																<ALTS>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="0"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="1"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="2"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="3"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="4"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="5"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="6"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="7"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																</ALTS>
+															</AGGREGATE>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="14"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="irq_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="nmi_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="res_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="rdy">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="sob_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="data_rdy">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="data_mspw">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<AGGREGATE>
+																<ALTS>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="0"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="1"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="2"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="3"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="4"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="5"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="6"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="7"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="8"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="9"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="10"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="11"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="12"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="13"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="14"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																	<ALT>
+																		<INDICES>
+																			<INTVAL value="15"/>
+																		</INDICES>
+																		<VALUE>
+																			<BOOLVAL value="false">
+																				<TYPE>
+																					<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																				</TYPE>
+																			</BOOLVAL>
+																		</VALUE>
+																	</ALT>
+																</ALTS>
+															</AGGREGATE>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<ALT>
+												<IDENTIFIER name="ST_1">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="rdy">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="true">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="sob_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="true">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="irq_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="nmi_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="res_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<ALT>
+												<IDENTIFIER name="ST_2">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="res_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<ALT>
+												<IDENTIFIER name="ST_5">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="nmi_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="true">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<ALT>
+												<IDENTIFIER name="ST_11">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="nmi_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="false">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<ALT>
+												<IDENTIFIER name="ST_13">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+												</IDENTIFIER>
+												<ACTIONS>
+													<ASSIGN>
+														<LEFTHANDSIDE>
+															<IDENTIFIER name="res_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+															</IDENTIFIER>
+														</LEFTHANDSIDE>
+														<RIGHTHANDSIDE>
+															<BOOLVAL value="true">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</RIGHTHANDSIDE>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+													</ASSIGN>
+												</ACTIONS>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+											</ALT>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="5"/>
+										</SWITCH>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="process_0" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="clk">
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+								</IDENTIFIER>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="process_0" priority="0">
+									<ACTIONS>
+										<IF>
+											<ALT>
+												<CONDITION>
+													<EXPRESSION operator="==">
+														<VALUE1>
+															<IDENTIFIER name="rst">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="9"/>
+															</IDENTIFIER>
+														</VALUE1>
+														<VALUE2>
+															<BOOLVAL value="true">
+																<TYPE>
+																	<BOOLEAN constexpr="true" typeVariant="NATIVE_TYPE"/>
+																</TYPE>
+															</BOOLVAL>
+														</VALUE2>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="14"/>
+													</EXPRESSION>
+												</CONDITION>
+												<ASSIGN>
+													<LEFTHANDSIDE>
+														<IDENTIFIER name="state_sig_var">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+													</LEFTHANDSIDE>
+													<RIGHTHANDSIDE>
+														<IDENTIFIER name="ST_START">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+														</IDENTIFIER>
+													</RIGHTHANDSIDE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+												</ASSIGN>
+												<ASSIGN>
+													<LEFTHANDSIDE>
+														<IDENTIFIER name="state">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+													</LEFTHANDSIDE>
+													<RIGHTHANDSIDE>
+														<IDENTIFIER name="state_sig_var">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+													</RIGHTHANDSIDE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="16"/>
+												</ASSIGN>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="3"/>
+											</ALT>
+											<DEFAULTS>
+												<SWITCH caseSemantics="CASE_LITERAL">
+													<CONDITION>
+														<IDENTIFIER name="state_sig_var">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+														</IDENTIFIER>
+													</CONDITION>
+													<ALT>
+														<IDENTIFIER name="ST_START">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="10"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_1">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_1">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_2">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_2">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_3">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_3">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_4">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_4">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_5">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_5">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_6">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_6">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_7">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_7">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_8">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_8">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_9">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_9">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="6"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_10">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_10">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_11">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_11">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_12">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_12">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_13">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_13">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<IDENTIFIER name="ST_15">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_14">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<ALT>
+														<IDENTIFIER name="ST_14">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+														</IDENTIFIER>
+														<ACTIONS>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="ST_15">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+															<ASSIGN>
+																<LEFTHANDSIDE>
+																	<IDENTIFIER name="state">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</LEFTHANDSIDE>
+																<RIGHTHANDSIDE>
+																	<IDENTIFIER name="state_sig_var">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+																	</IDENTIFIER>
+																</RIGHTHANDSIDE>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+															</ASSIGN>
+														</ACTIONS>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="4"/>
+													</ALT>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="5"/>
+												</SWITCH>
+											</DEFAULTS>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="3"/>
+										</IF>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="process_1" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="clk">
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="14"/>
+								</IDENTIFIER>
+								<IDENTIFIER name="addr">
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="19"/>
+								</IDENTIFIER>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="process_1" priority="0">
+									<ACTIONS>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="memory_addr">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="&amp;">
+													<VALUE1>
+														<IDENTIFIER name="addr">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+														</IDENTIFIER>
+													</VALUE1>
+													<VALUE2>
+														<INTVAL value="8191">
+															<TYPE>
+																<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																	<SPAN direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="15"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</SPAN>
+																</INTEGER>
+															</TYPE>
+														</INTVAL>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="memory_addr_switch">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="20"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<EXPRESSION operator="&amp;">
+															<VALUE1>
+																<EXPRESSION operator="SRL">
+																	<VALUE1>
+																		<IDENTIFIER name="addr">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="29"/>
+																		</IDENTIFIER>
+																	</VALUE1>
+																	<VALUE2>
+																		<INTVAL value="15">
+																			<TYPE>
+																				<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="31"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</INTVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="1">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="15"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE>
+													<TYPE>
+														<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="29"/>
+										</ASSIGN>
+										<IF>
+											<ALT>
+												<CONDITION>
+													<EXPRESSION operator="&amp;&amp;">
+														<VALUE1>
+															<EXPRESSION operator="!">
+																<VALUE1>
+																	<IDENTIFIER name="memory_addr_switch">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+																	</IDENTIFIER>
+																</VALUE1>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="!">
+																<VALUE1>
+																	<IDENTIFIER name="we_n">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="30"/>
+																	</IDENTIFIER>
+																</VALUE1>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="30"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="30"/>
+													</EXPRESSION>
+												</CONDITION>
+												<ASSIGN>
+													<LEFTHANDSIDE>
+														<MEMBER>
+															<PREFIX>
+																<IDENTIFIER name="ram">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="18"/>
+																</IDENTIFIER>
+															</PREFIX>
+															<INDEX>
+																<IDENTIFIER name="memory_addr">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="17"/>
+																</IDENTIFIER>
+															</INDEX>
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="18"/>
+														</MEMBER>
+													</LEFTHANDSIDE>
+													<RIGHTHANDSIDE>
+														<IDENTIFIER name="datao">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+														</IDENTIFIER>
+													</RIGHTHANDSIDE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+												</ASSIGN>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="3"/>
+											</ALT>
+											<ALT>
+												<CONDITION>
+													<EXPRESSION operator="&amp;&amp;">
+														<VALUE1>
+															<EXPRESSION operator="!">
+																<VALUE1>
+																	<IDENTIFIER name="memory_addr_switch">
+																		<CODE_INFO column_number="0" file="verilog/memory.v" line_number="28"/>
+																	</IDENTIFIER>
+																</VALUE1>
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="28"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<IDENTIFIER name="we_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+															</IDENTIFIER>
+														</VALUE2>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+													</EXPRESSION>
+												</CONDITION>
+												<ASSIGN>
+													<LEFTHANDSIDE>
+														<IDENTIFIER name="datai_mspw">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+														</IDENTIFIER>
+													</LEFTHANDSIDE>
+													<RIGHTHANDSIDE>
+														<CAST>
+															<VALUE>
+																<MEMBER>
+																	<PREFIX>
+																		<IDENTIFIER name="ram">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+																		</IDENTIFIER>
+																	</PREFIX>
+																	<INDEX>
+																		<IDENTIFIER name="memory_addr">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+																		</IDENTIFIER>
+																	</INDEX>
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+																</MEMBER>
+															</VALUE>
+															<TYPE>
+																<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+																	<RANGE direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="7"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</RANGE>
+																	<TYPE>
+																		<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+																	</TYPE>
+																</ARRAY>
+															</TYPE>
+														</CAST>
+													</RIGHTHANDSIDE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+												</ASSIGN>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+											</ALT>
+											<ALT>
+												<CONDITION>
+													<EXPRESSION operator="&amp;&amp;">
+														<VALUE1>
+															<IDENTIFIER name="memory_addr_switch">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="27"/>
+															</IDENTIFIER>
+														</VALUE1>
+														<VALUE2>
+															<IDENTIFIER name="we_n">
+																<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+															</IDENTIFIER>
+														</VALUE2>
+														<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+													</EXPRESSION>
+												</CONDITION>
+												<ASSIGN>
+													<LEFTHANDSIDE>
+														<IDENTIFIER name="datai_mspw">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="8"/>
+														</IDENTIFIER>
+													</LEFTHANDSIDE>
+													<RIGHTHANDSIDE>
+														<CAST>
+															<VALUE>
+																<MEMBER>
+																	<PREFIX>
+																		<IDENTIFIER name="rom">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+																		</IDENTIFIER>
+																	</PREFIX>
+																	<INDEX>
+																		<IDENTIFIER name="memory_addr">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+																		</IDENTIFIER>
+																	</INDEX>
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+																</MEMBER>
+															</VALUE>
+															<TYPE>
+																<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+																	<RANGE direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="7"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</RANGE>
+																	<TYPE>
+																		<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+																	</TYPE>
+																</ARRAY>
+															</TYPE>
+														</CAST>
+													</RIGHTHANDSIDE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+												</ASSIGN>
+												<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+											</ALT>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="3"/>
+										</IF>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="process_2" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="clk">
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+								</IDENTIFIER>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="process_2" priority="0">
+									<ACTIONS>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<MEMBER>
+													<PREFIX>
+														<IDENTIFIER name="ram">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<INDEX>
+														<IDENTIFIER name="ACCELEROMETER_HIGH_ADDRESS">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+														</IDENTIFIER>
+													</INDEX>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+												</MEMBER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<EXPRESSION operator="&amp;">
+															<VALUE1>
+																<EXPRESSION operator="SRL">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="53"/>
+																		</IDENTIFIER>
+																	</VALUE1>
+																	<VALUE2>
+																		<INTVAL value="8">
+																			<TYPE>
+																				<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="31"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</INTVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="255">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="15"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE>
+													<TYPE>
+														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="53"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<MEMBER>
+													<PREFIX>
+														<IDENTIFIER name="ram">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<INDEX>
+														<IDENTIFIER name="ACCELEROMETER_LOW_ADDRESS">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="31"/>
+														</IDENTIFIER>
+													</INDEX>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+												</MEMBER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<IDENTIFIER name="accelerometer">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="51"/>
+														</IDENTIFIER>
+													</VALUE>
+													<TYPE>
+														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="51"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="data_rdy">
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="11"/>
+												</IDENTIFIER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<EXPRESSION operator="&amp;">
+															<VALUE1>
+																<MEMBER>
+																	<PREFIX>
+																		<IDENTIFIER name="ram">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+																		</IDENTIFIER>
+																	</PREFIX>
+																	<INDEX>
+																		<IDENTIFIER name="DATA_RDY_ADDRESS">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="32"/>
+																		</IDENTIFIER>
+																	</INDEX>
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+																</MEMBER>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="1">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="7"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE>
+													<TYPE>
+														<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<SLICE>
+													<PREFIX>
+														<IDENTIFIER name="data_mspw">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<RANGE direction="DOWNTO">
+														<LEFTBOUND>
+															<INTVAL value="7"/>
+														</LEFTBOUND>
+														<RIGHTBOUND>
+															<INTVAL value="0"/>
+														</RIGHTBOUND>
+													</RANGE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="12"/>
+												</SLICE>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<MEMBER>
+															<PREFIX>
+																<IDENTIFIER name="ram">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="34"/>
+																</IDENTIFIER>
+															</PREFIX>
+															<INDEX>
+																<IDENTIFIER name="DATA_LOW_ADDRESS">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="33"/>
+																</IDENTIFIER>
+															</INDEX>
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="34"/>
+														</MEMBER>
+													</VALUE>
+													<TYPE>
+														<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+															<RANGE direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</RANGE>
+															<TYPE>
+																<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+															</TYPE>
+														</ARRAY>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="34"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<SLICE>
+													<PREFIX>
+														<IDENTIFIER name="data_mspw">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<RANGE direction="DOWNTO">
+														<LEFTBOUND>
+															<INTVAL value="15"/>
+														</LEFTBOUND>
+														<RIGHTBOUND>
+															<INTVAL value="8"/>
+														</RIGHTBOUND>
+													</RANGE>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="13"/>
+												</SLICE>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<MEMBER>
+															<PREFIX>
+																<IDENTIFIER name="ram">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="36"/>
+																</IDENTIFIER>
+															</PREFIX>
+															<INDEX>
+																<IDENTIFIER name="DATA_HIGH_ADDRESS">
+																	<CODE_INFO column_number="0" file="verilog/memory.v" line_number="35"/>
+																</IDENTIFIER>
+															</INDEX>
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="36"/>
+														</MEMBER>
+													</VALUE>
+													<TYPE>
+														<ARRAY signed="false" typeVariant="NATIVE_TYPE">
+															<RANGE direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</RANGE>
+															<TYPE>
+																<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+															</TYPE>
+														</ARRAY>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="36"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<MEMBER>
+													<PREFIX>
+														<IDENTIFIER name="ram">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<INDEX>
+														<IDENTIFIER name="RESULT_RDY_ADDRESS">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+														</IDENTIFIER>
+													</INDEX>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+												</MEMBER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<IDENTIFIER name="result_rdy">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="36"/>
+														</IDENTIFIER>
+													</VALUE>
+													<TYPE>
+														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="36"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<MEMBER>
+													<PREFIX>
+														<IDENTIFIER name="ram">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="26"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<INDEX>
+														<IDENTIFIER name="RESULT_HIGH_ADDRESS">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+														</IDENTIFIER>
+													</INDEX>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="26"/>
+												</MEMBER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<EXPRESSION operator="&amp;">
+															<VALUE1>
+																<EXPRESSION operator="SRL">
+																	<VALUE1>
+																		<IDENTIFIER name="result">
+																			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="39"/>
+																		</IDENTIFIER>
+																	</VALUE1>
+																	<VALUE2>
+																		<INTVAL value="8">
+																			<TYPE>
+																				<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="31"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</INTVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="255">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="15"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE>
+													<TYPE>
+														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="39"/>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<MEMBER>
+													<PREFIX>
+														<IDENTIFIER name="ram">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+														</IDENTIFIER>
+													</PREFIX>
+													<INDEX>
+														<IDENTIFIER name="RESULT_LOW_ADDRESS">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="24"/>
+														</IDENTIFIER>
+													</INDEX>
+													<CODE_INFO column_number="0" file="verilog/memory.v" line_number="25"/>
+												</MEMBER>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<CAST>
+													<VALUE>
+														<IDENTIFIER name="result">
+															<CODE_INFO column_number="0" file="verilog/memory.v" line_number="37"/>
+														</IDENTIFIER>
+													</VALUE>
+													<TYPE>
+														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+															<SPAN direction="DOWNTO">
+																<LEFTBOUND>
+																	<INTVAL value="7"/>
+																</LEFTBOUND>
+																<RIGHTBOUND>
+																	<INTVAL value="0"/>
+																</RIGHTBOUND>
+															</SPAN>
+														</INTEGER>
+													</TYPE>
+												</CAST>
+											</RIGHTHANDSIDE>
+											<CODE_INFO column_number="0" file="verilog/memory.v" line_number="37"/>
+										</ASSIGN>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="datai_mspw_proc_tgt" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="datai_mspw"/>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="datai_mspw_proc_tgt" priority="0">
+									<ACTIONS>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="datai"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="|">
+													<VALUE1>
+														<EXPRESSION operator="|">
+															<VALUE1>
+																<EXPRESSION operator="|">
+																	<VALUE1>
+																		<EXPRESSION operator="|">
+																			<VALUE1>
+																				<EXPRESSION operator="|">
+																					<VALUE1>
+																						<EXPRESSION operator="|">
+																							<VALUE1>
+																								<EXPRESSION operator="|">
+																									<VALUE1>
+																										<EXPRESSION operator="SLL">
+																											<VALUE1>
+																												<CAST>
+																													<VALUE>
+																														<MEMBER>
+																															<PREFIX>
+																																<IDENTIFIER name="datai_mspw"/>
+																															</PREFIX>
+																															<INDEX>
+																																<INTVAL value="1"/>
+																															</INDEX>
+																														</MEMBER>
+																													</VALUE>
+																													<TYPE>
+																														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="7"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</INTEGER>
+																													</TYPE>
+																												</CAST>
+																											</VALUE1>
+																											<VALUE2>
+																												<INTVAL value="1">
+																													<TYPE>
+																														<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="31"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</INTEGER>
+																													</TYPE>
+																												</INTVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<CAST>
+																											<VALUE>
+																												<MEMBER>
+																													<PREFIX>
+																														<IDENTIFIER name="datai_mspw"/>
+																													</PREFIX>
+																													<INDEX>
+																														<INTVAL value="0"/>
+																													</INDEX>
+																												</MEMBER>
+																											</VALUE>
+																											<TYPE>
+																												<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="7"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</INTEGER>
+																											</TYPE>
+																										</CAST>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="SLL">
+																									<VALUE1>
+																										<CAST>
+																											<VALUE>
+																												<MEMBER>
+																													<PREFIX>
+																														<IDENTIFIER name="datai_mspw"/>
+																													</PREFIX>
+																													<INDEX>
+																														<INTVAL value="2"/>
+																													</INDEX>
+																												</MEMBER>
+																											</VALUE>
+																											<TYPE>
+																												<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="7"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</INTEGER>
+																											</TYPE>
+																										</CAST>
+																									</VALUE1>
+																									<VALUE2>
+																										<INTVAL value="2">
+																											<TYPE>
+																												<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="31"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</INTEGER>
+																											</TYPE>
+																										</INTVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="SLL">
+																							<VALUE1>
+																								<CAST>
+																									<VALUE>
+																										<MEMBER>
+																											<PREFIX>
+																												<IDENTIFIER name="datai_mspw"/>
+																											</PREFIX>
+																											<INDEX>
+																												<INTVAL value="3"/>
+																											</INDEX>
+																										</MEMBER>
+																									</VALUE>
+																									<TYPE>
+																										<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="7"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</INTEGER>
+																									</TYPE>
+																								</CAST>
+																							</VALUE1>
+																							<VALUE2>
+																								<INTVAL value="3">
+																									<TYPE>
+																										<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="31"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</INTEGER>
+																									</TYPE>
+																								</INTVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="SLL">
+																					<VALUE1>
+																						<CAST>
+																							<VALUE>
+																								<MEMBER>
+																									<PREFIX>
+																										<IDENTIFIER name="datai_mspw"/>
+																									</PREFIX>
+																									<INDEX>
+																										<INTVAL value="4"/>
+																									</INDEX>
+																								</MEMBER>
+																							</VALUE>
+																							<TYPE>
+																								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="7"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</INTEGER>
+																							</TYPE>
+																						</CAST>
+																					</VALUE1>
+																					<VALUE2>
+																						<INTVAL value="4">
+																							<TYPE>
+																								<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="31"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</INTEGER>
+																							</TYPE>
+																						</INTVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="SLL">
+																			<VALUE1>
+																				<CAST>
+																					<VALUE>
+																						<MEMBER>
+																							<PREFIX>
+																								<IDENTIFIER name="datai_mspw"/>
+																							</PREFIX>
+																							<INDEX>
+																								<INTVAL value="5"/>
+																							</INDEX>
+																						</MEMBER>
+																					</VALUE>
+																					<TYPE>
+																						<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="7"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</INTEGER>
+																					</TYPE>
+																				</CAST>
+																			</VALUE1>
+																			<VALUE2>
+																				<INTVAL value="5">
+																					<TYPE>
+																						<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="31"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</INTEGER>
+																					</TYPE>
+																				</INTVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="SLL">
+																	<VALUE1>
+																		<CAST>
+																			<VALUE>
+																				<MEMBER>
+																					<PREFIX>
+																						<IDENTIFIER name="datai_mspw"/>
+																					</PREFIX>
+																					<INDEX>
+																						<INTVAL value="6"/>
+																					</INDEX>
+																				</MEMBER>
+																			</VALUE>
+																			<TYPE>
+																				<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="7"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</CAST>
+																	</VALUE1>
+																	<VALUE2>
+																		<INTVAL value="6">
+																			<TYPE>
+																				<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="31"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</INTVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="SLL">
+															<VALUE1>
+																<CAST>
+																	<VALUE>
+																		<MEMBER>
+																			<PREFIX>
+																				<IDENTIFIER name="datai_mspw"/>
+																			</PREFIX>
+																			<INDEX>
+																				<INTVAL value="7"/>
+																			</INDEX>
+																		</MEMBER>
+																	</VALUE>
+																	<TYPE>
+																		<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="7"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</CAST>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="7">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="31"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+									</ACTIONS>
+								</STATE>
+							</STATES>
+						</STATETABLE>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="HDL" name="data_mspw_proc_tgt" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="data_mspw"/>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="data_mspw_proc_tgt" priority="0">
+									<ACTIONS>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="data"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="|">
+													<VALUE1>
+														<EXPRESSION operator="|">
+															<VALUE1>
+																<EXPRESSION operator="|">
+																	<VALUE1>
+																		<EXPRESSION operator="|">
+																			<VALUE1>
+																				<EXPRESSION operator="|">
+																					<VALUE1>
+																						<EXPRESSION operator="|">
+																							<VALUE1>
+																								<EXPRESSION operator="|">
+																									<VALUE1>
+																										<EXPRESSION operator="|">
+																											<VALUE1>
+																												<EXPRESSION operator="|">
+																													<VALUE1>
+																														<EXPRESSION operator="|">
+																															<VALUE1>
+																																<EXPRESSION operator="|">
+																																	<VALUE1>
+																																		<EXPRESSION operator="|">
+																																			<VALUE1>
+																																				<EXPRESSION operator="|">
+																																					<VALUE1>
+																																						<EXPRESSION operator="|">
+																																							<VALUE1>
+																																								<EXPRESSION operator="|">
+																																									<VALUE1>
+																																										<EXPRESSION operator="SLL">
+																																											<VALUE1>
+																																												<CAST>
+																																													<VALUE>
+																																														<MEMBER>
+																																															<PREFIX>
+																																																<IDENTIFIER name="data_mspw"/>
+																																															</PREFIX>
+																																															<INDEX>
+																																																<INTVAL value="1"/>
+																																															</INDEX>
+																																														</MEMBER>
+																																													</VALUE>
+																																													<TYPE>
+																																														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																															<SPAN direction="DOWNTO">
+																																																<LEFTBOUND>
+																																																	<INTVAL value="15"/>
+																																																</LEFTBOUND>
+																																																<RIGHTBOUND>
+																																																	<INTVAL value="0"/>
+																																																</RIGHTBOUND>
+																																															</SPAN>
+																																														</INTEGER>
+																																													</TYPE>
+																																												</CAST>
+																																											</VALUE1>
+																																											<VALUE2>
+																																												<INTVAL value="1">
+																																													<TYPE>
+																																														<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																															<SPAN direction="DOWNTO">
+																																																<LEFTBOUND>
+																																																	<INTVAL value="31"/>
+																																																</LEFTBOUND>
+																																																<RIGHTBOUND>
+																																																	<INTVAL value="0"/>
+																																																</RIGHTBOUND>
+																																															</SPAN>
+																																														</INTEGER>
+																																													</TYPE>
+																																												</INTVAL>
+																																											</VALUE2>
+																																										</EXPRESSION>
+																																									</VALUE1>
+																																									<VALUE2>
+																																										<CAST>
+																																											<VALUE>
+																																												<MEMBER>
+																																													<PREFIX>
+																																														<IDENTIFIER name="data_mspw"/>
+																																													</PREFIX>
+																																													<INDEX>
+																																														<INTVAL value="0"/>
+																																													</INDEX>
+																																												</MEMBER>
+																																											</VALUE>
+																																											<TYPE>
+																																												<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																													<SPAN direction="DOWNTO">
+																																														<LEFTBOUND>
+																																															<INTVAL value="15"/>
+																																														</LEFTBOUND>
+																																														<RIGHTBOUND>
+																																															<INTVAL value="0"/>
+																																														</RIGHTBOUND>
+																																													</SPAN>
+																																												</INTEGER>
+																																											</TYPE>
+																																										</CAST>
+																																									</VALUE2>
+																																								</EXPRESSION>
+																																							</VALUE1>
+																																							<VALUE2>
+																																								<EXPRESSION operator="SLL">
+																																									<VALUE1>
+																																										<CAST>
+																																											<VALUE>
+																																												<MEMBER>
+																																													<PREFIX>
+																																														<IDENTIFIER name="data_mspw"/>
+																																													</PREFIX>
+																																													<INDEX>
+																																														<INTVAL value="2"/>
+																																													</INDEX>
+																																												</MEMBER>
+																																											</VALUE>
+																																											<TYPE>
+																																												<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																													<SPAN direction="DOWNTO">
+																																														<LEFTBOUND>
+																																															<INTVAL value="15"/>
+																																														</LEFTBOUND>
+																																														<RIGHTBOUND>
+																																															<INTVAL value="0"/>
+																																														</RIGHTBOUND>
+																																													</SPAN>
+																																												</INTEGER>
+																																											</TYPE>
+																																										</CAST>
+																																									</VALUE1>
+																																									<VALUE2>
+																																										<INTVAL value="2">
+																																											<TYPE>
+																																												<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																													<SPAN direction="DOWNTO">
+																																														<LEFTBOUND>
+																																															<INTVAL value="31"/>
+																																														</LEFTBOUND>
+																																														<RIGHTBOUND>
+																																															<INTVAL value="0"/>
+																																														</RIGHTBOUND>
+																																													</SPAN>
+																																												</INTEGER>
+																																											</TYPE>
+																																										</INTVAL>
+																																									</VALUE2>
+																																								</EXPRESSION>
+																																							</VALUE2>
+																																						</EXPRESSION>
+																																					</VALUE1>
+																																					<VALUE2>
+																																						<EXPRESSION operator="SLL">
+																																							<VALUE1>
+																																								<CAST>
+																																									<VALUE>
+																																										<MEMBER>
+																																											<PREFIX>
+																																												<IDENTIFIER name="data_mspw"/>
+																																											</PREFIX>
+																																											<INDEX>
+																																												<INTVAL value="3"/>
+																																											</INDEX>
+																																										</MEMBER>
+																																									</VALUE>
+																																									<TYPE>
+																																										<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																											<SPAN direction="DOWNTO">
+																																												<LEFTBOUND>
+																																													<INTVAL value="15"/>
+																																												</LEFTBOUND>
+																																												<RIGHTBOUND>
+																																													<INTVAL value="0"/>
+																																												</RIGHTBOUND>
+																																											</SPAN>
+																																										</INTEGER>
+																																									</TYPE>
+																																								</CAST>
+																																							</VALUE1>
+																																							<VALUE2>
+																																								<INTVAL value="3">
+																																									<TYPE>
+																																										<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																											<SPAN direction="DOWNTO">
+																																												<LEFTBOUND>
+																																													<INTVAL value="31"/>
+																																												</LEFTBOUND>
+																																												<RIGHTBOUND>
+																																													<INTVAL value="0"/>
+																																												</RIGHTBOUND>
+																																											</SPAN>
+																																										</INTEGER>
+																																									</TYPE>
+																																								</INTVAL>
+																																							</VALUE2>
+																																						</EXPRESSION>
+																																					</VALUE2>
+																																				</EXPRESSION>
+																																			</VALUE1>
+																																			<VALUE2>
+																																				<EXPRESSION operator="SLL">
+																																					<VALUE1>
+																																						<CAST>
+																																							<VALUE>
+																																								<MEMBER>
+																																									<PREFIX>
+																																										<IDENTIFIER name="data_mspw"/>
+																																									</PREFIX>
+																																									<INDEX>
+																																										<INTVAL value="4"/>
+																																									</INDEX>
+																																								</MEMBER>
+																																							</VALUE>
+																																							<TYPE>
+																																								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																									<SPAN direction="DOWNTO">
+																																										<LEFTBOUND>
+																																											<INTVAL value="15"/>
+																																										</LEFTBOUND>
+																																										<RIGHTBOUND>
+																																											<INTVAL value="0"/>
+																																										</RIGHTBOUND>
+																																									</SPAN>
+																																								</INTEGER>
+																																							</TYPE>
+																																						</CAST>
+																																					</VALUE1>
+																																					<VALUE2>
+																																						<INTVAL value="4">
+																																							<TYPE>
+																																								<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																									<SPAN direction="DOWNTO">
+																																										<LEFTBOUND>
+																																											<INTVAL value="31"/>
+																																										</LEFTBOUND>
+																																										<RIGHTBOUND>
+																																											<INTVAL value="0"/>
+																																										</RIGHTBOUND>
+																																									</SPAN>
+																																								</INTEGER>
+																																							</TYPE>
+																																						</INTVAL>
+																																					</VALUE2>
+																																				</EXPRESSION>
+																																			</VALUE2>
+																																		</EXPRESSION>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<EXPRESSION operator="SLL">
+																																			<VALUE1>
+																																				<CAST>
+																																					<VALUE>
+																																						<MEMBER>
+																																							<PREFIX>
+																																								<IDENTIFIER name="data_mspw"/>
+																																							</PREFIX>
+																																							<INDEX>
+																																								<INTVAL value="5"/>
+																																							</INDEX>
+																																						</MEMBER>
+																																					</VALUE>
+																																					<TYPE>
+																																						<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																							<SPAN direction="DOWNTO">
+																																								<LEFTBOUND>
+																																									<INTVAL value="15"/>
+																																								</LEFTBOUND>
+																																								<RIGHTBOUND>
+																																									<INTVAL value="0"/>
+																																								</RIGHTBOUND>
+																																							</SPAN>
+																																						</INTEGER>
+																																					</TYPE>
+																																				</CAST>
+																																			</VALUE1>
+																																			<VALUE2>
+																																				<INTVAL value="5">
+																																					<TYPE>
+																																						<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																							<SPAN direction="DOWNTO">
+																																								<LEFTBOUND>
+																																									<INTVAL value="31"/>
+																																								</LEFTBOUND>
+																																								<RIGHTBOUND>
+																																									<INTVAL value="0"/>
+																																								</RIGHTBOUND>
+																																							</SPAN>
+																																						</INTEGER>
+																																					</TYPE>
+																																				</INTVAL>
+																																			</VALUE2>
+																																		</EXPRESSION>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE1>
+																															<VALUE2>
+																																<EXPRESSION operator="SLL">
+																																	<VALUE1>
+																																		<CAST>
+																																			<VALUE>
+																																				<MEMBER>
+																																					<PREFIX>
+																																						<IDENTIFIER name="data_mspw"/>
+																																					</PREFIX>
+																																					<INDEX>
+																																						<INTVAL value="6"/>
+																																					</INDEX>
+																																				</MEMBER>
+																																			</VALUE>
+																																			<TYPE>
+																																				<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="15"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</INTEGER>
+																																			</TYPE>
+																																		</CAST>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<INTVAL value="6">
+																																			<TYPE>
+																																				<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="31"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</INTEGER>
+																																			</TYPE>
+																																		</INTVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="SLL">
+																															<VALUE1>
+																																<CAST>
+																																	<VALUE>
+																																		<MEMBER>
+																																			<PREFIX>
+																																				<IDENTIFIER name="data_mspw"/>
+																																			</PREFIX>
+																																			<INDEX>
+																																				<INTVAL value="7"/>
+																																			</INDEX>
+																																		</MEMBER>
+																																	</VALUE>
+																																	<TYPE>
+																																		<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="15"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</INTEGER>
+																																	</TYPE>
+																																</CAST>
+																															</VALUE1>
+																															<VALUE2>
+																																<INTVAL value="7">
+																																	<TYPE>
+																																		<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="31"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</INTEGER>
+																																	</TYPE>
+																																</INTVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="SLL">
+																													<VALUE1>
+																														<CAST>
+																															<VALUE>
+																																<MEMBER>
+																																	<PREFIX>
+																																		<IDENTIFIER name="data_mspw"/>
+																																	</PREFIX>
+																																	<INDEX>
+																																		<INTVAL value="8"/>
+																																	</INDEX>
+																																</MEMBER>
+																															</VALUE>
+																															<TYPE>
+																																<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="15"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</INTEGER>
+																															</TYPE>
+																														</CAST>
+																													</VALUE1>
+																													<VALUE2>
+																														<INTVAL value="8">
+																															<TYPE>
+																																<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="31"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</INTEGER>
+																															</TYPE>
+																														</INTVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="SLL">
+																											<VALUE1>
+																												<CAST>
+																													<VALUE>
+																														<MEMBER>
+																															<PREFIX>
+																																<IDENTIFIER name="data_mspw"/>
+																															</PREFIX>
+																															<INDEX>
+																																<INTVAL value="9"/>
+																															</INDEX>
+																														</MEMBER>
+																													</VALUE>
+																													<TYPE>
+																														<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="15"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</INTEGER>
+																													</TYPE>
+																												</CAST>
+																											</VALUE1>
+																											<VALUE2>
+																												<INTVAL value="9">
+																													<TYPE>
+																														<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="31"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</INTEGER>
+																													</TYPE>
+																												</INTVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="SLL">
+																									<VALUE1>
+																										<CAST>
+																											<VALUE>
+																												<MEMBER>
+																													<PREFIX>
+																														<IDENTIFIER name="data_mspw"/>
+																													</PREFIX>
+																													<INDEX>
+																														<INTVAL value="10"/>
+																													</INDEX>
+																												</MEMBER>
+																											</VALUE>
+																											<TYPE>
+																												<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="15"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</INTEGER>
+																											</TYPE>
+																										</CAST>
+																									</VALUE1>
+																									<VALUE2>
+																										<INTVAL value="10">
+																											<TYPE>
+																												<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="31"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</INTEGER>
+																											</TYPE>
+																										</INTVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="SLL">
+																							<VALUE1>
+																								<CAST>
+																									<VALUE>
+																										<MEMBER>
+																											<PREFIX>
+																												<IDENTIFIER name="data_mspw"/>
+																											</PREFIX>
+																											<INDEX>
+																												<INTVAL value="11"/>
+																											</INDEX>
+																										</MEMBER>
+																									</VALUE>
+																									<TYPE>
+																										<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="15"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</INTEGER>
+																									</TYPE>
+																								</CAST>
+																							</VALUE1>
+																							<VALUE2>
+																								<INTVAL value="11">
+																									<TYPE>
+																										<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="31"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</INTEGER>
+																									</TYPE>
+																								</INTVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="SLL">
+																					<VALUE1>
+																						<CAST>
+																							<VALUE>
+																								<MEMBER>
+																									<PREFIX>
+																										<IDENTIFIER name="data_mspw"/>
+																									</PREFIX>
+																									<INDEX>
+																										<INTVAL value="12"/>
+																									</INDEX>
+																								</MEMBER>
+																							</VALUE>
+																							<TYPE>
+																								<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="15"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</INTEGER>
+																							</TYPE>
+																						</CAST>
+																					</VALUE1>
+																					<VALUE2>
+																						<INTVAL value="12">
+																							<TYPE>
+																								<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="31"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</INTEGER>
+																							</TYPE>
+																						</INTVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="SLL">
+																			<VALUE1>
+																				<CAST>
+																					<VALUE>
+																						<MEMBER>
+																							<PREFIX>
+																								<IDENTIFIER name="data_mspw"/>
+																							</PREFIX>
+																							<INDEX>
+																								<INTVAL value="13"/>
+																							</INDEX>
+																						</MEMBER>
+																					</VALUE>
+																					<TYPE>
+																						<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="15"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</INTEGER>
+																					</TYPE>
+																				</CAST>
+																			</VALUE1>
+																			<VALUE2>
+																				<INTVAL value="13">
+																					<TYPE>
+																						<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="31"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</INTEGER>
+																					</TYPE>
+																				</INTVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="SLL">
+																	<VALUE1>
+																		<CAST>
+																			<VALUE>
+																				<MEMBER>
+																					<PREFIX>
+																						<IDENTIFIER name="data_mspw"/>
+																					</PREFIX>
+																					<INDEX>
+																						<INTVAL value="14"/>
+																					</INDEX>
+																				</MEMBER>
+																			</VALUE>
+																			<TYPE>
+																				<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="15"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</CAST>
+																	</VALUE1>
+																	<VALUE2>
+																		<INTVAL value="14">
+																			<TYPE>
+																				<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="31"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</INTEGER>
+																			</TYPE>
+																		</INTVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="SLL">
+															<VALUE1>
+																<CAST>
+																	<VALUE>
+																		<MEMBER>
+																			<PREFIX>
+																				<IDENTIFIER name="data_mspw"/>
+																			</PREFIX>
+																			<INDEX>
+																				<INTVAL value="15"/>
+																			</INDEX>
+																		</MEMBER>
+																	</VALUE>
+																	<TYPE>
+																		<INTEGER constexpr="false" signed="false" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="15"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</CAST>
+															</VALUE1>
+															<VALUE2>
+																<INTVAL value="15">
+																	<TYPE>
+																		<INTEGER constexpr="true" signed="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="31"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</INTEGER>
+																	</TYPE>
+																</INTVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+									</ACTIONS>
+								</STATE>
+							</STATES>
+						</STATETABLE>
+					</STATETABLES>
+					<GLOBALACTION/>
+					<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+				</CONTENTS>
+				<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+			</VIEW>
+			<CODE_INFO column_number="0" file="verilog/memory.v" line_number="7"/>
+		</DESIGNUNIT>
+	</DESIGNUNITS>
+</SYSTEM>

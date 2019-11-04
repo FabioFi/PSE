@@ -1,0 +1,3398 @@
+<SYSTEM formatVersion="4.0" generationDate="13:12:55:345818" languageId="RTL" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="DDT">
+	<LIBRARYDEFS>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_driver_access" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_disciplines" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_constants" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_standard" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="RTL" name="hif_verilog_standard" standard="true"/>
+	</LIBRARYDEFS>
+	<DESIGNUNITS>
+		<DESIGNUNIT name="accelerometer">
+			<VIEW filename="" languageId="RTL" name="behav" standard="false">
+				<LIBRARIES>
+					<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+					<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+				</LIBRARIES>
+				<ENTITY name="Entity">
+					<PORT direction="OUT" name="accelerometer_V_avz_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_reduced_1_dot_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_reduced_1_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_reduced_0_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_reduced_0_dot_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_avx_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="OUT" name="accelerometer_V_avy_ddt" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+					</PORT>
+					<PORT direction="IN" name="avz" wrapper="false">
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="18"/>
+					</PORT>
+					<PORT direction="IN" name="avy" wrapper="false">
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="18"/>
+					</PORT>
+					<PORT direction="IN" name="avx" wrapper="false">
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="18"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap7" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="27"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap5" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="27"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap2" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="27"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap1" wrapper="false">
+						<VALUE>
+							<REALVAL value="0">
+								<TYPE>
+									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+										<SPAN direction="DOWNTO">
+											<LEFTBOUND>
+												<INTVAL value="63"/>
+											</LEFTBOUND>
+											<RIGHTBOUND>
+												<INTVAL value="0"/>
+											</RIGHTBOUND>
+										</SPAN>
+									</REAL>
+								</TYPE>
+							</REALVAL>
+						</VALUE>
+						<TYPE>
+							<REAL constexpr="false" typeVariant="NATIVE_TYPE">
+								<SPAN direction="DOWNTO">
+									<LEFTBOUND>
+										<INTVAL value="63"/>
+									</LEFTBOUND>
+									<RIGHTBOUND>
+										<INTVAL value="0"/>
+									</RIGHTBOUND>
+								</SPAN>
+							</REAL>
+						</TYPE>
+						<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="27"/>
+					</PORT>
+					<PORT direction="IN" name="analog_clock" wrapper="false">
+						<TYPE>
+							<BOOLEAN constexpr="false" typeVariant="NATIVE_TYPE"/>
+						</TYPE>
+					</PORT>
+					<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+				</ENTITY>
+				<CONTENTS name="Architecture">
+					<DECLARATIONS>
+						<VARIABLE instance="true" name="accelerometer_V_Cap7" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_Cap5" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_Cap2" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_Cap1" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avz_dot" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avy_dot" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avx_dot" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_reduced_1_dot" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_reduced_0_dot" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_reduced_1" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avx" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avy" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_avz" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="accelerometer_V_reduced_0" standard="false">
+							<TYPE>
+								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+									<SPAN direction="DOWNTO">
+										<LEFTBOUND>
+											<INTVAL value="63"/>
+										</LEFTBOUND>
+										<RIGHTBOUND>
+											<INTVAL value="0"/>
+										</RIGHTBOUND>
+									</SPAN>
+								</REAL>
+							</TYPE>
+							<VALUE>
+								<REALVAL value="0">
+									<TYPE>
+										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+											<SPAN direction="DOWNTO">
+												<LEFTBOUND>
+													<INTVAL value="63"/>
+												</LEFTBOUND>
+												<RIGHTBOUND>
+													<INTVAL value="0"/>
+												</RIGHTBOUND>
+											</SPAN>
+										</REAL>
+									</TYPE>
+								</REALVAL>
+							</VALUE>
+						</VARIABLE>
+					</DECLARATIONS>
+					<STATETABLES>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="ANALOG" name="process" standard="false">
+							<SENSITIVITY>
+								<IDENTIFIER name="analog_clock"/>
+							</SENSITIVITY>
+							<STATES>
+								<STATE atomic="false" name="process" priority="0">
+									<ACTIONS>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avx"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="avx"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set input values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avy"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="avy"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set input values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avz"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="avz"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set input values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-0.003728135119188048">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="0.003728135119188048">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="-2.115039716424037">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="2.115039716424037">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="5.336334959298336e-05">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-5.336334959298336e-05">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="0.612305414528409">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="12.24610829056818">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="6.303192520065858e-15">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="1.260638504595002e-13">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-2.133933361666745">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="2.133933361666745">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="0.003695126553352967">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="-0.003695126553352967">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="0.03054438677665568">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-0.03054438677665568">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="5.917553417428419e-15">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="1.697431721517617e-13">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="0.6123054145323998">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="12.246108290648">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0_dot"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-0.0001864067559594024">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="0.0001864067559594024">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="-0.1057519858212019">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="0.1057519858212019">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="2.668167479649168e-06">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-2.668167479649168e-06">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="-0.01938472927357955">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="0.612305414528409">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="3.151596260430569e-16">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="6.303192520861139e-15">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1_dot"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-0.1066966680833372">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="0.1066966680833372">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="0.0001847563276681184">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="-0.0001847563276681184">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="0.001527219338832784">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-0.001527219338832784">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="4.104876092039445e-16">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="5.254241397810489e-15">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="-0.01938472927338001">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="0.6123054145323998">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avx_dot"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avx"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="-0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avy_dot"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avy"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="-0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avz_dot"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avz"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<EXPRESSION operator="*">
+															<VALUE1>
+																<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+															</VALUE1>
+															<VALUE2>
+																<REALVAL value="-0.04999999999999999">
+																	<TYPE>
+																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																			<SPAN direction="DOWNTO">
+																				<LEFTBOUND>
+																					<INTVAL value="63"/>
+																				</LEFTBOUND>
+																				<RIGHTBOUND>
+																					<INTVAL value="0"/>
+																				</RIGHTBOUND>
+																			</SPAN>
+																		</REAL>
+																	</TYPE>
+																</REALVAL>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap1"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="-">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="+">
+																															<VALUE1>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="-1.285115295880227e-13">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE1>
+																															<VALUE2>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="1.285115295880227e-13">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avy"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-4.317265437626564e-15">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="4.317265437626564e-15">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avz"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="1.839469749151862e-15">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="-1.839469749151862e-15">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="1.314270103382379e-15">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="2.628540206765725e-14">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="3.687247551095106e-14">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="7.374495102190212e-13">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<REALVAL value="3.206985399781644e-13">
+															<TYPE>
+																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																	<SPAN direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="63"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</SPAN>
+																</REAL>
+															</TYPE>
+														</REALVAL>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap2"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="-">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="+">
+																															<VALUE1>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="-4.317245379147243e-15">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE1>
+																															<VALUE2>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="4.317245379147243e-15">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avy"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="1.285115293361693e-13">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="-1.285115293361693e-13">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avz"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="6.179555604094232e-17">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="-6.179555604094232e-17">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-3.720189603138636e-14">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="-7.440379206277272e-13">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="1.303773804088645e-15">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="2.60754760817729e-14">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<REALVAL value="3.206985399781645e-13">
+															<TYPE>
+																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																	<SPAN direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="63"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</SPAN>
+																</REAL>
+															</TYPE>
+														</REALVAL>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap5"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="+">
+																															<VALUE1>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="1.285133105908749e-13">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE1>
+																															<VALUE2>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="-1.285133105908749e-13">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avy"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="4.317245361299441e-15">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="-4.317245361299441e-15">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avz"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="-1.839495241812946e-15">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="1.839495241812946e-15">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="-1.314265184104945e-15">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="-2.628530368210372e-14">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="-3.687298655597665e-14">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="-7.37459731119533e-13">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<REALVAL value="3.206985399781644e-13">
+															<TYPE>
+																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																	<SPAN direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="63"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</SPAN>
+																</REAL>
+															</TYPE>
+														</REALVAL>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap7"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<EXPRESSION operator="+">
+													<VALUE1>
+														<EXPRESSION operator="+">
+															<VALUE1>
+																<EXPRESSION operator="+">
+																	<VALUE1>
+																		<EXPRESSION operator="+">
+																			<VALUE1>
+																				<EXPRESSION operator="+">
+																					<VALUE1>
+																						<EXPRESSION operator="+">
+																							<VALUE1>
+																								<EXPRESSION operator="+">
+																									<VALUE1>
+																										<EXPRESSION operator="+">
+																											<VALUE1>
+																												<EXPRESSION operator="+">
+																													<VALUE1>
+																														<EXPRESSION operator="+">
+																															<VALUE1>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="4.317265448328503e-15">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE1>
+																															<VALUE2>
+																																<EXPRESSION operator="*">
+																																	<VALUE1>
+																																		<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+																																	</VALUE1>
+																																	<VALUE2>
+																																		<REALVAL value="-4.317265448328503e-15">
+																																			<TYPE>
+																																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																					<SPAN direction="DOWNTO">
+																																						<LEFTBOUND>
+																																							<INTVAL value="63"/>
+																																						</LEFTBOUND>
+																																						<RIGHTBOUND>
+																																							<INTVAL value="0"/>
+																																						</RIGHTBOUND>
+																																					</SPAN>
+																																				</REAL>
+																																			</TYPE>
+																																		</REALVAL>
+																																	</VALUE2>
+																																</EXPRESSION>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE1>
+																													<VALUE2>
+																														<EXPRESSION operator="*">
+																															<VALUE1>
+																																<IDENTIFIER name="accelerometer_V_avy"/>
+																															</VALUE1>
+																															<VALUE2>
+																																<REALVAL value="-1.285133103245492e-13">
+																																	<TYPE>
+																																		<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																			<SPAN direction="DOWNTO">
+																																				<LEFTBOUND>
+																																					<INTVAL value="63"/>
+																																				</LEFTBOUND>
+																																				<RIGHTBOUND>
+																																					<INTVAL value="0"/>
+																																				</RIGHTBOUND>
+																																			</SPAN>
+																																		</REAL>
+																																	</TYPE>
+																																</REALVAL>
+																															</VALUE2>
+																														</EXPRESSION>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE1>
+																											<VALUE2>
+																												<EXPRESSION operator="*">
+																													<VALUE1>
+																														<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+																													</VALUE1>
+																													<VALUE2>
+																														<REALVAL value="1.285133103245492e-13">
+																															<TYPE>
+																																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																																	<SPAN direction="DOWNTO">
+																																		<LEFTBOUND>
+																																			<INTVAL value="63"/>
+																																		</LEFTBOUND>
+																																		<RIGHTBOUND>
+																																			<INTVAL value="0"/>
+																																		</RIGHTBOUND>
+																																	</SPAN>
+																																</REAL>
+																															</TYPE>
+																														</REALVAL>
+																													</VALUE2>
+																												</EXPRESSION>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE1>
+																									<VALUE2>
+																										<EXPRESSION operator="*">
+																											<VALUE1>
+																												<IDENTIFIER name="accelerometer_V_avz"/>
+																											</VALUE1>
+																											<VALUE2>
+																												<REALVAL value="-6.179584330419582e-17">
+																													<TYPE>
+																														<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																															<SPAN direction="DOWNTO">
+																																<LEFTBOUND>
+																																	<INTVAL value="63"/>
+																																</LEFTBOUND>
+																																<RIGHTBOUND>
+																																	<INTVAL value="0"/>
+																																</RIGHTBOUND>
+																															</SPAN>
+																														</REAL>
+																													</TYPE>
+																												</REALVAL>
+																											</VALUE2>
+																										</EXPRESSION>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE1>
+																							<VALUE2>
+																								<EXPRESSION operator="*">
+																									<VALUE1>
+																										<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+																									</VALUE1>
+																									<VALUE2>
+																										<REALVAL value="6.179584330419582e-17">
+																											<TYPE>
+																												<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																													<SPAN direction="DOWNTO">
+																														<LEFTBOUND>
+																															<INTVAL value="63"/>
+																														</LEFTBOUND>
+																														<RIGHTBOUND>
+																															<INTVAL value="0"/>
+																														</RIGHTBOUND>
+																													</SPAN>
+																												</REAL>
+																											</TYPE>
+																										</REALVAL>
+																									</VALUE2>
+																								</EXPRESSION>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE1>
+																					<VALUE2>
+																						<EXPRESSION operator="*">
+																							<VALUE1>
+																								<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+																							</VALUE1>
+																							<VALUE2>
+																								<REALVAL value="3.720241161708081e-14">
+																									<TYPE>
+																										<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																											<SPAN direction="DOWNTO">
+																												<LEFTBOUND>
+																													<INTVAL value="63"/>
+																												</LEFTBOUND>
+																												<RIGHTBOUND>
+																													<INTVAL value="0"/>
+																												</RIGHTBOUND>
+																											</SPAN>
+																										</REAL>
+																									</TYPE>
+																								</REALVAL>
+																							</VALUE2>
+																						</EXPRESSION>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE1>
+																			<VALUE2>
+																				<EXPRESSION operator="*">
+																					<VALUE1>
+																						<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+																					</VALUE1>
+																					<VALUE2>
+																						<REALVAL value="7.440482323416165e-13">
+																							<TYPE>
+																								<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																									<SPAN direction="DOWNTO">
+																										<LEFTBOUND>
+																											<INTVAL value="63"/>
+																										</LEFTBOUND>
+																										<RIGHTBOUND>
+																											<INTVAL value="0"/>
+																										</RIGHTBOUND>
+																									</SPAN>
+																								</REAL>
+																							</TYPE>
+																						</REALVAL>
+																					</VALUE2>
+																				</EXPRESSION>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE1>
+																	<VALUE2>
+																		<EXPRESSION operator="*">
+																			<VALUE1>
+																				<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+																			</VALUE1>
+																			<VALUE2>
+																				<REALVAL value="-1.303780463453806e-15">
+																					<TYPE>
+																						<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																							<SPAN direction="DOWNTO">
+																								<LEFTBOUND>
+																									<INTVAL value="63"/>
+																								</LEFTBOUND>
+																								<RIGHTBOUND>
+																									<INTVAL value="0"/>
+																								</RIGHTBOUND>
+																							</SPAN>
+																						</REAL>
+																					</TYPE>
+																				</REALVAL>
+																			</VALUE2>
+																		</EXPRESSION>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE1>
+															<VALUE2>
+																<EXPRESSION operator="*">
+																	<VALUE1>
+																		<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+																	</VALUE1>
+																	<VALUE2>
+																		<REALVAL value="-2.607560926907612e-14">
+																			<TYPE>
+																				<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																					<SPAN direction="DOWNTO">
+																						<LEFTBOUND>
+																							<INTVAL value="63"/>
+																						</LEFTBOUND>
+																						<RIGHTBOUND>
+																							<INTVAL value="0"/>
+																						</RIGHTBOUND>
+																					</SPAN>
+																				</REAL>
+																			</TYPE>
+																		</REALVAL>
+																	</VALUE2>
+																</EXPRESSION>
+															</VALUE2>
+														</EXPRESSION>
+													</VALUE1>
+													<VALUE2>
+														<REALVAL value="3.206985399781645e-13">
+															<TYPE>
+																<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																	<SPAN direction="DOWNTO">
+																		<LEFTBOUND>
+																			<INTVAL value="63"/>
+																		</LEFTBOUND>
+																		<RIGHTBOUND>
+																			<INTVAL value="0"/>
+																		</RIGHTBOUND>
+																	</SPAN>
+																</REAL>
+															</TYPE>
+														</REALVAL>
+													</VALUE2>
+												</EXPRESSION>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avx_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avx"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Update discretization variables."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avy_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avy"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avz_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_avz"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0_dot_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_0_dot"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1_dot_ddt"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_reduced_1_dot"/>
+											</RIGHTHANDSIDE>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="Cap7"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap7"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set output values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="Cap5"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap5"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set output values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="Cap2"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap2"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set output values."/>
+											</COMMENTS>
+										</ASSIGN>
+										<ASSIGN>
+											<LEFTHANDSIDE>
+												<IDENTIFIER name="Cap1"/>
+											</LEFTHANDSIDE>
+											<RIGHTHANDSIDE>
+												<IDENTIFIER name="accelerometer_V_Cap1"/>
+											</RIGHTHANDSIDE>
+											<COMMENTS>
+												<COMMENT text="Set output values."/>
+											</COMMENTS>
+										</ASSIGN>
+									</ACTIONS>
+									<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+						</STATETABLE>
+					</STATETABLES>
+					<GLOBALACTION/>
+					<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+				</CONTENTS>
+				<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+			</VIEW>
+			<CODE_INFO column_number="0" file="verilog-a/accelerometer.va" line_number="7"/>
+		</DESIGNUNIT>
+	</DESIGNUNITS>
+</SYSTEM>

@@ -1,3 +1,0 @@
-/home/fdl/fmi_lesson/models/gain/cpp/CMakeFiles/edit_cache.dir
-/home/fdl/fmi_lesson/models/gain/cpp/CMakeFiles/gain.dir
-/home/fdl/fmi_lesson/models/gain/cpp/CMakeFiles/rebuild_cache.dir

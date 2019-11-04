@@ -1,0 +1,241 @@
+[VERILOG2HIF] 13:12:49 - INFO: Running command:
+    verilog2hif verilog-a/accelerometer.va -o hif/design
+
+-- INFO: Parsing file: verilog-a/accelerometer.va Line:1
+[VERILOG2HIF] 13:12:49 - INFO: Performing post-parsing refinements - step 1
+[VERILOG2HIF] 13:12:49 - INFO: Performing post-parsing refinements - step 2
+[VERILOG2HIF] 13:12:49 - INFO: Renaming conflicting declarations
+[VERILOG2HIF] 13:12:49 - INFO: Binding open ports (if any)
+[VERILOG2HIF] 13:12:49 - INFO: Performing post-parsing refinements - step 3
+[VERILOG2HIF] 13:12:49 - INFO: Performing standardization
+[VERILOG2HIF] 13:12:49 - INFO:    - STD 01: Simplifying source tree
+[VERILOG2HIF] 13:12:50 - INFO:    - STD 02: Prefixing source tree symbols
+[VERILOG2HIF] 13:12:50 - INFO:    - STD 03: Perform tree standardization
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 04: Mapping destination tree standard symbols
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 05: Simplifying destination tree -- 1
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 06: Managing destination tree casts
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 07: Simplifying destination tree -- 2
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 08: Renaming destination tree forbidden names
+[VERILOG2HIF] 13:12:52 - INFO:    - STD 09: Final cleanup
+[VERILOG2HIF] 13:12:52 - INFO: Refining possible AMS units
+[VERILOG2HIF] 13:12:52 - INFO: Performing HIF description sanity checks
+[VERILOG2HIF] 13:12:52 - INFO: Performing final HIF sanity checks
+[VERILOG2HIF] 13:12:52 - INFO: HIF description written in: hif/design.hif.xml
+[VERILOG2HIF] 13:12:52 - INFO: HIF translation has been completed.
+[ANALyST] 13:12:52 - INFO: Running command:
+    analyst -t 20e-06 --no-parametric hif/design.hif.xml -o hif/design.analyst.hif.xml
+
+[HIF] [XML_PARSER] 13:12:53 - INFO: Parsed input file.
+[ANALyST] 13:12:53 - INFO: Running Occam...
+[ANALyST] 13:12:53 - INFO:     Running DisciplineGatherer...
+[ANALyST] 13:12:53 - INFO:         Acquiring natures...
+[ANALyST] 13:12:53 - INFO:         Acquiring DDT and IDT natures...
+[ANALyST] 13:12:53 - INFO:         Acquiring disciplines...
+[ANALyST] 13:12:53 - INFO:         Acquiring access functions...
+[ANALyST] 13:12:53 - INFO:     Running Instantiator...
+[ANALyST] 13:12:53 - INFO:         Acquiring instances...
+[ANALyST] 13:12:53 - INFO:         Instantiating the Design Units...
+[ANALyST] 13:12:53 - INFO:         Setting the template parameters...
+[ANALyST] 13:12:53 - INFO:     Running DesignUnitGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running NodeGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AliasGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running TopologyGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AnalogProcessGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running ValueGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running Interconnector...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running EquationGatherer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AccessFunctionReplacer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running EquationClassifier...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running EquationInversion...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running RequiredBranchesCreator...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running Configuration File Parser...
+[ANALyST] 13:12:53 - INFO:     Running ValueOfInterestIdentifier...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running ControlledSourcesIdentifier...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running reference nodes connector...
+[ANALyST] 13:12:53 - INFO:     Running sub-circuits updater...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:         Elapsed Time : 9.7089e-05 s
+[ANALyST] 13:12:53 - INFO:     Running Kirchhoff...
+[ANALyST] 13:12:53 - INFO:         Kirchhoff flow law...
+[ANALyST] 13:12:53 - INFO:         Kirchhoff potential law...
+[ANALyST] 13:12:53 - INFO:         Elapsed Time : 4.365e-05 s
+[ANALyST] 13:12:53 - INFO:     Running EquationSystemSimplifier...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:         Elapsed Time : 9.3799e-05 s
+[ANALyST] 13:12:53 - INFO:     Running EquationSystemSolver...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:         Elapsed Time : 0.007132 s
+[ANALyST] 13:12:53 - INFO:     Running AnalogStructureInstrumenter...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AnalogClockCreator...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AnalogNodesStandardizer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running TransformLogicNodes...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running BranchAliasRemover...
+[ANALyST] 13:12:53 - INFO:     Running CustomDisciplineRemover...
+[ANALyST] 13:12:53 - INFO:     Running EquationReplacer...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running AnalogValueUpdateInstrumenter...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running InterfaceBuilder...
+[ANALyST] 13:12:53 - INFO:         [accelerometer]
+[ANALyST] 13:12:53 - INFO:     Running VariableBinder...
+[ANALyST] 13:12:53 - INFO: Transformation completed.
+[DDT] 13:12:53 - INFO: Running command:
+    ddt hif/design.analyst.hif.xml -o hif/design.analyst.ddt.hif.xml
+
+[DDT] 13:12:53 - INFO: Command line parsed.
+[HIF] [XML_PARSER] 13:12:53 - INFO: Parsed input file.
+[DDT] 13:12:53 - INFO: 01 Performing fixes
+[DDT] 13:12:53 - INFO:    01 Fixing nested declarations
+[DDT] 13:12:53 - INFO:    02 Expanding generate constructs
+[DDT] 13:12:53 - INFO:    03 Resolving template arguments
+[DDT] 13:12:54 - INFO:    04 Simplify tree
+[DDT] 13:12:54 - INFO:    05 Removing unused declarations
+[DDT] 13:12:54 - INFO:    06 Rebasing type spans
+[DDT] 13:12:54 - INFO:    07 Fixing ranges direction
+[DDT] 13:12:54 - INFO:    08 Transform global actions
+[DDT] 13:12:54 - INFO:    09 Remove Standard Methods
+[DDT] 13:12:54 - INFO:    10 Splitting partially written signals
+[DDT] 13:12:54 - INFO:    11 Splitting targets representing concats
+[DDT] 13:12:54 - INFO:    12 Fixing instance bindings
+[DDT] 13:12:54 - INFO:    13 Fixing multiple signal/port assignments
+[DDT] 13:12:54 - INFO:    14 Fixing unsupported bits
+[DDT] 13:12:54 - INFO: 02 Padding Bitwidths
+[DDT] 13:12:54 - INFO:    01 Bitwidth Padding
+[DDT] 13:12:54 - INFO:    02 Padding Refinements
+[DDT] 13:12:54 - INFO:    03 Simplify after padding refinements
+[DDT] 13:12:54 - INFO:       - Checking after_bitwidthPadding
+[DDT] 13:12:54 - INFO: 03 Splitting bits
+[DDT] 13:12:54 - INFO:    01 Fix Instance Bindings
+[DDT] 13:12:54 - INFO:    02 Replicate Assign
+[DDT] 13:12:54 - INFO:    03 Splitting Bits
+[DDT] 13:12:54 - INFO:    04 Splitting Refinements
+[DDT] 13:12:55 - INFO:       - Checking after_splitBits
+[DDT] 13:12:55 - INFO: 04 Abstracting data types
+[DDT] 13:12:55 - INFO:       - Checking after_abstractTypes
+[DDT] 13:12:55 - INFO:       - Checking after_abstractTypesSimplify
+[DDT] 13:12:55 - INFO: 05 miscFixes
+[DDT] 13:12:55 - INFO:       - Checking after_miscFixes
+[DDT] 13:12:55 - INFO: 06 Simplifying HIF tree
+[DDT] 13:12:55 - INFO: Performing HIF description sanity checks
+[DDT] 13:12:55 - INFO: HIF description written in: /home/fdl/fmi_lesson_original/models/accelerometer/hif/design.analyst.ddt.hif.xml
+[DDT] 13:12:55 - INFO: Data types abstraction has been completed.
+[A2T] 13:12:55 - INFO: Running command:
+    a2tool hif/design.analyst.ddt.hif.xml -o hif/design.analyst.ddt.a2t.hif.xml --protocol CPP
+
+[A2T] 13:12:55 - INFO: Reading input HIF file hif/design.analyst.ddt.hif.xml...
+[HIF] [XML_PARSER] 13:12:55 - INFO: Parsed input file.
+[A2T] 13:12:55 - INFO: ### Start of analysis phase ###
+[A2T] 13:12:55 - INFO: [Hierarchy] Analysis of design hierarchy tree is completed.
+[A2T] 13:12:55 - INFO: [Clocks] Analysis of module clock signals is completed.
+[A2T] 13:12:55 - INFO: [Interface] Analysis of interfaces is completed.
+[A2T] 13:12:55 - INFO: [Process] Analysis of processes is completed.
+[A2T] 13:12:55 - INFO: ### End of analysis phase ###
+[A2T] 13:12:55 - INFO: ### Start of code generation phase ###
+[A2T] 13:12:55 - INFO: [Backbone] Generation of abstracted system backbone is completed.
+[A2T] 13:12:55 - INFO: [Functionality] Generation of functionality code is completed.
+[A2T] 13:12:55 - INFO: [Optimization] Optimization of functionality code is completed.
+[A2T] 13:12:55 - INFO: [Communication] Generation of C++ communication code is completed.
+[A2T] 13:12:55 - INFO: ### End of code generation phase ###
+[A2T] 13:12:55 - INFO: Performing HIF description sanity checks
+[A2T] 13:12:56 - INFO: HIF description written in: hif/design.analyst.ddt.a2t.hif.xml
+[A2T] 13:12:56 - INFO: Abstraction completed.
+[HIF2VP] 13:12:56 - INFO: Running command:
+    hif2vp hif/design.analyst.ddt.a2t.hif.xml -o hif/design.analyst.ddt.a2t.fmi.hif.xml -p fmi
+
+[HIF] [XML_PARSER] 13:12:56 - INFO: Parsed input file.
+[HIF2VP] [FMI] 13:12:56 - INFO: Checking model I/O ports and retrieve infos.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Real port found.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [I/O]: Boolean port found.
+[HIF2VP] [FMI] 13:12:56 - INFO: Generate FMU interface
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Add the ModelInstance struct.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2Instantiate function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2SetupExperiment function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2*InitializationMode functions.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2terminate function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2Reset function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2FreeInstance function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2GetVersione and fmi2GetTypesPlatform functions.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2SetDebugLogging function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2Get* functions.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2Set* functions.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2CancelStep function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2DoStep function.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2Get*Status functions.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [FMU]: Generate the fmi2SetRealInputDerivatives and fmi2GetRealOutputDerivatives functions.
+[HIF2VP] [FMI] 13:12:56 - INFO: Generate XML modelDescription.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: FMI model description population.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: Co-Simulation population.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: Log categories population.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: Model variables population.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: Model structure population.
+[HIF2VP] [FMI] 13:12:56 - INFO:    [XML]: Writing XML file.
+[HIF2VP] 13:12:56 - INFO: Performing HIF description sanity checks
+[HIF2VP] 13:12:58 - INFO: HIF description written in: hif/design.analyst.ddt.a2t.fmi.hif.xml
+[HIF2VP] 13:12:58 - INFO: Operation completed.
+[HIF2VP] 13:12:58 - INFO:  -- Command "hif2vp -o hif/design.analyst.ddt.a2t.fmi.hif.xml -p fmi hif/design.analyst.ddt.a2t.hif.xml " Done --
+[HIF2SC] 13:12:58 - INFO: Running command:
+    hif2sc hif/design.analyst.ddt.a2t.fmi.hif.xml --directory cpp --extensions cpp_hpp
+
+[HIF] [XML_PARSER] 13:12:58 - INFO: Parsed input file.
+[HIF2SC] 13:12:58 - INFO: Performing refinement steps...
+[HIF2SC] 13:12:58 - INFO: 01 Fixing nested declarations
+[HIF2SC] 13:12:58 - INFO: 02 Fixing generate statements
+[HIF2SC] 13:12:58 - INFO: 03 Fixing troublesome template parameters
+[HIF2SC] 13:13:03 - INFO: 04 Fixing port bindings of component instances
+[HIF2SC] 13:13:03 - INFO: 05 Fixing multiple signal/port assignments
+[HIF2SC] 13:13:03 - INFO: 06 Rebasing type spans
+[HIF2SC] 13:13:03 - INFO: 07 Fixing direction of ranges
+[HIF2SC] 13:13:04 - INFO: 08 Fixing conflicting subprograms
+[HIF2SC] 13:13:04 - INFO: 09 Expanding aliases
+[HIF2SC] 13:13:04 - INFO: 10 Performing miscellaneous fixes
+[HIF2SC] 13:13:04 - INFO: 11 Introducing support utility libraries
+[HIF2SC] 13:13:04 - INFO: 12 Performing standardization
+[HIF2SC] 13:13:04 - INFO:    - STD 01: Simplifying source tree
+[HIF2SC] 13:13:07 - INFO:    - STD 02: Prefixing source tree symbols
+[HIF2SC] 13:13:08 - INFO:    - STD 03: Perform tree standardization
+[HIF2SC] 13:13:10 - INFO:    - STD 04: Mapping destination tree standard symbols
+[HIF2SC] 13:13:10 - INFO:    - STD 05: Simplifying destination tree -- 1
+[HIF2SC] 13:13:11 - INFO:    - STD 06: Managing destination tree casts
+[HIF2SC] 13:13:11 - INFO:    - STD 07: Simplifying destination tree -- 2
+[HIF2SC] 13:13:11 - INFO:    - STD 08: Renaming destination tree forbidden names
+[HIF2SC] 13:13:12 - INFO:    - STD 09: Final cleanup
+[HIF2SC] 13:13:12 - INFO: 13 Refining for C++98 standard compliance
+[HIF2SC] 13:13:13 - INFO: 15 Performing final manipulations
+[HIF2SC] 13:13:13 - INFO: Refinement steps completed.
+[HIF2SC] 13:13:13 - INFO: Generating output directory structure
+[HIF2SC] 13:13:13 - INFO: Generating code...
+[HIF2SC] [PrintHeaderVisitor] 13:13:13 - INFO: Generating C++ code for library fmuInterface.
+[HIF2SC] [PrintHeaderVisitor] 13:13:14 - INFO: Generating C++ code for unit accelerometer.
+[HIF2SC] 13:13:14 - INFO: Code generation completed.
+[HIF2SC] 13:13:14 - INFO:  -- Command "hif2sc --directory cpp --extensions cpp_hpp hif/design.analyst.ddt.a2t.fmi.hif.xml " Done --

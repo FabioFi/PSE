@@ -1,0 +1,2081 @@
+<SYSTEM formatVersion="4.0" generationDate="13:12:52:880668" languageId="AMS" name="system" release="2017.05.1-antlia" revisionNumber="b0bd4dfb715be2454a21ed09454fa1a745d4bc72" tool="VERILOG2HIF">
+	<LIBRARYDEFS>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_driver_access" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_disciplines" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_constants" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="AMS" name="hif_verilog_vams_standard" standard="true"/>
+		<LIBRARYDEF clinkage="false" languageId="RTL" name="hif_verilog_standard" standard="true"/>
+	</LIBRARYDEFS>
+	<DESIGNUNITS>
+		<DESIGNUNIT name="accelerometer">
+			<VIEW filename="" languageId="AMS" name="behav" standard="false">
+				<LIBRARIES>
+					<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+					<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+				</LIBRARIES>
+				<ENTITY name="Entity">
+					<PORT direction="IN" name="avz" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="18" file="verilog-a/accelerometer.va" line_number="36"/>
+					</PORT>
+					<PORT direction="IN" name="avy" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="18" file="verilog-a/accelerometer.va" line_number="36"/>
+					</PORT>
+					<PORT direction="IN" name="avx" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="18" file="verilog-a/accelerometer.va" line_number="36"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap7" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="27" file="verilog-a/accelerometer.va" line_number="39"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap5" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="27" file="verilog-a/accelerometer.va" line_number="39"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap2" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="27" file="verilog-a/accelerometer.va" line_number="39"/>
+					</PORT>
+					<PORT direction="OUT" name="Cap1" wrapper="false">
+						<TYPE>
+							<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+								<INSTANCE>
+									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+								</INSTANCE>
+							</VIEWREFERENCE>
+						</TYPE>
+						<CODE_INFO column_number="27" file="verilog-a/accelerometer.va" line_number="39"/>
+					</PORT>
+					<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="35"/>
+				</ENTITY>
+				<CONTENTS name="Architecture">
+					<DECLARATIONS>
+						<VARIABLE instance="true" name="reduced_0" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="reduced_1" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="reduced_0_dot" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="reduced_1_dot" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="avx_dot" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="avy_dot" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+						<VARIABLE instance="true" name="avz_dot" standard="false">
+							<TYPE>
+								<VIEWREFERENCE name="ams_discipline" typeVariant="NATIVE_TYPE" unitName="hif_verilog_electrical">
+									<INSTANCE>
+										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+									</INSTANCE>
+								</VIEWREFERENCE>
+							</TYPE>
+						</VARIABLE>
+					</DECLARATIONS>
+					<STATETABLES>
+						<STATETABLE dontinitialize="false" entryStateName="" flavour="ANALOG" name="process" standard="false">
+							<STATES>
+								<STATE atomic="false" name="process" priority="0">
+									<ACTIONS>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="reduced_0">
+																	<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="46"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="46"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="46"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="52"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="-">
+														<VALUE1>
+															<EXPRESSION operator="+">
+																<VALUE1>
+																	<EXPRESSION operator="-">
+																		<VALUE1>
+																			<EXPRESSION operator="+">
+																				<VALUE1>
+																					<EXPRESSION operator="-">
+																						<VALUE1>
+																							<EXPRESSION operator="+">
+																								<VALUE1>
+																									<EXPRESSION operator="*">
+																										<VALUE1>
+																											<FCALL name="hif_verilog_V">
+																												<INSTANCE>
+																													<INSTANCE name="vams_disciplines">
+																														<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																													</INSTANCE>
+																												</INSTANCE>
+																												<PARAMETERASSIGN direction="NONE" name="param1">
+																													<VALUE>
+																														<IDENTIFIER name="avx_dot">
+																															<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="48"/>
+																														</IDENTIFIER>
+																													</VALUE>
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="48"/>
+																												</PARAMETERASSIGN>
+																												<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="48"/>
+																											</FCALL>
+																										</VALUE1>
+																										<VALUE2>
+																											<REALVAL value="8.197113578220593e-08">
+																												<TYPE>
+																													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																														<SPAN direction="DOWNTO">
+																															<LEFTBOUND>
+																																<INTVAL value="63"/>
+																															</LEFTBOUND>
+																															<RIGHTBOUND>
+																																<INTVAL value="0"/>
+																															</RIGHTBOUND>
+																														</SPAN>
+																													</REAL>
+																												</TYPE>
+																											</REALVAL>
+																										</VALUE2>
+																										<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="49"/>
+																									</EXPRESSION>
+																								</VALUE1>
+																								<VALUE2>
+																									<EXPRESSION operator="*">
+																										<VALUE1>
+																											<FCALL name="hif_verilog_V">
+																												<INSTANCE>
+																													<INSTANCE name="vams_disciplines">
+																														<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																													</INSTANCE>
+																												</INSTANCE>
+																												<PARAMETERASSIGN direction="NONE" name="param1">
+																													<VALUE>
+																														<IDENTIFIER name="avy_dot">
+																															<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="49"/>
+																														</IDENTIFIER>
+																													</VALUE>
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="49"/>
+																												</PARAMETERASSIGN>
+																												<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="49"/>
+																											</FCALL>
+																										</VALUE1>
+																										<VALUE2>
+																											<REALVAL value="4.733828150316048e-05">
+																												<TYPE>
+																													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																														<SPAN direction="DOWNTO">
+																															<LEFTBOUND>
+																																<INTVAL value="63"/>
+																															</LEFTBOUND>
+																															<RIGHTBOUND>
+																																<INTVAL value="0"/>
+																															</RIGHTBOUND>
+																														</SPAN>
+																													</REAL>
+																												</TYPE>
+																											</REALVAL>
+																										</VALUE2>
+																										<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="50"/>
+																									</EXPRESSION>
+																								</VALUE2>
+																								<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="48"/>
+																							</EXPRESSION>
+																						</VALUE1>
+																						<VALUE2>
+																							<EXPRESSION operator="*">
+																								<VALUE1>
+																									<FCALL name="hif_verilog_V">
+																										<INSTANCE>
+																											<INSTANCE name="vams_disciplines">
+																												<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																											</INSTANCE>
+																										</INSTANCE>
+																										<PARAMETERASSIGN direction="NONE" name="param1">
+																											<VALUE>
+																												<IDENTIFIER name="avz_dot">
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="50"/>
+																												</IDENTIFIER>
+																											</VALUE>
+																											<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="50"/>
+																										</PARAMETERASSIGN>
+																										<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="50"/>
+																									</FCALL>
+																								</VALUE1>
+																								<VALUE2>
+																									<REALVAL value="1.173309012318972e-09">
+																										<TYPE>
+																											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																												<SPAN direction="DOWNTO">
+																													<LEFTBOUND>
+																														<INTVAL value="63"/>
+																													</LEFTBOUND>
+																													<RIGHTBOUND>
+																														<INTVAL value="0"/>
+																													</RIGHTBOUND>
+																												</SPAN>
+																											</REAL>
+																										</TYPE>
+																									</REALVAL>
+																								</VALUE2>
+																								<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="51"/>
+																							</EXPRESSION>
+																						</VALUE2>
+																						<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="49"/>
+																					</EXPRESSION>
+																				</VALUE1>
+																				<VALUE2>
+																					<EXPRESSION operator="*">
+																						<VALUE1>
+																							<FCALL name="hif_verilog_V">
+																								<INSTANCE>
+																									<INSTANCE name="vams_disciplines">
+																										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																									</INSTANCE>
+																								</INSTANCE>
+																								<PARAMETERASSIGN direction="NONE" name="param1">
+																									<VALUE>
+																										<IDENTIFIER name="reduced_0">
+																											<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="46"/>
+																										</IDENTIFIER>
+																									</VALUE>
+																									<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="46"/>
+																								</PARAMETERASSIGN>
+																								<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="46"/>
+																							</FCALL>
+																						</VALUE1>
+																						<VALUE2>
+																							<REALVAL value="4.33864061611611e-07">
+																								<TYPE>
+																									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																										<SPAN direction="DOWNTO">
+																											<LEFTBOUND>
+																												<INTVAL value="63"/>
+																											</LEFTBOUND>
+																											<RIGHTBOUND>
+																												<INTVAL value="0"/>
+																											</RIGHTBOUND>
+																										</SPAN>
+																									</REAL>
+																								</TYPE>
+																							</REALVAL>
+																						</VALUE2>
+																						<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="47"/>
+																					</EXPRESSION>
+																				</VALUE2>
+																				<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="50"/>
+																			</EXPRESSION>
+																		</VALUE1>
+																		<VALUE2>
+																			<EXPRESSION operator="*">
+																				<VALUE1>
+																					<FCALL name="hif_verilog_V">
+																						<INSTANCE>
+																							<INSTANCE name="vams_disciplines">
+																								<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																							</INSTANCE>
+																						</INSTANCE>
+																						<PARAMETERASSIGN direction="NONE" name="param1">
+																							<VALUE>
+																								<IDENTIFIER name="reduced_1">
+																									<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="47"/>
+																								</IDENTIFIER>
+																							</VALUE>
+																							<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="47"/>
+																						</PARAMETERASSIGN>
+																						<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="47"/>
+																					</FCALL>
+																				</VALUE1>
+																				<VALUE2>
+																					<REALVAL value="1.336291478868363e-11">
+																						<TYPE>
+																							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																								<SPAN direction="DOWNTO">
+																									<LEFTBOUND>
+																										<INTVAL value="63"/>
+																									</LEFTBOUND>
+																									<RIGHTBOUND>
+																										<INTVAL value="0"/>
+																									</RIGHTBOUND>
+																								</SPAN>
+																							</REAL>
+																						</TYPE>
+																					</REALVAL>
+																				</VALUE2>
+																				<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="48"/>
+																			</EXPRESSION>
+																		</VALUE2>
+																		<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="51"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_ddt">
+																				<INSTANCE>
+																					<INSTANCE name="vams_standard">
+																						<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<FCALL name="hif_verilog_V">
+																							<INSTANCE>
+																								<INSTANCE name="vams_disciplines">
+																									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																								</INSTANCE>
+																							</INSTANCE>
+																							<PARAMETERASSIGN direction="NONE" name="param1">
+																								<VALUE>
+																									<IDENTIFIER name="reduced_0_dot">
+																										<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="51"/>
+																									</IDENTIFIER>
+																								</VALUE>
+																								<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="51"/>
+																							</PARAMETERASSIGN>
+																							<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="51"/>
+																						</FCALL>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="51"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="51"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="2.740892692849261e-10">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="52"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="52"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="reduced_1_dot">
+																								<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="52"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="52"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="52"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="52"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="52"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="8.441887381144286e-15">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="52"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="52"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="52"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="52"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="reduced_1">
+																	<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="54"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="54"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="13" file="verilog-a/accelerometer.va" line_number="54"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="60"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="-">
+																<VALUE1>
+																	<EXPRESSION operator="+">
+																		<VALUE1>
+																			<EXPRESSION operator="+">
+																				<VALUE1>
+																					<EXPRESSION operator="-">
+																						<VALUE1>
+																							<EXPRESSION operator="-">
+																								<VALUE1>
+																									<EXPRESSION operator="*">
+																										<VALUE1>
+																											<FCALL name="hif_verilog_V">
+																												<INSTANCE>
+																													<INSTANCE name="vams_disciplines">
+																														<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																													</INSTANCE>
+																												</INSTANCE>
+																												<PARAMETERASSIGN direction="NONE" name="param1">
+																													<VALUE>
+																														<IDENTIFIER name="avx_dot">
+																															<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="56"/>
+																														</IDENTIFIER>
+																													</VALUE>
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="56"/>
+																												</PARAMETERASSIGN>
+																												<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="56"/>
+																											</FCALL>
+																										</VALUE1>
+																										<VALUE2>
+																											<REALVAL value="4.691915281303281e-05">
+																												<TYPE>
+																													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																														<SPAN direction="DOWNTO">
+																															<LEFTBOUND>
+																																<INTVAL value="63"/>
+																															</LEFTBOUND>
+																															<RIGHTBOUND>
+																																<INTVAL value="0"/>
+																															</RIGHTBOUND>
+																														</SPAN>
+																													</REAL>
+																												</TYPE>
+																											</REALVAL>
+																										</VALUE2>
+																										<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="57"/>
+																									</EXPRESSION>
+																								</VALUE1>
+																								<VALUE2>
+																									<EXPRESSION operator="*">
+																										<VALUE1>
+																											<FCALL name="hif_verilog_V">
+																												<INSTANCE>
+																													<INSTANCE name="vams_disciplines">
+																														<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																													</INSTANCE>
+																												</INSTANCE>
+																												<PARAMETERASSIGN direction="NONE" name="param1">
+																													<VALUE>
+																														<IDENTIFIER name="avy_dot">
+																															<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="57"/>
+																														</IDENTIFIER>
+																													</VALUE>
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="57"/>
+																												</PARAMETERASSIGN>
+																												<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="57"/>
+																											</FCALL>
+																										</VALUE1>
+																										<VALUE2>
+																											<REALVAL value="8.270338360366894e-08">
+																												<TYPE>
+																													<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																														<SPAN direction="DOWNTO">
+																															<LEFTBOUND>
+																																<INTVAL value="63"/>
+																															</LEFTBOUND>
+																															<RIGHTBOUND>
+																																<INTVAL value="0"/>
+																															</RIGHTBOUND>
+																														</SPAN>
+																													</REAL>
+																												</TYPE>
+																											</REALVAL>
+																										</VALUE2>
+																										<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="58"/>
+																									</EXPRESSION>
+																								</VALUE2>
+																								<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="56"/>
+																							</EXPRESSION>
+																						</VALUE1>
+																						<VALUE2>
+																							<EXPRESSION operator="*">
+																								<VALUE1>
+																									<FCALL name="hif_verilog_V">
+																										<INSTANCE>
+																											<INSTANCE name="vams_disciplines">
+																												<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																											</INSTANCE>
+																										</INSTANCE>
+																										<PARAMETERASSIGN direction="NONE" name="param1">
+																											<VALUE>
+																												<IDENTIFIER name="avz_dot">
+																													<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="58"/>
+																												</IDENTIFIER>
+																											</VALUE>
+																											<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="58"/>
+																										</PARAMETERASSIGN>
+																										<CODE_INFO column_number="36" file="verilog-a/accelerometer.va" line_number="58"/>
+																									</FCALL>
+																								</VALUE1>
+																								<VALUE2>
+																									<REALVAL value="6.715845848320058e-07">
+																										<TYPE>
+																											<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																												<SPAN direction="DOWNTO">
+																													<LEFTBOUND>
+																														<INTVAL value="63"/>
+																													</LEFTBOUND>
+																													<RIGHTBOUND>
+																														<INTVAL value="0"/>
+																													</RIGHTBOUND>
+																												</SPAN>
+																											</REAL>
+																										</TYPE>
+																									</REALVAL>
+																								</VALUE2>
+																								<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="59"/>
+																							</EXPRESSION>
+																						</VALUE2>
+																						<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="57"/>
+																					</EXPRESSION>
+																				</VALUE1>
+																				<VALUE2>
+																					<EXPRESSION operator="*">
+																						<VALUE1>
+																							<FCALL name="hif_verilog_V">
+																								<INSTANCE>
+																									<INSTANCE name="vams_disciplines">
+																										<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																									</INSTANCE>
+																								</INSTANCE>
+																								<PARAMETERASSIGN direction="NONE" name="param1">
+																									<VALUE>
+																										<IDENTIFIER name="reduced_0">
+																											<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="54"/>
+																										</IDENTIFIER>
+																									</VALUE>
+																									<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="54"/>
+																								</PARAMETERASSIGN>
+																								<CODE_INFO column_number="52" file="verilog-a/accelerometer.va" line_number="54"/>
+																							</FCALL>
+																						</VALUE1>
+																						<VALUE2>
+																							<REALVAL value="-1.33629147903972e-11">
+																								<TYPE>
+																									<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																										<SPAN direction="DOWNTO">
+																											<LEFTBOUND>
+																												<INTVAL value="63"/>
+																											</LEFTBOUND>
+																											<RIGHTBOUND>
+																												<INTVAL value="0"/>
+																											</RIGHTBOUND>
+																										</SPAN>
+																									</REAL>
+																								</TYPE>
+																							</REALVAL>
+																						</VALUE2>
+																						<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="55"/>
+																					</EXPRESSION>
+																				</VALUE2>
+																				<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="58"/>
+																			</EXPRESSION>
+																		</VALUE1>
+																		<VALUE2>
+																			<EXPRESSION operator="*">
+																				<VALUE1>
+																					<FCALL name="hif_verilog_V">
+																						<INSTANCE>
+																							<INSTANCE name="vams_disciplines">
+																								<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																							</INSTANCE>
+																						</INSTANCE>
+																						<PARAMETERASSIGN direction="NONE" name="param1">
+																							<VALUE>
+																								<IDENTIFIER name="reduced_1">
+																									<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="55"/>
+																								</IDENTIFIER>
+																							</VALUE>
+																							<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="55"/>
+																						</PARAMETERASSIGN>
+																						<CODE_INFO column_number="38" file="verilog-a/accelerometer.va" line_number="55"/>
+																					</FCALL>
+																				</VALUE1>
+																				<VALUE2>
+																					<REALVAL value="4.262153360428024e-07">
+																						<TYPE>
+																							<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																								<SPAN direction="DOWNTO">
+																									<LEFTBOUND>
+																										<INTVAL value="63"/>
+																									</LEFTBOUND>
+																									<RIGHTBOUND>
+																										<INTVAL value="0"/>
+																									</RIGHTBOUND>
+																								</SPAN>
+																							</REAL>
+																						</TYPE>
+																					</REALVAL>
+																				</VALUE2>
+																				<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="56"/>
+																			</EXPRESSION>
+																		</VALUE2>
+																		<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="59"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_ddt">
+																				<INSTANCE>
+																					<INSTANCE name="vams_standard">
+																						<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<FCALL name="hif_verilog_V">
+																							<INSTANCE>
+																								<INSTANCE name="vams_disciplines">
+																									<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																								</INSTANCE>
+																							</INSTANCE>
+																							<PARAMETERASSIGN direction="NONE" name="param1">
+																								<VALUE>
+																									<IDENTIFIER name="reduced_0_dot">
+																										<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="59"/>
+																									</IDENTIFIER>
+																								</VALUE>
+																								<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="59"/>
+																							</PARAMETERASSIGN>
+																							<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="59"/>
+																						</FCALL>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="59"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="59"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="8.441887381144411e-15">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="60"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="2" file="verilog-a/accelerometer.va" line_number="60"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="reduced_1_dot">
+																								<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="60"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="60"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="46" file="verilog-a/accelerometer.va" line_number="60"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="60"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="60"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="2.692572636277522e-10">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="60"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="60"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="60"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="60"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="reduced_0_dot">
+																	<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="62"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="62"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="62"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="62"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_V">
+																		<INSTANCE>
+																			<INSTANCE name="vams_disciplines">
+																				<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<IDENTIFIER name="reduced_0_dot">
+																					<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="62"/>
+																				</IDENTIFIER>
+																			</VALUE>
+																			<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="62"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="62"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="-1e-06">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="61" file="verilog-a/accelerometer.va" line_number="62"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="reduced_0">
+																								<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="62"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="62"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="62"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="102" file="verilog-a/accelerometer.va" line_number="62"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="102" file="verilog-a/accelerometer.va" line_number="62"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="1e-12">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="62"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="62"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="62"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="62"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="reduced_1_dot">
+																	<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="63"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="63"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="17" file="verilog-a/accelerometer.va" line_number="63"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="63"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_V">
+																		<INSTANCE>
+																			<INSTANCE name="vams_disciplines">
+																				<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<IDENTIFIER name="reduced_1_dot">
+																					<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="63"/>
+																				</IDENTIFIER>
+																			</VALUE>
+																			<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="63"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="60" file="verilog-a/accelerometer.va" line_number="63"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="-1e-06">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="61" file="verilog-a/accelerometer.va" line_number="63"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="reduced_1">
+																								<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="63"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="63"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="101" file="verilog-a/accelerometer.va" line_number="63"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="102" file="verilog-a/accelerometer.va" line_number="63"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="102" file="verilog-a/accelerometer.va" line_number="63"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="1e-12">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="63"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="63"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="63"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="103" file="verilog-a/accelerometer.va" line_number="63"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="avx_dot">
+																	<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="65"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="65"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="65"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="65"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_V">
+																		<INSTANCE>
+																			<INSTANCE name="vams_disciplines">
+																				<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<IDENTIFIER name="avx_dot">
+																					<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="65"/>
+																				</IDENTIFIER>
+																			</VALUE>
+																			<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="65"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="65"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="-1e-06">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="49" file="verilog-a/accelerometer.va" line_number="65"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="avx">
+																								<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="65"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="65"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="65"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="65"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="65"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="9.999999999999998e-13">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="65"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="65"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="65"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="65"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="avy_dot">
+																	<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="66"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="66"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="66"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="66"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_V">
+																		<INSTANCE>
+																			<INSTANCE name="vams_disciplines">
+																				<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<IDENTIFIER name="avy_dot">
+																					<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="66"/>
+																				</IDENTIFIER>
+																			</VALUE>
+																			<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="66"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="66"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="-1e-06">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="49" file="verilog-a/accelerometer.va" line_number="66"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="avy">
+																								<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="66"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="66"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="66"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="66"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="66"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="9.999999999999998e-13">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="66"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="66"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="66"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="66"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_I">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="avz_dot">
+																	<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="67"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="67"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="11" file="verilog-a/accelerometer.va" line_number="67"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="67"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_V">
+																		<INSTANCE>
+																			<INSTANCE name="vams_disciplines">
+																				<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<IDENTIFIER name="avz_dot">
+																					<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="67"/>
+																				</IDENTIFIER>
+																			</VALUE>
+																			<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="67"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="67"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="-1e-06">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="49" file="verilog-a/accelerometer.va" line_number="67"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<EXPRESSION operator="*">
+																<VALUE1>
+																	<FCALL name="hif_verilog_ddt">
+																		<INSTANCE>
+																			<INSTANCE name="vams_standard">
+																				<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																			</INSTANCE>
+																		</INSTANCE>
+																		<PARAMETERASSIGN direction="NONE" name="param1">
+																			<VALUE>
+																				<FCALL name="hif_verilog_V">
+																					<INSTANCE>
+																						<INSTANCE name="vams_disciplines">
+																							<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																						</INSTANCE>
+																					</INSTANCE>
+																					<PARAMETERASSIGN direction="NONE" name="param1">
+																						<VALUE>
+																							<IDENTIFIER name="avz">
+																								<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="67"/>
+																							</IDENTIFIER>
+																						</VALUE>
+																						<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="67"/>
+																					</PARAMETERASSIGN>
+																					<CODE_INFO column_number="83" file="verilog-a/accelerometer.va" line_number="67"/>
+																				</FCALL>
+																			</VALUE>
+																			<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="67"/>
+																		</PARAMETERASSIGN>
+																		<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="67"/>
+																	</FCALL>
+																</VALUE1>
+																<VALUE2>
+																	<REALVAL value="9.999999999999998e-13">
+																		<TYPE>
+																			<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																				<SPAN direction="DOWNTO">
+																					<LEFTBOUND>
+																						<INTVAL value="63"/>
+																					</LEFTBOUND>
+																					<RIGHTBOUND>
+																						<INTVAL value="0"/>
+																					</RIGHTBOUND>
+																				</SPAN>
+																			</REAL>
+																		</TYPE>
+																	</REALVAL>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="67"/>
+															</EXPRESSION>
+														</VALUE2>
+														<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="67"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="67"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="67"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_V">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="Cap1">
+																	<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="69"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="69"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="69"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="69"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="-">
+														<VALUE1>
+															<EXPRESSION operator="+">
+																<VALUE1>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_0">
+																							<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="69"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="69"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="69"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="2.1464290078088e-15">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="69"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_1">
+																							<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="69"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="69"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="69"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="6.021909105459977e-14">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="69"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="69"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<REALVAL value="3.206985399781644e-13">
+																<TYPE>
+																	<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																		<SPAN direction="DOWNTO">
+																			<LEFTBOUND>
+																				<INTVAL value="63"/>
+																			</LEFTBOUND>
+																			<RIGHTBOUND>
+																				<INTVAL value="0"/>
+																			</RIGHTBOUND>
+																		</SPAN>
+																	</REAL>
+																</TYPE>
+															</REALVAL>
+														</VALUE2>
+														<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="69"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="69"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="69"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_V">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="Cap2">
+																	<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="70"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="70"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="70"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="70"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="-">
+														<VALUE1>
+															<EXPRESSION operator="+">
+																<VALUE1>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_0">
+																							<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="70"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="70"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="70"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="-6.075709139374322e-14">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="70"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_1">
+																							<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="70"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="70"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="70"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="2.129286746687815e-15">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="70"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="70"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<REALVAL value="3.206985399781645e-13">
+																<TYPE>
+																	<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																		<SPAN direction="DOWNTO">
+																			<LEFTBOUND>
+																				<INTVAL value="63"/>
+																			</LEFTBOUND>
+																			<RIGHTBOUND>
+																				<INTVAL value="0"/>
+																			</RIGHTBOUND>
+																		</SPAN>
+																	</REAL>
+																</TYPE>
+															</REALVAL>
+														</VALUE2>
+														<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="70"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="70"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="70"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_V">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="Cap5">
+																	<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="71"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="71"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="71"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="71"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="-">
+																<VALUE1>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_0">
+																							<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="71"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="71"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="71"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="-2.146420973782942e-15">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="71"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_1">
+																							<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="71"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="71"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="71"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="6.021992567897751e-14">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="71"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="71"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<REALVAL value="3.206985399781644e-13">
+																<TYPE>
+																	<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																		<SPAN direction="DOWNTO">
+																			<LEFTBOUND>
+																				<INTVAL value="63"/>
+																			</LEFTBOUND>
+																			<RIGHTBOUND>
+																				<INTVAL value="0"/>
+																			</RIGHTBOUND>
+																		</SPAN>
+																	</REAL>
+																</TYPE>
+															</REALVAL>
+														</VALUE2>
+														<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="71"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="71"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="71"/>
+										</PCALL>
+										<PCALL name="hif_verilog_vams_contribution_statement">
+											<INSTANCE>
+												<INSTANCE name="vams_standard">
+													<LIBRARY filename="" name="hif_verilog_vams_standard" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+												</INSTANCE>
+											</INSTANCE>
+											<PARAMETERASSIGN direction="NONE" name="param1">
+												<VALUE>
+													<FCALL name="hif_verilog_V">
+														<INSTANCE>
+															<INSTANCE name="vams_disciplines">
+																<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+															</INSTANCE>
+														</INSTANCE>
+														<PARAMETERASSIGN direction="NONE" name="param1">
+															<VALUE>
+																<IDENTIFIER name="Cap7">
+																	<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="72"/>
+																</IDENTIFIER>
+															</VALUE>
+															<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="72"/>
+														</PARAMETERASSIGN>
+														<CODE_INFO column_number="8" file="verilog-a/accelerometer.va" line_number="72"/>
+													</FCALL>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="72"/>
+											</PARAMETERASSIGN>
+											<PARAMETERASSIGN direction="NONE" name="param2">
+												<VALUE>
+													<EXPRESSION operator="+">
+														<VALUE1>
+															<EXPRESSION operator="-">
+																<VALUE1>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_0">
+																							<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="72"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="72"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="47" file="verilog-a/accelerometer.va" line_number="72"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="6.075793343381378e-14">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="48" file="verilog-a/accelerometer.va" line_number="72"/>
+																	</EXPRESSION>
+																</VALUE1>
+																<VALUE2>
+																	<EXPRESSION operator="*">
+																		<VALUE1>
+																			<FCALL name="hif_verilog_V">
+																				<INSTANCE>
+																					<INSTANCE name="vams_disciplines">
+																						<LIBRARY filename="" name="hif_verilog_vams_disciplines" standard="false" system="true" typeVariant="NATIVE_TYPE"/>
+																					</INSTANCE>
+																				</INSTANCE>
+																				<PARAMETERASSIGN direction="NONE" name="param1">
+																					<VALUE>
+																						<IDENTIFIER name="reduced_1">
+																							<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="72"/>
+																						</IDENTIFIER>
+																					</VALUE>
+																					<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="72"/>
+																				</PARAMETERASSIGN>
+																				<CODE_INFO column_number="84" file="verilog-a/accelerometer.va" line_number="72"/>
+																			</FCALL>
+																		</VALUE1>
+																		<VALUE2>
+																			<REALVAL value="2.129297622575898e-15">
+																				<TYPE>
+																					<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																						<SPAN direction="DOWNTO">
+																							<LEFTBOUND>
+																								<INTVAL value="63"/>
+																							</LEFTBOUND>
+																							<RIGHTBOUND>
+																								<INTVAL value="0"/>
+																							</RIGHTBOUND>
+																						</SPAN>
+																					</REAL>
+																				</TYPE>
+																			</REALVAL>
+																		</VALUE2>
+																		<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="72"/>
+																	</EXPRESSION>
+																</VALUE2>
+																<CODE_INFO column_number="85" file="verilog-a/accelerometer.va" line_number="72"/>
+															</EXPRESSION>
+														</VALUE1>
+														<VALUE2>
+															<REALVAL value="3.206985399781645e-13">
+																<TYPE>
+																	<REAL constexpr="true" typeVariant="NATIVE_TYPE">
+																		<SPAN direction="DOWNTO">
+																			<LEFTBOUND>
+																				<INTVAL value="63"/>
+																			</LEFTBOUND>
+																			<RIGHTBOUND>
+																				<INTVAL value="0"/>
+																			</RIGHTBOUND>
+																		</SPAN>
+																	</REAL>
+																</TYPE>
+															</REALVAL>
+														</VALUE2>
+														<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="72"/>
+													</EXPRESSION>
+												</VALUE>
+												<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="72"/>
+											</PARAMETERASSIGN>
+											<CODE_INFO column_number="109" file="verilog-a/accelerometer.va" line_number="72"/>
+										</PCALL>
+									</ACTIONS>
+									<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="45"/>
+								</STATE>
+							</STATES>
+							<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="45"/>
+						</STATETABLE>
+					</STATETABLES>
+					<GLOBALACTION/>
+					<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="35"/>
+				</CONTENTS>
+				<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="35"/>
+			</VIEW>
+			<CODE_INFO column_number="7" file="verilog-a/accelerometer.va" line_number="35"/>
+		</DESIGNUNIT>
+	</DESIGNUNITS>
+</SYSTEM>
